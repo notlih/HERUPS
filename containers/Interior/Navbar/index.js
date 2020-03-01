@@ -99,7 +99,6 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
           logoStyle={logoStyle}
         />
         <div style={{ display: 'flex', alignItems: 'center' }}>
-        
           <Button
             as="a"
             href="/resources"
@@ -121,7 +120,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
             aria-label="Contact button"
             title="Contact us"
           />
-          
+
           <Button
             variant="textButton"
             onClick={handleSearchModal}

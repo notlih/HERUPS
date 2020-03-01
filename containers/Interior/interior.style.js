@@ -323,11 +323,11 @@ const InteriorWrapper = styled.div`
         display: inline-block;
       }
       > span {
-        visibility:hidden;
-          @media (max-width: 767px) {
-            visibility: visible;
-          }
-        
+        visibility: hidden;
+        @media (max-width: 767px) {
+          visibility: visible;
+        }
+
         background-color: ${themeGet('colors.label', '#C6C6C6')};
       }
     }

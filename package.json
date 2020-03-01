@@ -53,7 +53,7 @@
     "gatsby-firebase-deploy": "firebase deploy",
     "netlify-deploy": "yarn workspace next-landing run netlify-build",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build", 
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -74,5 +74,11 @@
     "next": "^9.2.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
