@@ -3,11 +3,12 @@
   "description": "Modern Multipurpose Landing Pages Template Using React, Next, Styled Components and so on. It also support Gatsby Static site generator ",
   "version": "4.0.0",
   "private": true,
-  "author": "RedQ Team",
+  "homepage": "https://notlih.github.io/HERUPS",
+  "author": "Fresh Avocado",
   "license": "",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/notlih/HERUPS"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
@@ -28,7 +29,7 @@
   ],
   "scripts": {
     "clean": "lerna clean --yes && rimraf node_modules",
-    "start": "lerna run --parallel dev",
+    "start": "lerna run --parallel dev && react-scripts start",
     "preweb": "cpx \"packages/common/src/assets/image/**/*.*\" \"packages/landing/static\" -C",
     "next-dev": "yarn workspace next-landing run dev",
     "next-build": "rimraf dist && yarn workspace next-landing run build",
@@ -50,7 +51,12 @@
     "gatsby-firebase-serve": "cross-env NODE_ENV=production firebase serve",
     "pregatsby-firebase-deploy": "rimraf dist && yarn run gatsby-build && cpx \"packages/landing-gatsby/public/**/*.*\" \"dist/public\" -C",
     "gatsby-firebase-deploy": "firebase deploy",
-    "netlify-deploy": "yarn workspace next-landing run netlify-build"
+    "netlify-deploy": "yarn workspace next-landing run netlify-build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build", 
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "husky": {
     "hooks": {
@@ -64,6 +70,7 @@
     ]
   },
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "next": "^9.2.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
