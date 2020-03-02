@@ -11,10 +11,10 @@ const colors = {
   yellow: '#fdb32a',
   yellowHover: '#F29E02',
   border: '#dadada',
-  black: '#000000',
-  white: '#ffffff',
+  black: '#333333',
+  white: '#F5F5F5',
   primary: '#FDEF00',
-  heading: '#191919',
+  heading: '#333333',
   heading3: '#273343',
   quote: '#343d48',
   text: '#4E5865',
@@ -22,7 +22,7 @@ const colors = {
   link: '#352FD9',
   banner: '#171717',
   darkBg: '#0D0D0D',
-  lightBg: '#fbfafe',
+  lightBg: '#F5F5F5',
 };
 
 export default colors;

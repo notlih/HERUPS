@@ -34,7 +34,7 @@ import { dribbble } from 'react-icons-kit/fa/dribbble';
 import { googlePlus } from 'react-icons-kit/fa/googlePlus';
 import { skype } from 'react-icons-kit/fa/skype';
 import { twitter } from 'react-icons-kit/fa/twitter';
-import logo from '../../../../common/src/assets/image/interior/logo.svg';
+import logo from '../../../../common/src/assets/image/interior/avocado.png';
 
 
 
@@ -78,16 +78,6 @@ export const menuData = [
     path: '#team',
     offset: '80',
   },
-  {
-    label: 'News',
-    path: '#news',
-    offset: '40',
-  },
-  {
-    label: 'Testimonial',
-    path: '#testimonial',
-    offset: '80',
-  },
 ];
 
 /* ------------------------------------ */
@@ -95,28 +85,28 @@ export const menuData = [
 /* ------------------------------------ */
 
 export const bannerData = {
-  discount: '25%',
-  discountLabel: 'DISCOUNT ON YOUR FIRST DESIGN',
-  title: 'We craft affordable design',
+  discount: '100%',
+  discountLabel: 'COMMITTED TO A BETTER FUTURE',
+  title: 'We empower high school students to own their future',
   text:
-    'Your interior should still represent your style. No matter how large your space is or what your design preference is, these designer examples are designed to inspire you.',
+    'It’s intimidating to confront the process of discovering resources in pursuing higher education. We aim to provide underprivileged students in the South Seattle area with information for them to consider taking action.',
   carousel: [
     {
       id: 1,
       thumb_url: slide1,
-      title: 'Restroom',
+      title: 'Statements',
       link: '#1',
     },
     {
       id: 2,
       thumb_url: slide2,
-      title: 'Livingroom',
+      title: 'Applications',
       link: '#1',
     },
     {
       id: 3,
       thumb_url: slide3,
-      title: 'Corner',
+      title: 'Financial Aid',
       link: '#1',
     },
   ],
@@ -127,29 +117,29 @@ export const bannerData = {
 /* ------------------------------------ */
 
 export const featureData = {
-  title: 'OUR SERVICES',
-  slogan: 'Featured Service that We Provide',
+  title: 'OUR MISSION',
+  slogan: 'What we strive to provide with our solution',
   features: [
     {
       id: 1,
       icon: corporateIcon,
-      title: 'Corporate Design',
+      title: 'Targeted',
       description:
-        'Corporate design is a crucial part of your brand. Our approach corporate design is extraordinary.',
+        'Aimed to support over 2,000 students in South Seattle — with a focus on students who are underprivileged.',
     },
     {
       id: 2,
       icon: landscapeIcon,
-      title: 'Landscape Design',
+      title: 'Easy to Use',
       description:
-        'Learn more about landscape plans, how to design them, what to watch out for in your layout.',
+        'Designed to be accessible on multiple platforms, updated and maintained to ensure information reliability.',
     },
     {
       id: 3,
       icon: interiorIcon,
-      title: 'Interior Design',
+      title: 'Readily Available',
       description:
-        'Discover our design ideas, beautiful photos and how-to projects to create Interior Design.',
+        '4+ mentors always available to answer your questions and address your concerns.',
     },
   ],
 };

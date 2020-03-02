@@ -1,6 +1,6 @@
 {
   "homepage": "http://notlih.github.io/HERUPS",
-  "name": "Higher Education Resources for Underprivileged Students",
+  "name": "herups",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

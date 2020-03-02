@@ -97,10 +97,10 @@ const Banner = () => {
                 <Button
                   type="submit"
                   colors="primaryWithBg"
-                  title="FREE CONSULT"
+                  title="STAY TUNED"
                 />
                 <Button
-                  title="EXPLORE MORE"
+                  title="EXPLORE NOW"
                   variant="textButton"
                   icon={<i className="flaticon-next" />}
                 />
