@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import Tabs, { TabPane } from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
-import Box from 'common/src/components/Box';
-import Text from 'common/src/components/Text';
-import Heading from 'common/src/components/Heading';
-import Input from 'common/src/components/Input';
-import CheckBox from 'common/src/components/Checkbox/index';
-import Button from 'common/src/components/Button';
-import Image from 'common/src/components/Image';
+import Box from '../../../common/src/components/Box';
+import Text from '../../../common/src/components/Text';
+import Heading from '../../../common/src/components/Heading';
+import Input from '../../../common/src/components/Input';
+import CheckBox from '../../../common/src/components/Checkbox/index';
+import Button from '../../../common/src/components/Button';
+import Image from '../../../common/src/components/Image';
 import LoginModalWrapper from './loginModal.style';
 import 'rc-tabs/assets/index.css';
-import LogoImage from 'common/src/assets/image/agency/logo.png';
-import LoginImage from 'common/src/assets/image/agency/login-bg.jpg';
-import GoogleLogo from 'common/src/assets/image/agency/google-icon.jpg';
+import LogoImage from '../../../common/src/assets/image/agency/logo.png';
+import LoginImage from '../../../common/src/assets/image/agency/login-bg.jpg';
+import GoogleLogo from '../../../common/src/assets/image/agency/google-icon.jpg';
 
 const LoginModal = ({
   row,

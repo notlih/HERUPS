@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
-import Link from 'next/link';
-import Image from 'common/src/components/Image';
-import GlideCarousel from 'common/src/components/GlideCarousel';
-import GlideSlide from 'common/src/components/GlideCarousel/glideSlide';
+import Image from '../../../common/src/components/Image';
+import GlideCarousel from '../../../common/src/components/GlideCarousel';
+import GlideSlide from '../../../common/src/components/GlideCarousel/glideSlide';
 import GalleryWrapper, { GalleryCard, Button } from './gallery.style';
 
-import { galleryData } from 'common/src/data/Interior';
+import { galleryData } from '../../../common/src/data/Interior';
 
 const Gallery = () => {
   const glideOptions = {
@@ -36,15 +35,13 @@ const Gallery = () => {
           {galleryData.map(item => (
             <GlideSlide key={`gallery_key${item.id}`}>
               <GalleryCard>
-                <Link href={item.link}>
-                  <a>
-                    <Image src={item.thumb_url} alt={item.name} />
-                    <Button className="read_more__btn">
-                      <span className="arrow"></span>
-                      {item.name}
-                    </Button>
+                <a href={item.link}>
+                  <Image src={item.thumb_url} alt={item.name} />
+                  <Button className="read_more__btn">
+                    <span className="arrow"></span>
+                    {item.name}
+                  </Button>
                   </a>
-                </Link>
               </GalleryCard>
             </GlideSlide>
           ))}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import { themeGet } from '@styled-system/theme-get'
 
-import map from 'common/src/assets/image/interior/map.png';
+import map from '../../../common/src/assets/image/interior/map.png';
 
 const FooterWrapper = styled.footer`
   width: 100%;

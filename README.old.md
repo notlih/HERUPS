@@ -1,8 +1,5 @@
 # Team Fresh Avocado
 
-## Landing Page (WIP)
-https://harim2000.github.io/fresh-avocado/
-
 ## Background
 Underprivileged public high school juniors and seniors who come from first generation and low-income backgrounds have difficulty navigating the resources required to pursue higher education.
 

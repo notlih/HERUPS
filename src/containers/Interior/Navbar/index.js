@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 import { openModal, closeModal } from '@redq/reuse-modal';
 import { Icon } from 'react-icons-kit';
 import { androidClose } from 'react-icons-kit/ionicons/androidClose';
-import NavbarWrapper from 'common/src/components/Navbar';
-import Drawer from 'common/src/components/Drawer';
-import Button from 'common/src/components/Button';
-import Logo from 'common/src/components/UIElements/Logo';
-import HamburgMenu from 'common/src/components/HamburgMenu';
-import ScrollSpyMenu from 'common/src/components/ScrollSpyMenu';
-import { DrawerContext } from 'common/src/contexts/DrawerContext';
-import { Container, MobileDrawer } from './navbar.style';
+import NavbarWrapper from '../../../common/src/components/Navbar';
+import Drawer from '../../../common/src/components/Drawer';
+import Button from '../../../common/src/components/Button';
+import Logo from '../../../common/src/components/UIElements/Logo';
+import HamburgMenu from '../../../common/src/components/HamburgMenu';
+import ScrollSpyMenu from '../../../common/src/components/ScrollSpyMenu';
+import { DrawerContext } from '../../../common/src/contexts/DrawerContext';
+import { Container } from './navbar.style';
 import SearchPanel from '../SearchPanel';
 import LoginModal from '../LoginModal';
 import Copyright from '../Copyright';
 
-import { menuData } from 'common/src/data/Interior';
-import logo from 'common/src/assets/image/interior/logo.svg';
+import { menuData } from '../../../common/src/data/Interior';
+import logo from '../../../common/src/assets/image/interior/logo.svg';
 
 const CloseModalButton = () => (
   <Button
@@ -99,6 +99,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
           logoStyle={logoStyle}
         />
         <div style={{ display: 'flex', alignItems: 'center' }}>
+        
           <Button
             as="a"
             href="/resources"
@@ -120,7 +121,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
             aria-label="Contact button"
             title="Contact us"
           />
-
+          
           <Button
             variant="textButton"
             onClick={handleSearchModal}

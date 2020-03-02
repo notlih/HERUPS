@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import { themeGet } from '@styled-system/theme-get'
 
-import twitterIcon from 'common/src/assets/image/interior/twitter.svg';
+import twitterIcon from '../../../common/src/assets/image/interior/twitter.svg';
 
 const SectionWrapper = styled.section`
   padding: 162px 0 200px;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import { themeGet } from '@styled-system/theme-get'
 
 const GalleryWrapper = styled.div`
   padding: 0 0 160px;

@@ -1,12 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Link from 'next/link';
 import Fade from 'react-reveal/Fade';
-import Text from 'common/src/components/Text';
-import Heading from 'common/src/components/Heading';
-import Image from 'common/src/components/Image';
-import Container from 'common/src/components/UI/Container';
-import GlideCarousel from 'common/src/components/GlideCarousel';
-import GlideSlide from 'common/src/components/GlideCarousel/glideSlide';
+import Text from '../../../common/src/components/Text';
+import Heading from '../../../common/src/components/Heading';
+import Image from '../../../common/src/components/Image';
+import Container from '../../../common/src/components/UI/Container';
+import GlideCarousel from '../../../common/src/components/GlideCarousel';
+import GlideSlide from '../../../common/src/components/GlideCarousel/glideSlide';
 import { SectionHeader, CircleLoader } from '../interior.style';
 import SectionWrapper, {
   TeamCard,
@@ -15,7 +14,7 @@ import SectionWrapper, {
   CarouselWrapper,
 } from './team.style';
 
-import { teamData } from 'common/src/data/Interior';
+import { teamData } from '../../../common/src/data/Interior';
 
 const Team = () => {
   const { title, slogan, members } = teamData;
@@ -77,11 +76,9 @@ const Team = () => {
                           <ul className="social_links">
                             {member.social_links.map(item => (
                               <li key={`social_link__key${item.id}`}>
-                                <Link href={item.url}>
-                                  <a aria-label="Check out our team member profile">
-                                    {item.icon}
-                                  </a>
-                                </Link>
+                                <a href={item.url} aria-label="Check out our team member profile">
+                                  {item.icon}
+                                </a>
                               </li>
                             ))}
                           </ul>

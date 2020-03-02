@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Text from 'common/src/components/Text';
-import Heading from 'common/src/components/Heading';
-import Input from 'common/src/components/Input';
+import Text from '../../../common/src/components/Text';
+import Heading from '../../../common/src/components/Heading';
+import Input from '../../../common/src/components/Input';
 import { Icon } from 'react-icons-kit';
 import { iosSearchStrong } from 'react-icons-kit/ionicons/iosSearchStrong';
 import SearchPanelWrapper from './searchPanel.style';

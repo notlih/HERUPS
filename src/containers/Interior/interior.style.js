@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
-import { themeGet } from 'styled-system';
+import { themeGet } from '@styled-system/theme-get'
 
 const shake = keyframes`
   0% {
@@ -323,11 +323,11 @@ const InteriorWrapper = styled.div`
         display: inline-block;
       }
       > span {
-        visibility: hidden;
-        @media (max-width: 767px) {
-          visibility: visible;
-        }
-
+        visibility:hidden;
+          @media (max-width: 767px) {
+            visibility: visible;
+          }
+        
         background-color: ${themeGet('colors.label', '#C6C6C6')};
       }
     }

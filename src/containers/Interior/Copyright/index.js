@@ -1,9 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
-import Text from 'common/src/components/Text';
+import Text from '../../../common/src/components/Text';
 import CopyrightWrapper from './copyright.style';
 
-import { socialProfile } from 'common/src/data/Interior';
+import { socialProfile } from '../../../common/src/data/Interior';
 
 const Copyright = () => {
   return (
@@ -11,11 +10,9 @@ const Copyright = () => {
       <ul>
         {socialProfile.map((profile, index) => (
           <li key={`profile_key_${index}`}>
-            <Link href="#1">
-              <a>
-                <i className={profile.icon} />
-              </a>
-            </Link>
+            <a href="#1">
+              <i className={profile.icon} />
+            </a>
           </li>
         ))}
       </ul>

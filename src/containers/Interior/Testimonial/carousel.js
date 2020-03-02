@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import Glide from '@glidejs/glide';
 import '@glidejs/glide/dist/css/glide.core.min.css';
-import Text from 'common/src/components/Text';
-import Image from 'common/src/components/Image';
-import Heading from 'common/src/components/Heading';
+import Text from '../../../common/src/components/Text';
+import Image from '../../../common/src/components/Image';
+import Heading from '../../../common/src/components/Heading';
 
 const Carousel = ({ data }) => {
   useEffect(() => {

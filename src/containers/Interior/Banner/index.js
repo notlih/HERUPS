@@ -1,15 +1,14 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Link from 'next/link';
 import Fade from 'react-reveal/Fade';
 import { Icon } from 'react-icons-kit';
 import { iosEmailOutline } from 'react-icons-kit/ionicons/iosEmailOutline';
-import Heading from 'common/src/components/Heading';
-import Text from 'common/src/components/Text';
-import Image from 'common/src/components/Image';
-import Button from 'common/src/components/Button';
-import Input from 'common/src/components/Input';
-import GlideCarousel from 'common/src/components/GlideCarousel';
-import GlideSlide from 'common/src/components/GlideCarousel/glideSlide';
+import Heading from '../../../common/src/components/Heading';
+import Text from '../../../common/src/components/Text';
+import Image from '../../../common/src/components/Image';
+import Button from '../../../common/src/components/Button';
+import Input from '../../../common/src/components/Input';
+import GlideCarousel from '../../../common/src/components/GlideCarousel';
+import GlideSlide from '../../../common/src/components/GlideCarousel/glideSlide';
 import { CircleLoader } from '../interior.style';
 import BannerWrapper, {
   Container,
@@ -20,7 +19,7 @@ import BannerWrapper, {
   CarouselArea,
 } from './banner.style';
 
-import { bannerData } from 'common/src/data/Interior';
+import { bannerData } from '../../../common/src/data/Interior';
 
 const Banner = () => {
   const { discount, discountLabel, title, text, carousel } = bannerData;
@@ -122,12 +121,10 @@ const Banner = () => {
               <Fragment>
                 {carousel.map(item => (
                   <GlideSlide key={`carousel_key${item.id}`}>
-                    <Link href={item.link}>
-                      <a className="item_wrapper">
-                        <Image src={item.thumb_url} alt={item.title} />
-                        <Heading as="h4" content={item.title} />
-                      </a>
-                    </Link>
+                    <a className="item_wrapper" href={item.link}>
+                      <Image src={item.thumb_url} alt={item.title} />
+                      <Heading as="h4" content={item.title} />
+                    </a>
                   </GlideSlide>
                 ))}
               </Fragment>

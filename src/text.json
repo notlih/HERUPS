@@ -1,0 +1,10 @@
+{
+    "backgroundText1":"Underprivileged public high school juniors and seniors who come from first generation and low-income backgrounds have difficulty navigating the resources required to pursue higher education.",
+    "backgroundText2": "It is especially difficult for this population of students, as they often lack the information about the college application process and its specifics, such as cost, accessibility, and benefits. This population may also not know anyone from their family, or group of friends that has gone to college, so they experience more difficulty in finding resources and information related to the college application process. It’s intimidating to confront the process of discovering resources related to colleges while attempting to pursue higher education.",
+    "problemStatement": "How might last or second-to-last year students with financial or cultural hardships, in the South Seattle area, achieve better understanding of the process to higher education and the resources available, so that they feel more prepared with resources to advance towards furthering their education?",
+    "solutionStatement1": "Provide users with an platform of resources, populated through an aggregation of a majority of the resources out there available to a user.",
+    "solutionStatement2":"This platform would allow a user to filter through the aggregation of resources through a tagging system, allowing our users to find the specific information that will fit their background and needs.",
+    "solutionStatement3" : "This solution also allows a user to get connected with mentors that can answer any question they may have in their journey through higher education.",
+    "aboutUs" : "We are a team of four students majoring in Informatics at the University of Washington's Information School. This capstone project is a culmination of our learning experience at the iSchool. We will distill the knowledge and skills acquired in academic courses and apply them to a real-world project.",
+    "contactUs" : "If you have the wish to suggest ideas to contribute to this project, please be sure to contact us using the email below."
+}

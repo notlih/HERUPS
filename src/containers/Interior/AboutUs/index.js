@@ -1,16 +1,16 @@
 import React from 'react';
-import Link from 'next/link';
+
 import Fade from 'react-reveal/Fade';
-import Image from 'common/src/components/Image';
-import Heading from 'common/src/components/Heading';
-import Text from 'common/src/components/Text';
+import Image from '../../../common/src/components/Image';
+import Heading from '../../../common/src/components/Heading';
+import Text from '../../../common/src/components/Text';
 import SectionWrapper, {
   Container,
   ImageWrapper,
   TextWrapper,
 } from './aboutUs.style';
 
-import { aboutData } from 'common/src/data/Interior';
+import { aboutData } from '../../../common/src/data/Interior';
 
 const AboutUs = () => {
   const { thumb_url, title, text, text2 } = aboutData;
@@ -31,12 +31,10 @@ const AboutUs = () => {
             <Heading dangerouslySetInnerHTML={setTitle(title)} />
             <Text content={text} />
             <Text content={text2} />
-            <Link href="#1">
-              <a className="learn__more-btn">
-                <span className="btn_text">VISITE SITE</span>
-                <span className="next_arrow"></span>
-              </a>
-            </Link>
+            <a className="learn__more-btn" href="#1">
+              <span className="btn_text">VISITE SITE</span>
+              <span className="next_arrow"></span>
+            </a>
           </Fade>
         </TextWrapper>
       </Container>

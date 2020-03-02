@@ -1,0 +1,48 @@
+html{scroll-behavior:smooth}
+
+body{
+    background-color: #4BC6B9;
+}
+
+.mainContainer{
+    font-family: 'Lato';
+    font-weight: lighter;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.titleContainer{
+    margin: 10px 0 0 0;
+    background-color: #1F5EA0;
+    padding: 5px;
+
+    text-align: center;
+}
+
+.textContainer{
+    padding: 10px;
+}
+
+.sectionHeader{
+    margin-bottom: 5px;
+    width: fit-content;
+    border-bottom: 3px white solid;
+}
+
+.mainText{
+    color: rgb(241, 241, 241);
+    text-shadow: 1px 1px black;
+    font-size: 25px;
+}
+
+
+@media screen and (min-width:768px){
+    .mainContainer{
+        margin: 0 100px;
+    }
+    .textContainer{
+        padding: 20px;
+        margin: 10px;
+        border-radius: 20px;
+    }
+}

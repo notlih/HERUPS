@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import { themeGet } from '@styled-system/theme-get'
 
-import error from 'common/src/assets/image/error.svg';
-import success from 'common/src/assets/image/success.svg';
+import error from '../../../common/src/assets/image/error.svg';
+import success from '../../../common/src/assets/image/success.svg';
 
 const SectionWrapper = styled.section`
   padding: 51px 0 130px;

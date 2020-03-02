@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
-import Box from 'common/src/components/Box';
-import Text from 'common/src/components/Text';
-import Heading from 'common/src/components/Heading';
-import Logo from 'common/src/components/UIElements/Logo';
-import Container from 'common/src/components/UI/Container';
+import Box from '../../../common/src/components/Box';
+import Text from '../../../common/src/components/Text';
+import Heading from '../../../common/src/components/Heading';
+import Logo from '../../../common/src/components/UIElements/Logo';
+import Container from '../../../common/src/components/UI/Container';
 import FooterWrapper, {
   CurvIcon,
   List,
@@ -13,7 +12,7 @@ import FooterWrapper, {
   SocialList,
 } from './footer.style';
 
-import { footerData } from 'common/src/data/Interior';
+import { footerData } from '../../../common/src/data/Interior';
 
 const Footer = ({ row, col, colOne, colTwo }) => {
   const { logo, mail, phone, socialLinks, menuWidgets } = footerData;
@@ -44,9 +43,7 @@ const Footer = ({ row, col, colOne, colTwo }) => {
               <SocialList>
                 {socialLinks.map(item => (
                   <li className={item.name} key={`link-key${item.id}`}>
-                    <Link href={item.link}>
-                      <a aria-label={item.name}>{item.icon}</a>
-                    </Link>
+                    <a href={item.link} aria-label={item.name}>{item.icon}</a>
                   </li>
                 ))}
               </SocialList>
@@ -68,9 +65,7 @@ const Footer = ({ row, col, colOne, colTwo }) => {
                   <List>
                     {widget.menu.map(item => (
                       <ListItem key={`list__item-${item.id}`}>
-                        <Link href={item.link}>
-                          <a>{item.text}</a>
-                        </Link>
+                        <a href={item.link}>{item.text}</a>
                       </ListItem>
                     ))}
                   </List>

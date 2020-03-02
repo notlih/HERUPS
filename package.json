@@ -1,84 +1,62 @@
 {
-  "name": "react-next-landing",
-  "description": "Modern Multipurpose Landing Pages Template Using React, Next, Styled Components and so on. It also support Gatsby Static site generator ",
-  "version": "4.0.0",
+  "homepage": "http://harim2000.github.io/fresh-avocado",
+  "name": "fresh-avocado",
+  "version": "0.1.0",
   "private": true,
-  "homepage": "https://notlih.github.io/HERUPS",
-  "author": "Fresh Avocado",
-  "license": "",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/notlih/HERUPS"
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "@glidejs/glide": "^3.4.1",
+    "@material-ui/core": "^4.9.4",
+    "@material-ui/icons": "^4.9.1",
+    "@redq/reuse-modal": "^1.2.4",
+    "@styled-system/theme-get": "^5.1.2",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.1",
+    "@testing-library/user-event": "^7.2.1",
+    "fs": "0.0.1-security",
+    "rc-drawer": "^3.1.3",
+    "rc-tabs": "^10.0.0",
+    "react": "^16.12.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-burger-menu": "^2.6.13",
+    "react-dom": "^16.12.0",
+    "react-icons": "^2.2.7",
+    "react-icons-kit": "^1.3.1",
+    "react-reveal": "^1.2.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "react-scrollspy": "^3.4.2",
+    "react-stickynode": "^2.1.1",
+    "styled-components": "^5.0.1",
+    "styled-system": "^5.1.5"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "cpx": "^1.5.0",
-    "cross-env": "^7.0.0",
-    "firebase-tools": "7.12.1",
-    "husky": "^4.2.1",
-    "lerna": "^3.20.2",
-    "lint-staged": "^10.0.3",
-    "prettier": "^1.19.1",
-    "rimraf": "^3.0.1"
-  },
-  "workspaces": [
-    "packages/common",
-    "packages/landing",
-    "packages/landing-gatsby",
-    "packages/reusecore"
-  ],
   "scripts": {
-    "clean": "lerna clean --yes && rimraf node_modules",
-    "start": "lerna run --parallel dev && react-scripts start",
-    "preweb": "cpx \"packages/common/src/assets/image/**/*.*\" \"packages/landing/static\" -C",
-    "next-dev": "yarn workspace next-landing run dev",
-    "next-build": "rimraf dist && yarn workspace next-landing run build",
-    "next-start": "yarn workspace next-landing run start",
-    "next-export": "yarn workspace next-landing run export",
-    "gatsby-dev": "yarn workspace gatsby-landing run dev",
-    "gatsby-build": "yarn workspace gatsby-landing run build",
-    "gatsby-serve": "yarn workspace gatsby-landing run serve",
-    "prebuild-public": "rimraf \"dist/functions/**\" && rimraf \"dist/public\"",
-    "prefirebase-serve": "yarn run build-public && yarn run build-funcs && yarn workspace next-landing run build && yarn run copy-deps && yarn run install-deps",
-    "firebase-serve": "cross-env NODE_ENV=production firebase serve",
-    "prefirebase-deploy": "yarn run build-public && yarn run build-funcs && yarn workspace next-landing run build && yarn run copy-deps",
-    "firebase-deploy": "firebase deploy",
-    "build-public": "cpx \"packages/common/src/assets/**/*.*\" \"dist/public/static\" -C && cpx \"public/**/*.*\" \"dist/public\" -C",
-    "build-funcs": "babel \"packages/functions\" --out-dir \"dist/functions\"",
-    "copy-deps": "cpx \"packages/landing/*{package.json,package-lock.json,yarn.lock}\" \"dist/functions\" -C",
-    "install-deps": "cd \"dist/functions\" && yarn",
-    "pregatsby-firebase-serve": "rimraf dist && yarn run gatsby-build && cpx \"packages/landing-gatsby/public/**/*.*\" \"dist/public\" -C",
-    "gatsby-firebase-serve": "cross-env NODE_ENV=production firebase serve",
-    "pregatsby-firebase-deploy": "rimraf dist && yarn run gatsby-build && cpx \"packages/landing-gatsby/public/**/*.*\" \"dist/public\" -C",
-    "gatsby-firebase-deploy": "firebase deploy",
-    "netlify-deploy": "yarn workspace next-landing run netlify-build",
-    "predeploy": "yarn run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "lint-staged": {
-    "*.{js,md,css}": [
-      "prettier --trailing-comma es5 --single-quote --write",
-      "git add"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
-  "dependencies": {
-    "gh-pages": "^2.2.0",
-    "next": "^9.2.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
 }

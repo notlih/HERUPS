@@ -1,12 +1,12 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import Heading from 'common/src/components/Heading';
-import BlogPost from 'common/src/components/BlogPost';
-import Container from 'common/src/components/UI/Container';
+import Heading from '../../../common/src/components/Heading';
+import BlogPost from '../../../common/src/components/BlogPost';
+import Container from '../../../common/src/components/UI/Container';
 import { SectionHeader } from '../interior.style';
 import SectionWrapper, { FeatureWrapper } from './feature.style';
 
-import { featureData } from 'common/src/data/Interior/';
+import { featureData } from '../../../common/src/data/Interior/';
 
 const Feature = () => {
   const { title, slogan, features } = featureData;
