@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1e3f61940238ab8af02b3d30faf6b9f4",
+    "revision": "27892ea9c3d300bf719ad8e0472c9ea2",
     "url": "/HERUPS/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/css/2.d2d351c6.chunk.css"
   },
   {
-    "revision": "e707cdbd21f41621ef4b",
+    "revision": "3e58aea48293527b4754",
     "url": "/HERUPS/static/css/main.64e13da7.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/js/2.852bd46f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e707cdbd21f41621ef4b",
-    "url": "/HERUPS/static/js/main.f2691171.chunk.js"
+    "revision": "3e58aea48293527b4754",
+    "url": "/HERUPS/static/js/main.77054933.chunk.js"
   },
   {
     "revision": "c4001a3af4aa9457a209",
@@ -60,8 +60,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/media/Flaticon.bd6d1d55.woff2"
   },
   {
-    "revision": "97b00764bf4371d5fd0dc12cf7f64263",
-    "url": "/HERUPS/static/media/avocado.97b00764.png"
+    "revision": "d262ae041824a5c97e20671f38950aed",
+    "url": "/HERUPS/static/media/avocado.d262ae04.png"
   },
   {
     "revision": "7b4e609e3b3241b9570b30cb258c6ada",
