@@ -1,8 +1,8 @@
 import React from 'react'
 
-import slide1 from '../../assets/image/interior/slider/slide-1.png';
-import slide2 from '../../assets/image/interior/slider/slide-2.png';
-import slide3 from '../../assets/image/interior/slider/slide-3.png';
+import slide1 from '../../assets/image/interior/slider/pStatements.jpg';
+import slide2 from '../../assets/image/interior/slider/cApplications.jpg';
+import slide3 from '../../assets/image/interior/slider/fAid.jpg';
 
 import corporateIcon from '../../assets/image/interior/feature/1.svg';
 import landscapeIcon from '../../assets/image/interior/feature/2.svg';
