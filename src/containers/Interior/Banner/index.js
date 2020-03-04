@@ -21,7 +21,7 @@ import BannerWrapper, {
 
 import { bannerData } from '../../../common/src/data/Interior';
 
-const Banner = () => {
+const Banner = () => {  
   const { discount, discountLabel, title, text, carousel } = bannerData;
   const glideOptions = {
     type: 'carousel',
@@ -46,17 +46,19 @@ const Banner = () => {
   }, []);
 
   const [state, setState] = useState({ email: '', valid: '' });
+  const [emailSent, setEmailSent] = useState(false);
+
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-  const handleOnChange = e => {
+  const handleOnChange = (e) => {
     let value = '';
-    if (e.target.value.match(emailRegex)) {
-      if (e.target.value.length > 0) {
-        value = e.target.value;
+    if (e.match(emailRegex)) {
+      if (e.length > 0) {
+        value = e;
         setState({ ...state, email: value, valid: 'valid' });
       }
     } else {
-      if (e.target.value.length > 0) {
+      if (e > 0) {
         setState({ ...state, valid: 'invalid' });
       } else {
         setState({ ...state, valid: '' });
@@ -64,11 +66,17 @@ const Banner = () => {
     }
   };
 
-  const handleSubscriptionForm = e => {
+  const handleSubscriptionForm = async (e) => {
     e.preventDefault();
+    console.log("submitted");
     if (state.email.match(emailRegex)) {
-      console.log(state.email);
+      const res = await fetch(`https://fresh-avocado-2020.herokuapp.com/email?q=${state.email}`)
+                    .then(res => res.json())
+                    .then(data => {
+                      console.log(data);
+                    });
       setState({ email: '', valid: '' });
+      setEmailSent(true);
     }
   };
 
@@ -82,30 +90,35 @@ const Banner = () => {
             </HighlightedText>
             <Heading as="h1" content={title} />
             <Text content={text} />
-            <FormWrapper onSubmit={handleSubscriptionForm}>
-              <Input
-                className={state.valid}
-                type="email"
-                placeholder="Enter email address"
-                icon={<Icon icon={iosEmailOutline} />}
-                iconPosition="left"
-                required={true}
-                onChange={handleOnChange}
-                aria-label="email"
-              />
-              <ButtonGroup>
-                <Button
-                  type="submit"
-                  colors="primaryWithBg"
-                  title="STAY TUNED"
-                />
-                <Button
-                  title="EXPLORE NOW"
-                  variant="textButton"
-                  icon={<i className="flaticon-next" />}
-                />
-              </ButtonGroup>
-            </FormWrapper>
+            {emailSent ? (
+                      <Heading as="h1" content="Thank you for signing up to receive email updates!"/>
+                    ) : (
+                      <FormWrapper onSubmit={handleSubscriptionForm}>
+                      <Input
+                        className={state.valid}
+                        name="email"
+                        type="email"
+                        placeholder="Enter email address"
+                        icon={<Icon icon={iosEmailOutline} />}
+                        iconPosition="left"
+                        required={true}
+                        onChange={e => handleOnChange(e.target.value)}
+                        aria-label="email"
+                      />
+                      <ButtonGroup>
+                        <Button
+                          type="submit"
+                          colors="primaryWithBg"
+                          title="STAY TUNED"
+                        />
+                        <Button
+                          title="EXPLORE NOW"
+                          variant="textButton"
+                          icon={<i className="flaticon-next" />}
+                        />
+                      </ButtonGroup>
+                    </FormWrapper>
+                    )}
           </Fade>
         </ContentArea>
         {/* End of content section */}

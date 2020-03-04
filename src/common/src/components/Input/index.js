@@ -53,8 +53,9 @@ const Input = ({
     setState({
       ...state,
       value: event.target.value,
+      
     });
-    onChange(event.target.value);
+    onChange(event);
   };
 
   // get input focus class
