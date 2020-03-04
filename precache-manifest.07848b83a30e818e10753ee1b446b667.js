@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "450824c0b25d53eaf19bcafeb4e926f6",
+    "revision": "1e3f61940238ab8af02b3d30faf6b9f4",
     "url": "/HERUPS/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/css/2.d2d351c6.chunk.css"
   },
   {
-    "revision": "d90fe2e9dc22d0822348",
+    "revision": "e707cdbd21f41621ef4b",
     "url": "/HERUPS/static/css/main.64e13da7.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/js/2.852bd46f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d90fe2e9dc22d0822348",
-    "url": "/HERUPS/static/js/main.2ea906b3.chunk.js"
+    "revision": "e707cdbd21f41621ef4b",
+    "url": "/HERUPS/static/js/main.f2691171.chunk.js"
   },
   {
     "revision": "c4001a3af4aa9457a209",
@@ -64,12 +64,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/media/avocado.97b00764.png"
   },
   {
+    "revision": "7b4e609e3b3241b9570b30cb258c6ada",
+    "url": "/HERUPS/static/media/cApplications.7b4e609e.jpg"
+  },
+  {
     "revision": "f458c03ef7bc399e504527243767cfe0",
     "url": "/HERUPS/static/media/curv-bg.f458c03e.svg"
   },
   {
     "revision": "bc05fb19b84dca436d581e674e0c6333",
     "url": "/HERUPS/static/media/error.bc05fb19.svg"
+  },
+  {
+    "revision": "b9f3dd334156d97eed46480e746f899d",
+    "url": "/HERUPS/static/media/fAid.b9f3dd33.jpg"
   },
   {
     "revision": "be2e9a02a773eac061cd01d2724c9825",
@@ -84,16 +92,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/media/map.25359dc5.png"
   },
   {
-    "revision": "c0f370865706184c8eae809367adffaa",
-    "url": "/HERUPS/static/media/slide-1.c0f37086.png"
-  },
-  {
-    "revision": "d46ec48188a8a408bed6540bb4de1569",
-    "url": "/HERUPS/static/media/slide-2.d46ec481.png"
-  },
-  {
-    "revision": "d46ec48188a8a408bed6540bb4de1569",
-    "url": "/HERUPS/static/media/slide-3.d46ec481.png"
+    "revision": "d29e9b2f351d528dba72557b639232aa",
+    "url": "/HERUPS/static/media/pStatements.d29e9b2f.jpg"
   },
   {
     "revision": "34b863ea02c320cb3735ef22e8a195bf",
