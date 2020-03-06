@@ -87,7 +87,7 @@ export const menuData = [
 export const bannerData = {
   discount: '100%',
   discountLabel: 'COMMITTED TO A BETTER FUTURE',
-  title: 'We empower high school students to own their future',
+  title: 'Higher Education Resources for Underprivileged Students',
   text:
     'It’s intimidating to confront the process of discovering resources in pursuing higher education. We aim to provide underprivileged students in the South Seattle area with information for them to consider taking action.',
   carousel: [
@@ -118,7 +118,7 @@ export const bannerData = {
 
 export const featureData = {
   title: 'OUR MISSION',
-  slogan: 'What we strive to provide with our solution',
+  slogan: 'We empower high school students to own their future',
   features: [
     {
       id: 1,

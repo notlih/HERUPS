@@ -93,9 +93,9 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
     <NavbarWrapper {...navbarStyle}>
       <Container>
         <Logo
-          href="/interior"
+          href="/HERUPS"
           logoSrc={logo}
-          title="Interior"
+          title="HERUPS"
           logoStyle={logoStyle}
         />
         <div style={{ display: 'flex', alignItems: 'center' }}>
