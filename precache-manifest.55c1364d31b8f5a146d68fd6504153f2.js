@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "87a380d5c2b3c32577f9e670b54cae85",
+    "revision": "db23afb58a94a66dbdad1132daa88486",
     "url": "/HERUPS/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/css/2.d2d351c6.chunk.css"
   },
   {
-    "revision": "498742c3c7793fe7a4c5",
+    "revision": "d6e65de423d3b76b5b59",
     "url": "/HERUPS/static/css/main.64e13da7.chunk.css"
   },
   {
@@ -20,24 +20,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/js/2.78b9457c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "498742c3c7793fe7a4c5",
-    "url": "/HERUPS/static/js/main.87f45df5.chunk.js"
+    "revision": "d6e65de423d3b76b5b59",
+    "url": "/HERUPS/static/js/main.51ebc41e.chunk.js"
   },
   {
     "revision": "c4001a3af4aa9457a209",
     "url": "/HERUPS/static/js/runtime-main.c30626b8.js"
-  },
-  {
-    "revision": "b7d885c0434b652da9268a83dd8c53e9",
-    "url": "/HERUPS/static/media/1.b7d885c0.svg"
-  },
-  {
-    "revision": "0547419664922fb2c430c6e83f4dc6c3",
-    "url": "/HERUPS/static/media/2.05474196.svg"
-  },
-  {
-    "revision": "7de3dd1f5bee645c03756b0cfc57fe78",
-    "url": "/HERUPS/static/media/3.7de3dd1f.svg"
   },
   {
     "revision": "2370efcdc4fa02a123a3ca8702214b08",
@@ -60,6 +48,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/media/Flaticon.bd6d1d55.woff2"
   },
   {
+    "revision": "0fd5d67dc3aa6c791af07b6f5d121a77",
+    "url": "/HERUPS/static/media/available.0fd5d67d.svg"
+  },
+  {
     "revision": "d262ae041824a5c97e20671f38950aed",
     "url": "/HERUPS/static/media/avocado.d262ae04.png"
   },
@@ -70,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f458c03ef7bc399e504527243767cfe0",
     "url": "/HERUPS/static/media/curv-bg.f458c03e.svg"
+  },
+  {
+    "revision": "aab10dcda881a44e80000af983aa787a",
+    "url": "/HERUPS/static/media/easy.aab10dcd.svg"
   },
   {
     "revision": "bc05fb19b84dca436d581e674e0c6333",
@@ -98,6 +94,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "34b863ea02c320cb3735ef22e8a195bf",
     "url": "/HERUPS/static/media/success.34b863ea.svg"
+  },
+  {
+    "revision": "9b693167b614b1dd627cd1876d5e8edd",
+    "url": "/HERUPS/static/media/targeted.9b693167.svg"
   },
   {
     "revision": "6f64ae8eefc9c9040289302248a367db",
