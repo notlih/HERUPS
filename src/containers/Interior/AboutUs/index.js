@@ -32,7 +32,7 @@ const AboutUs = () => {
             <Text content={text} />
             <Text content={text2} />
             <a className="learn__more-btn" href="#1">
-              <span className="btn_text">VISITE SITE</span>
+              <span className="btn_text">LEARN MORE</span>
               <span className="next_arrow"></span>
             </a>
           </Fade>

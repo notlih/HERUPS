@@ -22,6 +22,7 @@ import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter';
 import member1 from '../../assets/image/interior/team/member1.jpg';
 import member2 from '../../assets/image/interior/team/member2.jpg';
 import member3 from '../../assets/image/interior/team/member3.jpg';
+import member4 from '../../assets/image/interior/team/member3.jpg';
 
 import galleryImg1 from '../../assets/image/interior/gallery/1.jpg';
 import galleryImg2 from '../../assets/image/interior/gallery/2.jpg';
@@ -150,11 +151,11 @@ export const featureData = {
 
 export const aboutData = {
   thumb_url: parentImg,
-  title: 'Hi, Meet <br> Concrete Squarefeet',
+  title: 'Why this matters',
   text:
-    'Your interior should still represent your style and feel like a place you want to unwind in. No matter how large your space is or what your design preference is, these designer examples are designed to inspire you. No matter what your choices are, customer satisfaction is our desired goal.',
+    'High school students who come from underprivileged backgrounds have difficulty navigating the resources required to pursue higher education. In particular, the focus of our project is in the South Seattle area, where most of us, the site creators, grew up from.',
   text2:
-    'When considering the design of your bedroom, it’s important to keep in mind both aesthetics and functionality. If storage is a primary concern, it is important to integrate the right cupboards and wardrobes into your design.',
+    'It is especially difficult for this population of students, as they often lack the information about the higher education process. Specifics of the higher education process, such as cost, accessibility, and benefits are not well detailed towards a person’s background. These students may also not know anyone from their family, or group of friends that has gone to college, so they experience more difficulty in finding resources and information related to the higher education process. It’s difficult feeling like you’re the only person in your situation, we know—we’ve been in your situation before. You’re not alone!',
 };
 
 /* ------------------------------------ */
@@ -195,13 +196,13 @@ export const projectData = {
 /* ------------------------------------ */
 
 export const teamData = {
-  title: 'OUR TEAM MEMBER',
-  slogan: 'Meet Our Perfectionist',
+  title: 'OUR TEAM',
+  slogan: 'We\'re students like you',
   members: [
     {
       id: 1,
       avatar: member1,
-      name: 'Roman Ul Oman',
+      name: 'Hilton Vo',
       designation: 'Project Manager',
       social_links: [
         {
@@ -234,8 +235,8 @@ export const teamData = {
     {
       id: 2,
       avatar: member2,
-      name: 'Jeny Doe',
-      designation: 'Lead Designer',
+      name: 'Harim Sanchez',
+      designation: 'Developer',
       social_links: [
         {
           id: 1,
@@ -267,8 +268,41 @@ export const teamData = {
     {
       id: 3,
       avatar: member3,
-      name: 'Naina Cooper',
-      designation: 'Marketing Manager',
+      name: 'Ryan Dang',
+      designation: 'Data Analyst',
+      social_links: [
+        {
+          id: 1,
+          icon: <Icon icon={socialFacebook} />,
+          url: '#1',
+        },
+        {
+          id: 2,
+          icon: <Icon icon={socialDribbble} />,
+          url: '#1',
+        },
+        {
+          id: 3,
+          icon: <Icon icon={socialGoogleplus} />,
+          url: '#1',
+        },
+        {
+          id: 4,
+          icon: <Icon icon={socialSkype} />,
+          url: '#1',
+        },
+        {
+          id: 5,
+          icon: <Icon icon={socialTwitter} />,
+          url: '#1',
+        },
+      ],
+    },
+    {
+      id: 4,
+      avatar: member2,
+      name: 'Daniel In',
+      designation: '???',
       social_links: [
         {
           id: 1,

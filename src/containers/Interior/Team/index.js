@@ -22,7 +22,7 @@ const Team = () => {
 
   const glideOptions = {
     type: 'carousel',
-    perView: 3,
+    perView: 4,
     gap: 50,
     breakpoints: {
       1200: {
