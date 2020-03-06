@@ -15,7 +15,7 @@ const Feature = () => {
     <SectionWrapper id="feature">
       <Fade bottom>
         <SectionHeader>
-          <Heading as="h5" content={title} />
+          <Heading as="h3" content={title} />
           <Heading content={slogan} />
         </SectionHeader>
       </Fade>

@@ -4,9 +4,9 @@ import slide1 from '../../assets/image/interior/slider/pStatements.jpg';
 import slide2 from '../../assets/image/interior/slider/cApplications.jpg';
 import slide3 from '../../assets/image/interior/slider/fAid.jpg';
 
-import corporateIcon from '../../assets/image/interior/feature/1.svg';
-import landscapeIcon from '../../assets/image/interior/feature/2.svg';
-import interiorIcon from '../../assets/image/interior/feature/3.svg';
+import corporateIcon from '../../assets/image/interior/feature/targeted.svg';
+import landscapeIcon from '../../assets/image/interior/feature/easy.svg';
+import interiorIcon from '../../assets/image/interior/feature/available.svg';
 
 import parentImg from '../../assets/image/interior/about_parent.png';
 
@@ -38,7 +38,7 @@ import logo from '../../../../common/src/assets/image/interior/avocado.png';
 
 
 
-/* interiro dummy data list :-
+/* interior dummy data list :-
 - Navbar
 - Banner
 - Feature
