@@ -72,11 +72,13 @@ const Banner = () => {
     if (state.email.match(emailRegex)) {
     await fetch(`https://fresh-avocado-2020.herokuapp.com/email?q=${state.email}`)
             .then(resp => {
-              if (resp.resp.localeCompare("email exists") != 0){
+              if (resp.status.localeCompare("email exists") != 0){
                 //email exists
+                console.log("email exists");
                 setEmailSent(2);
               } else{
                 //email added
+                console.log("email added");
                 setEmailSent(1);
               }
             })
