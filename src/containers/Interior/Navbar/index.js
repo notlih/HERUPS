@@ -18,6 +18,8 @@ import Copyright from '../Copyright';
 
 import { menuData } from '../../../common/src/data/Interior';
 import logo from '../../../common/src/assets/image/interior/avocado.png';
+import { typography } from 'styled-system';
+import firebase from '../../../common/firebase';
 
 const CloseModalButton = () => (
   <Button
@@ -90,6 +92,12 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
     });
   };
 
+  if (!firebase.getCurrentUsername()) {
+    // not logged in
+    alert('Please login first')
+    return null
+  }
+
   return (
     <NavbarWrapper {...navbarStyle}>
       <Container>
@@ -137,6 +145,10 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
             icon={<i className="flaticon-user" />}
             aria-label="registration button"
           />
+
+          <Typography component="h1" variant="h5">
+            User { firebase.getCurrentUsername()}
+          </Typography>
 
           <Drawer
             width="420px"

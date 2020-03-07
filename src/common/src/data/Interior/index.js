@@ -302,7 +302,7 @@ export const teamData = {
       id: 4,
       avatar: member4,
       name: 'Daniel In',
-      designation: '???',
+      designation: 'UX/UI Designer',
       social_links: [
         {
           id: 1,
