@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import {Modal} from '@redq/reuse-modal';
 
 import Sticky from 'react-stickynode';
 import { ThemeProvider } from 'styled-components';
@@ -49,6 +50,7 @@ export default class HomePage extends Component{
                   <Testimonial />
                   <Gallery />
                   <Newsletter />
+                  <Modal/>
                 </ContentWrapper>
                 <Footer />
               </InteriorWrapper>
