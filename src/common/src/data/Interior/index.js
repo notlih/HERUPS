@@ -61,7 +61,7 @@ import logo from '../../../../common/src/assets/image/interior/avocado.png';
 export const menuData = [
   {
     label: 'Resources',
-    path: '#resources',
+    path: 'resources',
     offset: '80',
   },
   {

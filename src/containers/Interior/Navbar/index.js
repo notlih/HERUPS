@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { openModal, closeModal } from '@redq/reuse-modal';
 import { Icon } from 'react-icons-kit';
@@ -100,13 +101,15 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
         />
         <div style={{ display: 'flex', alignItems: 'center' }}>
         
-          <Button
-            as="a"
-            href="/resources"
-            variant="textButton"
-            aria-label="resources button"
-            title="Resources"
-          />
+          <Link to="/resources">
+            <Button
+              // as="a"
+              // href="/resources"
+              variant="textButton"
+              aria-label="resources button"
+              title="Resources"
+            />
+          </Link>
           <Button
             as="a"
             href="/mentors"

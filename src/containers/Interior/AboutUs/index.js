@@ -23,7 +23,7 @@ const AboutUs = () => {
       <Container>
         <ImageWrapper>
           <Fade left>
-            <Image src={thumb_url} alt="Interior Landing by RedQ" />
+            <Image src={thumb_url} alt="HERUPS Landing by Fresh Avocado" />
           </Fade>
         </ImageWrapper>
         <TextWrapper>
