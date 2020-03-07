@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c604d5d6cac9912d5552f78e07689bf5",
+    "revision": "60f985fb3b2942834e84f80b2c74ab02",
     "url": "/HERUPS/index.html"
   },
   {
-    "revision": "03f08576b5583afc9e2a",
+    "revision": "40cf84518bebbd1e6ad7",
     "url": "/HERUPS/static/css/2.d2d351c6.chunk.css"
   },
   {
-    "revision": "93e8f72a768acbe4f73c",
+    "revision": "d62c511d7ec42bc1f920",
     "url": "/HERUPS/static/css/main.64e13da7.chunk.css"
   },
   {
-    "revision": "03f08576b5583afc9e2a",
-    "url": "/HERUPS/static/js/2.1476cdb4.chunk.js"
+    "revision": "40cf84518bebbd1e6ad7",
+    "url": "/HERUPS/static/js/2.de415526.chunk.js"
   },
   {
     "revision": "541e5fd1ee2866a9a0ed58edafc01398",
-    "url": "/HERUPS/static/js/2.1476cdb4.chunk.js.LICENSE.txt"
+    "url": "/HERUPS/static/js/2.de415526.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "93e8f72a768acbe4f73c",
-    "url": "/HERUPS/static/js/main.baa70d80.chunk.js"
+    "revision": "d62c511d7ec42bc1f920",
+    "url": "/HERUPS/static/js/main.10ff11f9.chunk.js"
   },
   {
     "revision": "c4001a3af4aa9457a209",
@@ -64,6 +64,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/media/curv-bg.f458c03e.svg"
   },
   {
+    "revision": "7b2e77f3b3831497100838ab8e3bc343",
+    "url": "/HERUPS/static/media/daniel.7b2e77f3.jpg"
+  },
+  {
     "revision": "aab10dcda881a44e80000af983aa787a",
     "url": "/HERUPS/static/media/easy.aab10dcd.svg"
   },
@@ -74,6 +78,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b9f3dd334156d97eed46480e746f899d",
     "url": "/HERUPS/static/media/fAid.b9f3dd33.jpg"
+  },
+  {
+    "revision": "845a4184adfb27d9625958fe0bbf0c73",
+    "url": "/HERUPS/static/media/harim.845a4184.jpg"
   },
   {
     "revision": "be2e9a02a773eac061cd01d2724c9825",
@@ -90,6 +98,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d29e9b2f351d528dba72557b639232aa",
     "url": "/HERUPS/static/media/pStatements.d29e9b2f.jpg"
+  },
+  {
+    "revision": "ac846088bc65b6c596760c7bf04822d4",
+    "url": "/HERUPS/static/media/ryan.ac846088.png"
   },
   {
     "revision": "34b863ea02c320cb3735ef22e8a195bf",
