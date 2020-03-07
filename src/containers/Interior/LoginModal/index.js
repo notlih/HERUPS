@@ -17,9 +17,6 @@ import LoginImage from '../../../common/src/assets/image/agency/login-bg.jpg';
 import GoogleLogo from '../../../common/src/assets/image/agency/google-icon.jpg';
 import firebase from '../../../common/firebase';
 
-const [name, setName] = useState('')
-const [email, setEmail] = useState('')
-const [password, setPassword] = useState('')
 
 
 const LoginModal = ({
@@ -34,6 +31,7 @@ const LoginModal = ({
   googleButtonStyle,
 }) => {
   const LoginButtonGroup = () => (
+    
     <Fragment>
       <Button className="default" title="LOGIN" {...btnStyle} />
       <Button
@@ -49,7 +47,10 @@ const LoginModal = ({
       <Button className="default" title="REGISTER" {...btnStyle} onClick={onRegister}/>
     </Fragment>
   );
-  
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   async function login() {
     try {
       await firebase.login(email, password)

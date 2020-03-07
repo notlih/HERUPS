@@ -46,7 +46,7 @@ const Banner = () => {
   }, []);
 
   const [state, setState] = useState({ email: '', valid: '' });
-  const [emailSent, setEmailSent] = useState(false);
+  const [emailSent, setEmailSent] = useState(0);
 
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -70,14 +70,53 @@ const Banner = () => {
     e.preventDefault();
     console.log("submitted");
     if (state.email.match(emailRegex)) {
-      const res = await fetch(`https://fresh-avocado-2020.herokuapp.com/email?q=${state.email}`)
-                    .then(res => {
-                      console.log(res);
-                    })
+    await fetch(`https://fresh-avocado-2020.herokuapp.com/email?q=${state.email}`)
+            .then(resp => {
+              if (resp.resp.localeCompare("email exists") != 0){
+                //email exists
+                setEmailSent(2);
+              } else{
+                //email added
+                setEmailSent(1);
+              }
+            })
       setState({ email: '', valid: '' });
-      setEmailSent(true);
     }
   };
+
+  var displayEmailUpdates = (
+    <FormWrapper onSubmit={handleSubscriptionForm}>
+    <Input
+      className={state.valid}
+      name="email"
+      type="email"
+      placeholder="Enter email address"
+      icon={<Icon icon={iosEmailOutline} />}
+      iconPosition="left"
+      required={true}
+      onChange={e => handleOnChange(e.target.value)}
+      aria-label="email"
+    />
+    <ButtonGroup>
+      <Button
+        type="submit"
+        colors="primaryWithBg"
+        title="STAY TUNED"
+      />
+      <Button
+        title="EXPLORE NOW"
+        variant="textButton"
+        icon={<i className="flaticon-next" />}
+      />
+    </ButtonGroup>
+  </FormWrapper>
+  )
+
+  if (emailSent == 1){
+    displayEmailUpdates = <Heading as="h1" content="Thank you for signing up to receive email updates!"/>
+  } else if (emailSent == 2){
+    displayEmailUpdates = <Heading as="h1" content="Email already exists. Thank you for your support!"/>
+  }
 
   return (
     <BannerWrapper>
@@ -89,35 +128,7 @@ const Banner = () => {
             </HighlightedText>
             <Heading as="h1" content={title} />
             <Text content={text} />
-            {emailSent ? (
-                      <Heading as="h1" content="Thank you for signing up to receive email updates!"/>
-                    ) : (
-                      <FormWrapper onSubmit={handleSubscriptionForm}>
-                      <Input
-                        className={state.valid}
-                        name="email"
-                        type="email"
-                        placeholder="Enter email address"
-                        icon={<Icon icon={iosEmailOutline} />}
-                        iconPosition="left"
-                        required={true}
-                        onChange={e => handleOnChange(e.target.value)}
-                        aria-label="email"
-                      />
-                      <ButtonGroup>
-                        <Button
-                          type="submit"
-                          colors="primaryWithBg"
-                          title="STAY TUNED"
-                        />
-                        <Button
-                          title="EXPLORE NOW"
-                          variant="textButton"
-                          icon={<i className="flaticon-next" />}
-                        />
-                      </ButtonGroup>
-                    </FormWrapper>
-                    )}
+            { displayEmailUpdates }
           </Fade>
         </ContentArea>
         {/* End of content section */}

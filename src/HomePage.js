@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import {Modal} from '@redq/reuse-modal';
-
 import { Modal } from '@redq/reuse-modal';
 import Sticky from 'react-stickynode';
 import { ThemeProvider } from 'styled-components';
