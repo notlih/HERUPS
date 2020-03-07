@@ -71,10 +71,9 @@ const Banner = () => {
     console.log("submitted");
     if (state.email.match(emailRegex)) {
       const res = await fetch(`https://fresh-avocado-2020.herokuapp.com/email?q=${state.email}`)
-                    .then(res => res.json())
-                    .then(data => {
-                      console.log(data);
-                    });
+                    .then(res => {
+                      console.log(res);
+                    })
       setState({ email: '', valid: '' });
       setEmailSent(true);
     }

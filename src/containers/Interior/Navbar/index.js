@@ -36,6 +36,7 @@ const CloseModalButtonAlt = () => (
   />
 );
 
+
 const Navbar = ({ navbarStyle, logoStyle }) => {
   const { state, dispatch } = useContext(DrawerContext);
 
@@ -79,7 +80,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
       component: LoginModal,
       componentProps: {},
       closeComponent: CloseModalButton,
-      closeOnClickOutside: false,
+      closeOnClickOutside: true,
     });
   };
 

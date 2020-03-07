@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
+import { Modal } from '@redq/reuse-modal';
 import Sticky from 'react-stickynode';
 import { ThemeProvider } from 'styled-components';
 import { interiorTheme } from './common/src/theme/interior';
@@ -51,6 +52,7 @@ export default class HomePage extends Component{
                   <Newsletter />
                 </ContentWrapper>
                 <Footer />
+                <Modal />
               </InteriorWrapper>
               {/* End of markup section. */}
             </Fragment>
