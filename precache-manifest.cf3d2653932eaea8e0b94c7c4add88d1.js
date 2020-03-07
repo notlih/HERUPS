@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c1989f4269ec531250fa8d6957e4afb1",
+    "revision": "66f781c20ad9a7845ce5217c2684f2ad",
     "url": "/HERUPS/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/css/2.d2d351c6.chunk.css"
   },
   {
-    "revision": "f7c70788d24f4d78ea93",
+    "revision": "b033f1939bab7e04d854",
     "url": "/HERUPS/static/css/main.66bb4e04.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/js/2.1778b86a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f7c70788d24f4d78ea93",
-    "url": "/HERUPS/static/js/main.770d4daa.chunk.js"
+    "revision": "b033f1939bab7e04d854",
+    "url": "/HERUPS/static/js/main.b364cd1b.chunk.js"
   },
   {
     "revision": "c4001a3af4aa9457a209",
