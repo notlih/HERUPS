@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Tabs, { TabPane } from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
@@ -15,12 +15,6 @@ import 'rc-tabs/assets/index.css';
 import LogoImage from '../../../common/src/assets/image/agency/logo.png';
 import LoginImage from '../../../common/src/assets/image/agency/login-bg.jpg';
 import GoogleLogo from '../../../common/src/assets/image/agency/google-icon.jpg';
-import firebase from '../../../common/firebase';
-
-const [name, setName] = useState('')
-const [email, setEmail] = useState('')
-const [password, setPassword] = useState('')
-
 
 const LoginModal = ({
   row,
@@ -37,7 +31,6 @@ const LoginModal = ({
     <Fragment>
       <Button className="default" title="LOGIN" {...btnStyle} />
       <Button
-        onClick={login}
         title="Forget Password"
         variant="textButton"
         {...outlineBtnStyle}
@@ -46,26 +39,9 @@ const LoginModal = ({
   );
   const SignupButtonGroup = () => (
     <Fragment>
-      <Button className="default" title="REGISTER" {...btnStyle} onClick={onRegister}/>
+      <Button className="default" title="REGISTER" {...btnStyle} />
     </Fragment>
   );
-  
-  async function login() {
-    try {
-      await firebase.login(email, password)
-    } catch(error) {
-      alert(error.message)
-    }
-  }
-
-  async function onRegister() {
-    try {
-      await firebase.onRegister(name, email, password)
-    } catch(error) {
-      alert(error.message)
-    }
-  }
-
   return (
     <LoginModalWrapper>
       <Box className="row" {...row}>
@@ -94,8 +70,8 @@ const LoginModal = ({
                   {...googleButtonStyle}
                 />
 
-                <Input inputType="email" isMaterial label="Email Address" value={email} onChange={e => setEmail(e.target.value)}/>
-                <Input inputType="password" isMaterial label="Password" value={password} onChange={e => setPassword(e.target.value)}/>
+                <Input inputType="email" isMaterial label="Email Address" />
+                <Input inputType="password" isMaterial label="Password" />
                 <CheckBox
                   id="remember"
                   htmlFor="remember"
@@ -118,9 +94,9 @@ const LoginModal = ({
                   className="google-login__btn"
                   {...googleButtonStyle}
                 />
-                <Input isMaterial label="Full Name" value={name} onChange={e => setName(e.target.value)}/>
-                <Input inputType="email" isMaterial label="Email Address" value={email} onChange={e => setEmail(e.target.value)}/>
-                <Input inputType="password" isMaterial label="Password" value={password} onChange={e => setPassword(e.target.value)}/>
+                <Input isMaterial label="Full Name" />
+                <Input inputType="email" isMaterial label="Email Address" />
+                <Input inputType="password" isMaterial label="Password" />
                 <div>
                   <SignupButtonGroup />
                 </div>

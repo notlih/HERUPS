@@ -20,9 +20,9 @@ import { socialSkype } from 'react-icons-kit/ionicons/socialSkype';
 import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter';
 
 import member1 from '../../assets/image/interior/team/member1.jpg';
-import member2 from '../../assets/image/interior/team/member2.jpg';
-import member3 from '../../assets/image/interior/team/member3.jpg';
-import member4 from '../../assets/image/interior/team/member3.jpg';
+import member2 from '../../assets/image/interior/team/harim.jpg';
+import member3 from '../../assets/image/interior/team/ryan.png';
+import member4 from '../../assets/image/interior/team/daniel.jpg';
 
 import galleryImg1 from '../../assets/image/interior/gallery/1.jpg';
 import galleryImg2 from '../../assets/image/interior/gallery/2.jpg';
@@ -61,7 +61,7 @@ import logo from '../../../../common/src/assets/image/interior/avocado.png';
 export const menuData = [
   {
     label: 'Resources',
-    path: '#resources',
+    path: 'resources',
     offset: '80',
   },
   {
@@ -300,9 +300,9 @@ export const teamData = {
     },
     {
       id: 4,
-      avatar: member2,
+      avatar: member4,
       name: 'Daniel In',
-      designation: '???',
+      designation: 'UX/UI Designer',
       social_links: [
         {
           id: 1,
@@ -550,94 +550,6 @@ export const footerData = {
         {
           id: 5,
           text: 'Popular Campaign',
-          link: '#',
-        },
-      ],
-    },
-    {
-      id: 2,
-      title: 'OUR INFORMATION',
-      menu: [
-        {
-          id: 1,
-          text: 'Return Policy',
-          link: '#',
-        },
-        {
-          id: 2,
-          text: 'Privacy Policy',
-          link: '#',
-        },
-        {
-          id: 3,
-          text: 'Terms & Conditions',
-          link: '#',
-        },
-        {
-          id: 4,
-          text: 'Site Map',
-          link: '#',
-        },
-        {
-          id: 5,
-          text: 'Store Hours',
-          link: '#',
-        },
-      ],
-    },
-    {
-      id: 3,
-      title: 'MY ACCOUNT',
-      menu: [
-        {
-          id: 1,
-          text: 'Press inquiries',
-          link: '#',
-        },
-        {
-          id: 2,
-          text: 'Social media directories',
-          link: '#',
-        },
-        {
-          id: 3,
-          text: 'Images & B-roll',
-          link: '#',
-        },
-        {
-          id: 4,
-          text: 'Permissions',
-          link: '#',
-        },
-        {
-          id: 5,
-          text: 'Speaker requests',
-          link: '#',
-        },
-      ],
-    },
-    {
-      id: 4,
-      title: 'POLICY',
-      menu: [
-        {
-          id: 1,
-          text: 'Application security',
-          link: '#',
-        },
-        {
-          id: 2,
-          text: 'Software principles',
-          link: '#',
-        },
-        {
-          id: 3,
-          text: 'Unwanted software policy',
-          link: '#',
-        },
-        {
-          id: 4,
-          text: 'Responsible supply chain',
           link: '#',
         },
       ],

@@ -1,30 +1,29 @@
 import React, { Component, Fragment } from 'react';
 import {Modal} from '@redq/reuse-modal';
 
-import { Modal } from '@redq/reuse-modal';
 import Sticky from 'react-stickynode';
 import { ThemeProvider } from 'styled-components';
 import { interiorTheme } from './common/src/theme/interior';
 import { DrawerProvider } from './common/src/contexts/DrawerContext';
-import Navbar from './containers/Interior/Navbar';
-import Banner from './containers/Interior/Banner';
-import Feature from './containers/Interior/Feature';
-import AboutUs from './containers/Interior/AboutUs';
-import Project from './containers/Interior/Project';
-import Team from './containers/Interior/Team';
-import News from './containers/Interior/News';
-import Testimonial from './containers/Interior/Testimonial';
-import Gallery from './containers/Interior/Gallery';
-import Newsletter from './containers/Interior/Newsletter';
-import Footer from './containers/Interior/Footer';
+import Navbar from './resourceContainers/Interior/Navbar';
+import Banner from './resourceContainers/Interior/Banner';
+import Feature from './resourceContainers/Interior/Feature';
+import AboutUs from './resourceContainers/Interior/AboutUs';
+import Project from './resourceContainers/Interior/Project';
+import Team from './resourceContainers/Interior/Team';
+import News from './resourceContainers/Interior/News';
+import Testimonial from './resourceContainers/Interior/Testimonial';
+import Gallery from './resourceContainers/Interior/Gallery';
+import Newsletter from './resourceContainers/Interior/Newsletter';
+import Footer from './resourceContainers/Interior/Footer';
 import { ResetCSS } from './common/src/assets/css/style';
 import {
   GlobalStyle,
   InteriorWrapper,
   ContentWrapper,
-} from './containers/Interior/interior.style';
+} from './resourceContainers/Interior/interior.style';
 
-export default class HomePage extends Component{
+export default class ResourcesPage extends Component{
 
     render(){
    
@@ -42,7 +41,6 @@ export default class HomePage extends Component{
                   </DrawerProvider>
                 </Sticky>
                 <ContentWrapper>
-                  <Banner />
                   <Feature />
                   <AboutUs />
                   <Project />
@@ -54,7 +52,6 @@ export default class HomePage extends Component{
                   <Modal/>
                 </ContentWrapper>
                 <Footer />
-                <Modal />
               </InteriorWrapper>
               {/* End of markup section. */}
             </Fragment>

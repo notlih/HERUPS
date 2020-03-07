@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { openModal, closeModal } from '@redq/reuse-modal';
 import { Icon } from 'react-icons-kit';
@@ -18,8 +17,6 @@ import Copyright from '../Copyright';
 
 import { menuData } from '../../../common/src/data/Interior';
 import logo from '../../../common/src/assets/image/interior/avocado.png';
-import { typography } from 'styled-system';
-import firebase from '../../../common/firebase';
 
 const CloseModalButton = () => (
   <Button
@@ -38,7 +35,6 @@ const CloseModalButtonAlt = () => (
     icon={<i className="flaticon-plus-symbol" />}
   />
 );
-
 
 const Navbar = ({ navbarStyle, logoStyle }) => {
   const { state, dispatch } = useContext(DrawerContext);
@@ -83,7 +79,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
       component: LoginModal,
       componentProps: {},
       closeComponent: CloseModalButton,
-      closeOnClickOutside: true,
+      closeOnClickOutside: false,
     });
   };
 
@@ -92,12 +88,6 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
       type: 'TOGGLE',
     });
   };
-
-  if (!firebase.getCurrentUsername()) {
-    // not logged in
-    alert('Please login first')
-    return null
-  }
 
   return (
     <NavbarWrapper {...navbarStyle}>
@@ -110,15 +100,13 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
         />
         <div style={{ display: 'flex', alignItems: 'center' }}>
         
-          <Link to="/resources">
-            <Button
-              // as="a"
-              // href="/resources"
-              variant="textButton"
-              aria-label="resources button"
-              title="Resources"
-            />
-          </Link>
+          <Button
+            as="a"
+            href="/resources"
+            variant="textButton"
+            aria-label="resources button"
+            title="Resources"
+          />
           <Button
             as="a"
             href="/mentors"
@@ -146,10 +134,6 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
             icon={<i className="flaticon-user" />}
             aria-label="registration button"
           />
-
-          <Typography component="h1" variant="h5">
-            User { firebase.getCurrentUsername()}
-          </Typography>
 
           <Drawer
             width="420px"

@@ -1,7 +1,7 @@
 # Team Fresh Avocado
 
 ## Landing Page (WIP)
-https://notlih.github.io/HERUPS
+https://notlih.github.io/HERUPS/#/
 
 ## Background
 Underprivileged public high school juniors and seniors who come from first generation and low-income backgrounds have difficulty navigating the resources required to pursue higher education.
