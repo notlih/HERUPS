@@ -47,7 +47,7 @@ export default class HomePage extends Component{
                   <Team />
                   <News />
                   <Testimonial />
-                  <Gallery />
+                  {/* <Gallery /> */}
                   <Newsletter />
                   <Modal/>
                 </ContentWrapper>

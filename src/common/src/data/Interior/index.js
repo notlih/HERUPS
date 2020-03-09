@@ -476,10 +476,10 @@ export const galleryData = [
 // Newsletter data
 /* ------------------------------------ */
 export const newsletterData = {
-  title: 'SUBSCRIBE NEWSLETTER',
-  slogan: 'Don’t Miss Out Any Offer',
+  title: 'NEWSLETTER?',
+  slogan: 'Should there be one here? Probably not.',
   note:
-    'Note: Please call us at 12pm to 8am. otherwise our customer supporter will not available to reach your call, but you can drop mail anytime.',
+    'Note: This is what a note looks like here. Wow! Very cool!',
 };
 
 /* ------------------------------------ */
@@ -488,8 +488,8 @@ export const newsletterData = {
 
 export const footerData = {
   logo: logo,
-  mail: 'hello@redq.io',
-  phone: '123-456-7890',
+  mail: 'freshavocado2020@gmail.com',
+  phone: 'University of Washington',
   socialLinks: [
     {
       id: 1,

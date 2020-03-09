@@ -41,13 +41,13 @@ export default class ResourcesPage extends Component{
                   </DrawerProvider>
                 </Sticky>
                 <ContentWrapper>
+                  <Gallery />
                   <Feature />
                   <AboutUs />
                   <Project />
                   <Team />
                   <News />
                   <Testimonial />
-                  <Gallery />
                   <Newsletter />
                   <Modal/>
                 </ContentWrapper>

@@ -76,7 +76,7 @@ const Footer = ({ row, col, colOne, colTwo }) => {
           </Box>
           {/* End of widgets row */}
           <Box className="row copyright" {...row}>
-            <Text className="text" content="copyright 2019 @RedQ" />
+            <Text className="text" content="Team Fresh Avocado 2020" />
             <p>
               Built & designed with
               <svg
