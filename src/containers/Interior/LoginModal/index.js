@@ -4,7 +4,6 @@ import Tabs, { TabPane } from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 import Box from '../../../common/src/components/Box';
-import Text from '../../../common/src/components/Text';
 import Heading from '../../../common/src/components/Heading';
 import Input from '../../../common/src/components/Input';
 import CheckBox from '../../../common/src/components/Checkbox/index';
@@ -14,8 +13,8 @@ import LoginModalWrapper from './loginModal.style';
 import 'rc-tabs/assets/index.css';
 import LogoImage from '../../../common/src/assets/image/agency/logo.png';
 import LoginImage from '../../../common/src/assets/image/agency/login-bg.jpg';
-import GoogleLogo from '../../../common/src/assets/image/agency/google-icon.jpg';
-import firebase from '../../../common/firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 
 
@@ -42,30 +41,116 @@ const LoginModal = ({
       />
     </Fragment>
   );
+
   const SignupButtonGroup = () => (
     <Fragment>
       <Button className="default" title="REGISTER" {...btnStyle} onClick={onRegister}/>
     </Fragment>
   );
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [nameR, setNameR] = useState('');
+  const [emailR, setEmailR] = useState('');
+  const [passwordR, setPasswordR] = useState('');
+
+  const [registered, setRegistered] = useState(false);
+
+  const [firstGen, setFirstGen] = useState(false);
+  const [lowIncome, setLowIncome] = useState(false);
+  const [undoc, setUndoc] = useState(false);
+  const [studentOfColor, setStudentOfColor] = useState(false);
+  const [immigrant, setImmigrant] = useState(false);
+
+  const [emailL, setEmailL] = useState('');
+  const [passwordL, setPasswordL] = useState('');
 
   async function login() {
     try {
-      await firebase.login(email, password)
+      await firebase.login(emailL, passwordL)
     } catch(error) {
       alert(error.message)
     }
   }
 
   async function onRegister() {
-    try {
-      await firebase.onRegister(name, email, password)
-    } catch(error) {
-      alert(error.message)
-    }
+
+    setRegistered(true);
+
+   firebase.auth().createUserWithEmailAndPassword(emailR, passwordR)
+    .then((userCredentials) => {
+      let user = userCredentials.user;
+      console.log(JSON.stringify(user));
+    })
+    .catch((error) => {
+      console.log(error.message)
+    })
   }
+
+  const registration = (
+    <div>
+      <Heading content="Please create an account" {...titleStyle} />
+      <Input label="Full Name" value={nameR} onChange={e => setNameR(e.target.value)}/>
+      <Input inputType="email"  label="Email Address" value={emailR} onChange={e => setEmailR(e.target.value)}/>
+      <Input inputType="password"  label="Password" value={passwordR} onChange={e => setPasswordR(e.target.value)}/>
+      <div>
+        <SignupButtonGroup />
+      </div>
+    </div>);
+  
+  const furtherRegistration = (
+    <div>
+      <Heading content="Fill out further details to tailor your experience" {...titleStyle}/>
+      <form>
+        <label>
+          First-Generation Student
+          <input 
+            name="isFirstGen" 
+            type="checkbox" 
+            checked={firstGen} 
+            onChange={e => setFirstGen(!firstGen)}
+          />
+        </label>
+        
+        <label>
+          Low-Income
+          <input 
+            name="isLowIncome" 
+            type="checkbox" 
+            checked={lowIncome} 
+            onChange={e => setLowIncome(!lowIncome)}
+          />
+        </label>
+        
+        <label>
+          Undocumented
+          <input 
+            name="isUndoc" 
+            type="checkbox" 
+            checked={undoc} 
+            onChange={e => setUndoc(!undoc)}
+          />
+        </label>
+        
+        <label>
+          Student of Color
+          <input 
+            name="isStudentOfColor" 
+            type="checkbox" 
+            checked={studentOfColor} 
+            onChange={e => setStudentOfColor(!studentOfColor)}          
+          />
+        </label>
+        
+        <label>
+          Immigrant
+          <input 
+            name="isImmigrant" 
+            type="checkbox" 
+            checked={immigrant} 
+            onChange={e => setImmigrant(!immigrant)}
+          />
+        </label>
+      </form>
+    </div>
+  )
 
   return (
     <LoginModalWrapper>
@@ -82,21 +167,9 @@ const LoginModal = ({
               renderTabContent={() => <TabContent />}
             >
               <TabPane tab="LOGIN" key="loginForm">
-                <Heading content="Welcome Folk" {...titleStyle} />
-                <Text
-                  content="Welcome to Mate Family. Please login with your personal account information letter."
-                  {...descriptionStyle}
-                />
-                <Button
-                  icon={<Image src={GoogleLogo} alt="Google Icon" />}
-                  title="Sign in with Google"
-                  iconPosition="left"
-                  className="google-login__btn"
-                  {...googleButtonStyle}
-                />
-
-                <Input inputType="email" isMaterial label="Email Address" value={email} onChange={e => setEmail(e.target.value)}/>
-                <Input inputType="password" isMaterial label="Password" value={password} onChange={e => setPassword(e.target.value)}/>
+                <Heading content="Please login to your account" {...titleStyle} />
+                <Input inputType="email"  label="Email Address" value={emailL} onChange={e => setEmailL(e.target.value)}/>
+                <Input inputType="password"  label="Password" value={passwordL} onChange={e => setPasswordL(e.target.value)}/>
                 <CheckBox
                   id="remember"
                   htmlFor="remember"
@@ -107,26 +180,9 @@ const LoginModal = ({
                 </div>
               </TabPane>
               <TabPane tab="REGISTER" key="registerForm">
-                <Heading content="Welcome Folk" {...titleStyle} />
-                <Text
-                  content="Welcome to Mate Family. Please login with your personal account information letter."
-                  {...descriptionStyle}
-                />
-                <Button
-                  icon={<Image src={GoogleLogo} alt="Google Icon" />}
-                  title="Sign up with Google"
-                  iconPosition="left"
-                  className="google-login__btn"
-                  {...googleButtonStyle}
-                />
-                <Input isMaterial label="Full Name" value={name} onChange={e => setName(e.target.value)}/>
-                <Input inputType="email" isMaterial label="Email Address" value={email} onChange={e => setEmail(e.target.value)}/>
-                <Input inputType="password" isMaterial label="Password" value={password} onChange={e => setPassword(e.target.value)}/>
-                <div>
-                  <SignupButtonGroup />
-                </div>
+                {registered ? furtherRegistration : registration}
               </TabPane>
-            </Tabs>
+            </Tabs>            
           </Box>
         </Box>
       </Box>
