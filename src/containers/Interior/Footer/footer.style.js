@@ -23,7 +23,8 @@ const FooterWrapper = styled.footer`
   }
 
   a:visited{
-    color: #fff;
+    color: #FFC04D;
+    text-decoration: underline;
   }
 
   .widget_title {
