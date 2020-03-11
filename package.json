@@ -16,6 +16,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
+    "firebase": "^7.10.0",
     "fs": "0.0.1-security",
     "glidejs": "^2.1.0",
     "rc-drawer": "^3.1.3",

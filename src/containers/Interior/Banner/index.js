@@ -71,17 +71,21 @@ const Banner = () => {
     console.log("submitted");
     if (state.email.match(emailRegex)) {
     await fetch(`https://fresh-avocado-2020.herokuapp.com/email?q=${state.email}`)
-            .then(resp => {
-              if (resp.status.localeCompare("email exists") != 0){
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              console.log(data);
+              if (data.status.localeCompare("email exists") === 0){
                 //email exists
                 console.log("email exists");
                 setEmailSent(2);
-              } else{
+              } else {
                 //email added
                 console.log("email added");
                 setEmailSent(1);
               }
-            })
+            });
       setState({ email: '', valid: '' });
     }
   };
@@ -114,9 +118,9 @@ const Banner = () => {
   </FormWrapper>
   )
 
-  if (emailSent == 1){
+  if (emailSent === 1){
     displayEmailUpdates = <Heading as="h1" content="Thank you for signing up to receive email updates!"/>
-  } else if (emailSent == 2){
+  } else if (emailSent === 2){
     displayEmailUpdates = <Heading as="h1" content="Email already exists. Thank you for your support!"/>
   }
 

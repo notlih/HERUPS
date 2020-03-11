@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from 'react';
+import { Redirect } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Tabs, { TabPane } from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 import Box from '../../../common/src/components/Box';
-import Text from '../../../common/src/components/Text';
 import Heading from '../../../common/src/components/Heading';
 import Input from '../../../common/src/components/Input';
 import CheckBox from '../../../common/src/components/Checkbox/index';
@@ -14,10 +14,9 @@ import LoginModalWrapper from './loginModal.style';
 import 'rc-tabs/assets/index.css';
 import LogoImage from '../../../common/src/assets/image/agency/logo.png';
 import LoginImage from '../../../common/src/assets/image/agency/login-bg.jpg';
-import GoogleLogo from '../../../common/src/assets/image/agency/google-icon.jpg';
-import firebase from '../../../common/firebase';
-
-
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import "firebase/database"
 
 const LoginModal = ({
   row,
@@ -33,42 +32,185 @@ const LoginModal = ({
   const LoginButtonGroup = () => (
     
     <Fragment>
-      <Button className="default" title="LOGIN" {...btnStyle} />
+      <Button className="default" title="LOGIN" onClick={login} {...btnStyle} />
       <Button
-        onClick={login}
         title="Forget Password"
         variant="textButton"
         {...outlineBtnStyle}
       />
     </Fragment>
   );
+
   const SignupButtonGroup = () => (
     <Fragment>
       <Button className="default" title="REGISTER" {...btnStyle} onClick={onRegister}/>
     </Fragment>
   );
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+
+  const [userP, setUserP] = useState();
+  const [nameR, setNameR] = useState('');
+  const [emailR, setEmailR] = useState('');
+  const [passwordR, setPasswordR] = useState('');
+
+  const [registered, setRegistered] = useState(false);
+  const [errorRegistering, setErrorRegistering] = useState(<div></div>);
+
+  const [firstGen, setFirstGen] = useState(false);
+  const [lowIncome, setLowIncome] = useState(false);
+  const [undoc, setUndoc] = useState(false);
+  const [studentOfColor, setStudentOfColor] = useState(false);
+  const [immigrant, setImmigrant] = useState(false);
+
+  const [emailL, setEmailL] = useState('');
+  const [passwordL, setPasswordL] = useState('');
+  const [errorLogIn, setErrorLogIn] = useState(<div></div>);
+
+  const [toDash, setToDash] = useState(false);
 
   async function login() {
-    try {
-      await firebase.login(email, password)
-    } catch(error) {
-      alert(error.message)
-    }
+    firebase.auth().signInWithEmailAndPassword(emailL, passwordL).
+    then(function (userCredentials){
+      let user = userCredentials.user;
+      console.log(user);
+      setUserP(user);
+      setToDash(true)
+    })
+    .catch(function(error){
+      setErrorLogIn(<Heading color="RED" as="h3" content={error.message} />);
+    })
   }
 
   async function onRegister() {
-    try {
-      await firebase.onRegister(name, email, password)
-    } catch(error) {
-      alert(error.message)
-    }
+
+    let userRef = firebase.database().ref('users/' + nameR);
+    userRef.transaction(function(currentData){
+
+      if (currentData === null){
+        return {
+          username: nameR,
+          email: emailR
+        }
+      } else {
+        console.log("user exists");
+        return;
+      }
+    }, function(error, commited){
+        if(error){
+          console.log("transaction failed")
+        } else if(!commited){
+          console.log("User Already Exists")
+          setErrorRegistering(<Heading color="RED" as="h3" content="Display Name already in use, please choose another or LOG IN" />);
+        } else{
+          console.log("User created")
+          firebase.auth().createUserWithEmailAndPassword(emailR, passwordR)
+          .then((userCredentials) => {
+            let user = userCredentials.user;
+            setUserP(user);
+            user.updateProfile({
+              displayName: nameR,
+            })
+            setRegistered(true);
+          })
+          .catch((error) => {
+            if(error.message === "The email address is already in use by another account."){
+              setErrorRegistering(<Heading color="RED" as="h3" content="Email already in use, please LOG IN" />);
+            }
+          });
+        }
+      });
   }
+
+  function submitRegistration(){
+    firebase.database().ref("users/" + nameR).set({
+      username: nameR,
+      email: emailR,
+      firstGenStatus: firstGen,
+      lowIncomeStatus: lowIncome,
+      undocStatus: undoc,
+      studentOfColorStatus: studentOfColor,
+      immigrantStatus: immigrant
+    });
+    setToDash(true);
+  }
+
+
+  const registration = (
+    <div>
+      <Heading content="Please create an account" {...titleStyle} />
+      {errorRegistering}
+      <Input label="Display Name" value={nameR} onChange={e => setNameR(e.target.value)}/>
+      <Input inputType="email"  label="Email Address" value={emailR} onChange={e => setEmailR(e.target.value)}/>
+      <Input inputType="password"  label="Password" value={passwordR} onChange={e => setPasswordR(e.target.value)}/>
+      <div>
+        <SignupButtonGroup />
+      </div>
+    </div>);
+  
+  const furtherRegistration = (
+    <div>
+      <Heading content={"Hello " + nameR + ", please fill out further details to tailor this platform to you."} {...titleStyle}/>
+      <form>
+        <label>
+          First-Generation Student
+          <input 
+            name="isFirstGen" 
+            type="checkbox" 
+            checked={firstGen} 
+            onChange={e => setFirstGen(!firstGen)}
+          />
+        </label>
+        
+        <label>
+          Low-Income
+          <input 
+            name="isLowIncome" 
+            type="checkbox" 
+            checked={lowIncome} 
+            onChange={e => setLowIncome(!lowIncome)}
+          />
+        </label>
+        
+        <label>
+          Undocumented
+          <input 
+            name="isUndoc" 
+            type="checkbox" 
+            checked={undoc} 
+            onChange={e => setUndoc(!undoc)}
+          />
+        </label>
+        
+        <label>
+          Student of Color
+          <input 
+            name="isStudentOfColor" 
+            type="checkbox" 
+            checked={studentOfColor} 
+            onChange={e => setStudentOfColor(!studentOfColor)}          
+          />
+        </label>
+        
+        <label>
+          Immigrant
+          <input 
+            name="isImmigrant" 
+            type="checkbox" 
+            checked={immigrant} 
+            onChange={e => setImmigrant(!immigrant)}
+          />
+        </label>
+        <Button title="Submit Details" onClick={e => submitRegistration()} {...outlineBtnStyle}/>
+      </form>
+    </div>
+  )
 
   return (
     <LoginModalWrapper>
+      {toDash ? (
+        <Redirect to={{
+          pathname: "/dashboard",
+          state:{ user : userP}
+        }}/>) : null}
       <Box className="row" {...row}>
         <Box className="col imageCol" {...col}>
           <Image className="patternImage" src={LoginImage} alt="Login Banner" />
@@ -82,21 +224,10 @@ const LoginModal = ({
               renderTabContent={() => <TabContent />}
             >
               <TabPane tab="LOGIN" key="loginForm">
-                <Heading content="Welcome Folk" {...titleStyle} />
-                <Text
-                  content="Welcome to Mate Family. Please login with your personal account information letter."
-                  {...descriptionStyle}
-                />
-                <Button
-                  icon={<Image src={GoogleLogo} alt="Google Icon" />}
-                  title="Sign in with Google"
-                  iconPosition="left"
-                  className="google-login__btn"
-                  {...googleButtonStyle}
-                />
-
-                <Input inputType="email" isMaterial label="Email Address" value={email} onChange={e => setEmail(e.target.value)}/>
-                <Input inputType="password" isMaterial label="Password" value={password} onChange={e => setPassword(e.target.value)}/>
+              <Heading content="Please login to your account" {...titleStyle} />
+                {errorLogIn}
+                <Input inputType="email"  label="Email Address" value={emailL} onChange={e => setEmailL(e.target.value)}/>
+                <Input inputType="password"  label="Password" value={passwordL} onChange={e => setPasswordL(e.target.value)}/>
                 <CheckBox
                   id="remember"
                   htmlFor="remember"
@@ -107,26 +238,9 @@ const LoginModal = ({
                 </div>
               </TabPane>
               <TabPane tab="REGISTER" key="registerForm">
-                <Heading content="Welcome Folk" {...titleStyle} />
-                <Text
-                  content="Welcome to Mate Family. Please login with your personal account information letter."
-                  {...descriptionStyle}
-                />
-                <Button
-                  icon={<Image src={GoogleLogo} alt="Google Icon" />}
-                  title="Sign up with Google"
-                  iconPosition="left"
-                  className="google-login__btn"
-                  {...googleButtonStyle}
-                />
-                <Input isMaterial label="Full Name" value={name} onChange={e => setName(e.target.value)}/>
-                <Input inputType="email" isMaterial label="Email Address" value={email} onChange={e => setEmail(e.target.value)}/>
-                <Input inputType="password" isMaterial label="Password" value={password} onChange={e => setPassword(e.target.value)}/>
-                <div>
-                  <SignupButtonGroup />
-                </div>
+                {registered ? furtherRegistration : registration}
               </TabPane>
-            </Tabs>
+            </Tabs>            
           </Box>
         </Box>
       </Box>

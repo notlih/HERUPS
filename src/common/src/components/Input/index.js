@@ -50,6 +50,7 @@ const Input = ({
 
   // handle input value
   const handleOnChange = event => {
+    console.log(event.target.value);
     setState({
       ...state,
       value: event.target.value,

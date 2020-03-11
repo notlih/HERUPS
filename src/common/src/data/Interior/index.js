@@ -8,7 +8,7 @@ import corporateIcon from '../../assets/image/interior/feature/targeted.svg';
 import landscapeIcon from '../../assets/image/interior/feature/easy.svg';
 import interiorIcon from '../../assets/image/interior/feature/available.svg';
 
-import parentImg from '../../assets/image/interior/about_parent.png';
+import parentImg from '../../assets/image/interior/student.jpg';
 
 import project1 from '../../assets/image/interior/projects/1.png';
 
@@ -170,7 +170,7 @@ export const projectData = {
     {
       id: 1,
       text:
-        'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
+        'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle. We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
       text2:
         'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
     },
@@ -181,13 +181,13 @@ export const projectData = {
       text2:
         'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
     },
-    {
-      id: 3,
-      text:
-        'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
-      text2:
-        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
-    },
+    // {
+    //   id: 3,
+    //   text:
+    //     'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
+    //   text2:
+    //     'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    // },
   ],
 };
 
