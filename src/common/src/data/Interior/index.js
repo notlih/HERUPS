@@ -377,7 +377,7 @@ export const newsData = [
 /* ------------------------------------ */
 export const testimonialData = {
   title: 'EXPERIENCES',
-  slogan: 'Students Like You and I',
+  slogan: 'From Past and Present Users',
   reviews: [
     {
       id: 0,
