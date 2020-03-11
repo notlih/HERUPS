@@ -19,7 +19,7 @@ import { socialGoogleplus } from 'react-icons-kit/ionicons/socialGoogleplus';
 import { socialSkype } from 'react-icons-kit/ionicons/socialSkype';
 import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter';
 
-import member1 from '../../assets/image/interior/team/member1.png';
+import member1 from '../../assets/image/interior/team/member1.jpg';
 import member2 from '../../assets/image/interior/team/harim.jpg';
 import member3 from '../../assets/image/interior/team/ryan.png';
 import member4 from '../../assets/image/interior/team/daniel.jpg';

@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { Redirect } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Tabs, { TabPane } from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
@@ -17,8 +18,6 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import "firebase/database"
 
-
-
 const LoginModal = ({
   row,
   col,
@@ -33,9 +32,8 @@ const LoginModal = ({
   const LoginButtonGroup = () => (
     
     <Fragment>
-      <Button className="default" title="LOGIN" {...btnStyle} />
+      <Button className="default" title="LOGIN" onClick={login} {...btnStyle} />
       <Button
-        onClick={login}
         title="Forget Password"
         variant="textButton"
         {...outlineBtnStyle}
@@ -49,6 +47,7 @@ const LoginModal = ({
     </Fragment>
   );
 
+  const [userP, setUserP] = useState();
   const [nameR, setNameR] = useState('');
   const [emailR, setEmailR] = useState('');
   const [passwordR, setPasswordR] = useState('');
@@ -64,13 +63,21 @@ const LoginModal = ({
 
   const [emailL, setEmailL] = useState('');
   const [passwordL, setPasswordL] = useState('');
+  const [errorLogIn, setErrorLogIn] = useState(<div></div>);
+
+  const [toDash, setToDash] = useState(false);
 
   async function login() {
-    try {
-      await firebase.login(emailL, passwordL)
-    } catch(error) {
-      alert(error.message)
-    }
+    firebase.auth().signInWithEmailAndPassword(emailL, passwordL).
+    then(function (userCredentials){
+      let user = userCredentials.user;
+      console.log(user);
+      setUserP(user);
+      setToDash(true)
+    })
+    .catch(function(error){
+      setErrorLogIn(<Heading color="RED" as="h3" content={error.message} />);
+    })
   }
 
   async function onRegister() {
@@ -98,6 +105,7 @@ const LoginModal = ({
           firebase.auth().createUserWithEmailAndPassword(emailR, passwordR)
           .then((userCredentials) => {
             let user = userCredentials.user;
+            setUserP(user);
             user.updateProfile({
               displayName: nameR,
             })
@@ -109,10 +117,7 @@ const LoginModal = ({
             }
           });
         }
-
       });
-
-   
   }
 
   function submitRegistration(){
@@ -125,6 +130,7 @@ const LoginModal = ({
       studentOfColorStatus: studentOfColor,
       immigrantStatus: immigrant
     });
+    setToDash(true);
   }
 
 
@@ -200,6 +206,11 @@ const LoginModal = ({
 
   return (
     <LoginModalWrapper>
+      {toDash ? (
+        <Redirect to={{
+          pathname: "/dashboard",
+          state:{ user : userP}
+        }}/>) : null}
       <Box className="row" {...row}>
         <Box className="col imageCol" {...col}>
           <Image className="patternImage" src={LoginImage} alt="Login Banner" />
@@ -213,7 +224,8 @@ const LoginModal = ({
               renderTabContent={() => <TabContent />}
             >
               <TabPane tab="LOGIN" key="loginForm">
-                <Heading content="Please login to your account" {...titleStyle} />
+              <Heading content="Please login to your account" {...titleStyle} />
+                {errorLogIn}
                 <Input inputType="email"  label="Email Address" value={emailL} onChange={e => setEmailL(e.target.value)}/>
                 <Input inputType="password"  label="Password" value={passwordL} onChange={e => setPasswordL(e.target.value)}/>
                 <CheckBox
