@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get'
 
 const SectionWrapper = styled.div`
-  background-color: #fbfafe;
+  background-color: #ffc04d;
   padding-bottom: 20px;
-  margin-top: 40px;
+  padding-top: 10%;
   position: relative;
   @media only screen and (max-width: 1440px) {
     margin-top: -20px;
@@ -21,7 +21,7 @@ const SectionWrapper = styled.div`
     display: block;
     width: 100%;
     height: 10vw;
-    background-color: ${themeGet('colors.white', '#ffffff')};
+    background-color: #ffc04d;
     position: absolute;
     top: 0;
     left: 0;
@@ -72,7 +72,7 @@ export const ContentWrapper = styled.div`
       justify-content: center;
       align-items: center;
       font-size: 25vw;
-      color: #f5f5fc;
+      color: #F5F5F5;
       font-weight: 500;
       @media only screen and (min-width: 768px) and (max-width: 1200px) {
         font-size: 22vw;

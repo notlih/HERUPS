@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { interiorTheme } from './common/src/theme/interior';
 import { DrawerProvider } from './common/src/contexts/DrawerContext';
 import Navbar from './resourceContainers/Interior/Navbar';
-import Banner from './resourceContainers/Interior/Banner';
+// import Banner from './resourceContainers/Interior/Banner';
 import Feature from './resourceContainers/Interior/Feature';
 import AboutUs from './resourceContainers/Interior/AboutUs';
 import Project from './resourceContainers/Interior/Project';
@@ -41,12 +41,12 @@ export default class ResourcesPage extends Component{
                   </DrawerProvider>
                 </Sticky>
                 <ContentWrapper>
+                  <News />
                   <Gallery />
                   <Feature />
                   <AboutUs />
                   <Project />
                   <Team />
-                  <News />
                   <Testimonial />
                   <Newsletter />
                   <Modal/>
