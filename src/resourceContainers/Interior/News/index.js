@@ -2,6 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import Heading from '../../../common/src/components/Heading';
 import Text from '../../../common/src/components/Text';
+import { HashLink as Link } from 'react-router-hash-link';
 import SectionWrapper, {
   ContentWrapper,
   NewsWrapper,
@@ -16,28 +17,28 @@ const News = () => {
       <ContentWrapper>
         <div className="row">
           <div className="col">
-            <Fade delay={30}>N</Fade>
+            <Fade delay={30}>H</Fade>
           </div>
           <div className="col">
             <Fade delay={60}>E</Fade>
           </div>
           <div className="col">
-            <Fade delay={90}>W</Fade>
+            <Fade delay={90}>L</Fade>
           </div>
           <div className="col">
-            <Fade delay={90}>S</Fade>
+            <Fade delay={90}>P</Fade>
           </div>
         </div>
         <NewsWrapper>
           {newsData.map(item => (
             <NewsItem key={`news_key${item.id}`}>
               <Fade bottom delay={60 * item.id}>
-                <Heading as="h3" content={item.title} />
+                <Heading as="h2" content={item.title} />
                 <Text content={item.excerpt} />
-                <a href={item.link_url} className="read_more__btn">
+                <Link smooth to={item.link_url} className="read_more__btn">
                   <span className="arrow"></span>
                   <span className="text">{item.link_text}</span>
-                </a>
+                </Link>
               </Fade>
             </NewsItem>
           ))}

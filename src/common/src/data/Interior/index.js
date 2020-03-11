@@ -31,7 +31,7 @@ import galleryImg4 from '../../assets/image/interior/gallery/4.jpg';
 import galleryImg5 from '../../assets/image/interior/gallery/5.jpg';
 
 import { facebook } from 'react-icons-kit/fa/facebook';
-import { dribbble } from 'react-icons-kit/fa/dribbble';
+import { github } from 'react-icons-kit/fa/github';
 import { googlePlus } from 'react-icons-kit/fa/googlePlus';
 import { skype } from 'react-icons-kit/fa/skype';
 import { twitter } from 'react-icons-kit/fa/twitter';
@@ -340,34 +340,34 @@ export const teamData = {
 export const newsData = [
   {
     id: 1,
-    title: 'Corporate design is a crucial part of your brand.',
+    title: 'First-generation',
     excerpt:
-      'Corporate design is a crucial part of your brand. Our approach corporate design is extraordinary. Please come and visit us',
-    link_text: 'Read',
-    link_url: '#',
+      'People who come from families where they will be the first person from their family to pursue higher education.',
+    link_text: 'Be proud!',
+    link_url: '#feature',
   },
   {
     id: 2,
-    title: 'Learn more about landscape plans, how to design them.',
+    title: 'Person of Color',
     excerpt:
-      'Learn more about landscape plans, how to design them, what to watch out for in your layout. We deign the appropriate layout for our clients to deliver best',
-    link_text: 'Read',
+      'Students who self-identify as non-white, referred to some as ethnic "minority" students. Students of color may be underprivileged, and/or be marginalized by institutions/policies. ',
+    link_text: 'We\'re with you',
     link_url: '#',
   },
   {
     id: 3,
-    title: 'Discover our design ideas, beautiful photos for interior design.',
+    title: 'Low-income',
     excerpt:
-      'Discover our design ideas, beautiful photos and how-to projects to create Interior Design. We try to reflect your personality on our design',
-    link_text: 'Read',
+      <span>Those who come from a low-income background or family. The guidelines for low-income are defined <a href="https://www2.ed.gov/about/offices/list/ope/trio/incomelevels.html">here</a>.</span>,
+    link_text: 'No cost to you',
     link_url: '#',
   },
   {
     id: 4,
-    title: 'Interior design is an art and we are trying to paint monalisa.',
+    title: 'Undocumented',
     excerpt:
-      'With the best players in the designing sector, we explore a whole new world of interior design.Our approach corporate design is extraordinary',
-    link_text: 'Read',
+      'Those who are not documented as citizens in this country often find themselves scraping for educational resources, some of which require you to be a citizen.',
+    link_text: 'We\'ve got your back',
     link_url: '#',
   },
 ];
@@ -376,12 +376,12 @@ export const newsData = [
 // Testimonial data
 /* ------------------------------------ */
 export const testimonialData = {
-  title: 'TESTIMONIAL',
-  slogan: 'What Our Clients Say',
+  title: 'EXPERIENCES',
+  slogan: 'Students Like You and I',
   reviews: [
     {
       id: 0,
-      name: 'Parker Joe',
+      name: 'Joe S.',
       designation: 'Co-Founder & CEO',
       username: '@amader craft',
       account_url: '#',
@@ -392,7 +392,7 @@ export const testimonialData = {
     },
     {
       id: 1,
-      name: 'Britney havana',
+      name: 'Jennifer N.',
       designation: 'Co-Founder & CEO',
       username: '@Light’s craft',
       account_url: '#',
@@ -402,7 +402,7 @@ export const testimonialData = {
     },
     {
       id: 2,
-      name: 'June Spears',
+      name: 'Anna L.',
       designation: 'Co-Founder & CEO',
       username: '@Eagle’s craft',
       account_url: '#',
@@ -412,7 +412,7 @@ export const testimonialData = {
     },
     {
       id: 3,
-      name: 'Jessica Parker',
+      name: 'Betsy S.',
       designation: 'Co-Founder & CEO',
       username: '@Earth’s craft',
       account_url: '#',
@@ -423,7 +423,7 @@ export const testimonialData = {
     },
     {
       id: 4,
-      name: 'Django Dsuja',
+      name: 'Jair S.',
       designation: 'Co-Founder & CEO',
       username: '@Moon’s craft',
       account_url: '#',
@@ -443,32 +443,32 @@ export const galleryData = [
   {
     id: 1,
     thumb_url: galleryImg1,
-    name: 'Eco friendly',
+    name: 'First-generation',
     link: '#',
   },
   {
     id: 2,
     thumb_url: galleryImg2,
-    name: 'Living',
+    name: 'Immigrant',
     link: '#',
   },
   {
     id: 3,
     thumb_url: galleryImg3,
-    name: 'Corner',
+    name: 'Low-income',
     link: '#',
   },
   {
     id: 4,
     thumb_url: galleryImg4,
-    name: 'Wall decor',
+    name: 'Undocumented',
     link: '#',
   },
   {
     id: 5,
     thumb_url: galleryImg5,
-    name: 'Restroom',
-    link: '#',
+    name: 'Person of Color',
+    link: 'https://ih0.redbubble.net/image.433199449.1488/sn,x1000-pad,750x1000,f8f8f8.u3.jpg',
   },
 ];
 
@@ -488,8 +488,8 @@ export const newsletterData = {
 
 export const footerData = {
   logo: logo,
-  mail: 'freshavocado2020@gmail.com',
-  phone: 'University of Washington',
+  mail: <span>Contact us: <a href="mailto:freshavocado2020@gmail.com">freshavocado2020@gmail.com</a></span>,
+  phone: <a href="https://ischool.uw.edu/">Information School, University of Washington</a>,
   socialLinks: [
     {
       id: 1,
@@ -499,8 +499,8 @@ export const footerData = {
     },
     {
       id: 2,
-      icon: <Icon icon={dribbble} />,
-      name: 'dribbble',
+      icon: <Icon icon={github} />,
+      name: 'github',
       link: '#',
     },
     {
@@ -511,12 +511,6 @@ export const footerData = {
     },
     {
       id: 4,
-      icon: <Icon icon={skype} />,
-      name: 'skype',
-      link: '#',
-    },
-    {
-      id: 5,
       icon: <Icon icon={twitter} />,
       name: 'twitter',
       link: '#',

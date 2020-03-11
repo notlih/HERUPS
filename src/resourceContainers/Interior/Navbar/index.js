@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { openModal, closeModal } from '@redq/reuse-modal';
 import { Icon } from 'react-icons-kit';
@@ -35,6 +36,7 @@ const CloseModalButtonAlt = () => (
     icon={<i className="flaticon-plus-symbol" />}
   />
 );
+
 
 const Navbar = ({ navbarStyle, logoStyle }) => {
   const { state, dispatch } = useContext(DrawerContext);
@@ -79,7 +81,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
       component: LoginModal,
       componentProps: {},
       closeComponent: CloseModalButton,
-      closeOnClickOutside: false,
+      closeOnClickOutside: true,
     });
   };
 
@@ -100,13 +102,15 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
         />
         <div style={{ display: 'flex', alignItems: 'center' }}>
         
-          <Button
-            as="a"
-            href="/resources"
-            variant="textButton"
-            aria-label="resources button"
-            title="Resources"
-          />
+          <Link to="/resources">
+            <Button
+              // as="a"
+              // href="/resources"
+              variant="textButton"
+              aria-label="resources button"
+              title="Resources"
+            />
+          </Link>
           <Button
             as="a"
             href="/mentors"

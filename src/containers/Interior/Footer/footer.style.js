@@ -18,6 +18,14 @@ const FooterWrapper = styled.footer`
     }
   }
 
+  a:link {
+    color: #F2E93D;
+  }
+
+  a:visited{
+    color: #fff;
+  }
+
   .widget_title {
     color: ${themeGet('colors.label', '#C6C6C6')};
     font-size: 14px;
