@@ -15,6 +15,7 @@ import LogoImage from '../../../common/src/assets/image/agency/logo.png';
 import LoginImage from '../../../common/src/assets/image/agency/login-bg.jpg';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import "firebase/database"
 
 
 
@@ -47,11 +48,13 @@ const LoginModal = ({
       <Button className="default" title="REGISTER" {...btnStyle} onClick={onRegister}/>
     </Fragment>
   );
+
   const [nameR, setNameR] = useState('');
   const [emailR, setEmailR] = useState('');
   const [passwordR, setPasswordR] = useState('');
 
   const [registered, setRegistered] = useState(false);
+  const [errorRegistering, setErrorRegistering] = useState(<div></div>);
 
   const [firstGen, setFirstGen] = useState(false);
   const [lowIncome, setLowIncome] = useState(false);
@@ -72,22 +75,64 @@ const LoginModal = ({
 
   async function onRegister() {
 
-    setRegistered(true);
+    let userRef = firebase.database().ref('users/' + nameR);
+    userRef.transaction(function(currentData){
 
-   firebase.auth().createUserWithEmailAndPassword(emailR, passwordR)
-    .then((userCredentials) => {
-      let user = userCredentials.user;
-      console.log(JSON.stringify(user));
-    })
-    .catch((error) => {
-      console.log(error.message)
-    })
+      if (currentData === null){
+        return {
+          username: nameR,
+          email: emailR
+        }
+      } else {
+        console.log("user exists");
+        return;
+      }
+    }, function(error, commited){
+        if(error){
+          console.log("transaction failed")
+        } else if(!commited){
+          console.log("User Already Exists")
+          setErrorRegistering(<Heading color="RED" as="h3" content="Display Name already in use, please choose another or LOG IN" />);
+        } else{
+          console.log("User created")
+          firebase.auth().createUserWithEmailAndPassword(emailR, passwordR)
+          .then((userCredentials) => {
+            let user = userCredentials.user;
+            user.updateProfile({
+              displayName: nameR,
+            })
+            setRegistered(true);
+          })
+          .catch((error) => {
+            if(error.message === "The email address is already in use by another account."){
+              setErrorRegistering(<Heading color="RED" as="h3" content="Email already in use, please LOG IN" />);
+            }
+          });
+        }
+
+      });
+
+   
   }
+
+  function submitRegistration(){
+    firebase.database().ref("users/" + nameR).set({
+      username: nameR,
+      email: emailR,
+      firstGenStatus: firstGen,
+      lowIncomeStatus: lowIncome,
+      undocStatus: undoc,
+      studentOfColorStatus: studentOfColor,
+      immigrantStatus: immigrant
+    });
+  }
+
 
   const registration = (
     <div>
       <Heading content="Please create an account" {...titleStyle} />
-      <Input label="Full Name" value={nameR} onChange={e => setNameR(e.target.value)}/>
+      {errorRegistering}
+      <Input label="Display Name" value={nameR} onChange={e => setNameR(e.target.value)}/>
       <Input inputType="email"  label="Email Address" value={emailR} onChange={e => setEmailR(e.target.value)}/>
       <Input inputType="password"  label="Password" value={passwordR} onChange={e => setPasswordR(e.target.value)}/>
       <div>
@@ -97,7 +142,7 @@ const LoginModal = ({
   
   const furtherRegistration = (
     <div>
-      <Heading content="Fill out further details to tailor your experience" {...titleStyle}/>
+      <Heading content={"Hello " + nameR + ", please fill out further details to tailor this platform to you."} {...titleStyle}/>
       <form>
         <label>
           First-Generation Student
@@ -148,6 +193,7 @@ const LoginModal = ({
             onChange={e => setImmigrant(!immigrant)}
           />
         </label>
+        <Button title="Submit Details" onClick={e => submitRegistration()} {...outlineBtnStyle}/>
       </form>
     </div>
   )
