@@ -52,7 +52,7 @@ const LoginModal = ({
   const [emailR, setEmailR] = useState('');
   const [passwordR, setPasswordR] = useState('');
 
-  const [registered, setRegistered] = useState(false);
+  const [register, setRegister] = useState(0);
   const [errorRegistering, setErrorRegistering] = useState(<div></div>);
 
   const [firstGen, setFirstGen] = useState(false);
@@ -60,6 +60,8 @@ const LoginModal = ({
   const [undoc, setUndoc] = useState(false);
   const [studentOfColor, setStudentOfColor] = useState(false);
   const [immigrant, setImmigrant] = useState(false);
+  const [pronouns, setPronouns] = useState("");
+  const [education, setEducation] = useState("")
 
   const [emailL, setEmailL] = useState('');
   const [passwordL, setPasswordL] = useState('');
@@ -109,7 +111,7 @@ const LoginModal = ({
             user.updateProfile({
               displayName: nameR,
             })
-            setRegistered(true);
+            setRegister(1);
           })
           .catch((error) => {
             if(error.message === "The email address is already in use by another account."){
@@ -124,15 +126,18 @@ const LoginModal = ({
     firebase.database().ref("users/" + nameR).set({
       username: nameR,
       email: emailR,
+      pronoun: pronouns,
+      education: education,
       firstGenStatus: firstGen,
       lowIncomeStatus: lowIncome,
       undocStatus: undoc,
       studentOfColorStatus: studentOfColor,
-      immigrantStatus: immigrant
+      immigrantStatus: immigrant,
     });
     setToDash(true);
   }
 
+  let registrationStage = <div></div>;
 
   const registration = (
     <div>
@@ -146,7 +151,7 @@ const LoginModal = ({
       </div>
     </div>);
   
-  const furtherRegistration = (
+  const underPrivilegedBackground = (
     <div>
       <Heading content={"Hello " + nameR + ", please fill out further details to tailor this platform to you."} {...titleStyle}/>
       <form>
@@ -159,7 +164,7 @@ const LoginModal = ({
             onChange={e => setFirstGen(!firstGen)}
           />
         </label>
-        
+        <br/>
         <label>
           Low-Income
           <input 
@@ -169,7 +174,7 @@ const LoginModal = ({
             onChange={e => setLowIncome(!lowIncome)}
           />
         </label>
-        
+        <br/>
         <label>
           Undocumented
           <input 
@@ -179,7 +184,7 @@ const LoginModal = ({
             onChange={e => setUndoc(!undoc)}
           />
         </label>
-        
+        <br/>
         <label>
           Student of Color
           <input 
@@ -189,7 +194,7 @@ const LoginModal = ({
             onChange={e => setStudentOfColor(!studentOfColor)}          
           />
         </label>
-        
+        <br/>
         <label>
           Immigrant
           <input 
@@ -199,10 +204,73 @@ const LoginModal = ({
             onChange={e => setImmigrant(!immigrant)}
           />
         </label>
-        <Button title="Submit Details" onClick={e => submitRegistration()} {...outlineBtnStyle}/>
+        <br/>
+        <Button className="default" title="Continue Registration" onClick={e => setRegister(2)} {...btnStyle}/>
       </form>
     </div>
   )
+
+  const pronounRegistration = (
+    <div>
+      <Heading content={"What are your prefered pronouns?"} {...titleStyle}/>
+      <form>
+        <input 
+          type="radio" 
+          id="he/him" 
+          name="pronoun" 
+          value="he/him"
+          onChange={e => setPronouns("He/Him")}/>
+        <label for="he/him">He/Him</label>
+        <br/>
+
+        <input 
+          type="radio" 
+          id="she/her" 
+          name="pronoun" 
+          value="she/her"
+          onChange={e => setPronouns("She/Her")}/>
+        <label for="She/Her">She/Her</label>
+        <br/>
+
+        <input 
+          type="radio" 
+          id="they/them" 
+          name="pronoun" 
+          value="they/them"
+          onChange={e => setPronouns("He/Him")}/>
+        <label for="they/them">They/Them</label>
+        <br/>
+      </form>
+      <br/>
+      <Button className="default" title="Continue Registration" onClick={e => setRegister(3)} {...btnStyle}/>
+    </div>
+  )
+
+  const educationRegistration = (
+    <div>
+      <Heading content={"What field of study are you interested in?"} {...titleStyle}/>
+      <form>
+        <input
+          type="text"
+          id="education"
+          name="education"
+          onChange={ev => setEducation(ev.target.value)}/>
+      </form>
+      <br/>
+      <Button className="default" title="Continue Registration" onClick={e => submitRegistration} {...btnStyle}/>
+    </div>
+  )
+
+  if(register === 0) {
+    registrationStage = registration;
+  } else if (register === 1){
+    registrationStage = underPrivilegedBackground;
+  } else if (register === 2){
+    registrationStage = pronounRegistration;
+  } else if (register === 3){
+    registrationStage = educationRegistration;
+  } 
+
 
   return (
     <LoginModalWrapper>
@@ -212,12 +280,10 @@ const LoginModal = ({
           state:{ user : userP}
         }}/>) : null}
       <Box className="row" {...row}>
-        <Box className="col imageCol" {...col}>
-          <Image className="patternImage" src={LoginImage} alt="Login Banner" />
-        </Box>
         <Box className="col tabCol" {...col}>
           <Box {...contentWrapper}>
-            <Image src={LogoImage} {...logoStyle} alt="Logo" />
+            {//add image banner
+            }
             <Tabs
               defaultActiveKey="loginForm"
               renderTabBar={() => <ScrollableInkTabBar />}
@@ -238,7 +304,7 @@ const LoginModal = ({
                 </div>
               </TabPane>
               <TabPane tab="REGISTER" key="registerForm">
-                {registered ? furtherRegistration : registration}
+                {registrationStage}
               </TabPane>
             </Tabs>            
           </Box>
