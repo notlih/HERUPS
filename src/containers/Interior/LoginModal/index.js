@@ -249,15 +249,14 @@ const LoginModal = ({
   const educationRegistration = (
     <div>
       <Heading content={"What field of study are you interested in?"} {...titleStyle}/>
-      <form>
+      <form  onSubmit={e => submitRegistration()}>
         <input
           type="text"
           id="education"
-          name="education"
-          onChange={ev => setEducation(ev.target.value)}/>
+          name="education"/>
       </form>
       <br/>
-      <Button className="default" title="Continue Registration" onClick={e => submitRegistration} {...btnStyle}/>
+      <Button className="default" title="Submit Registration" onClick={e => submitRegistration()} {...btnStyle}/>
     </div>
   )
 
