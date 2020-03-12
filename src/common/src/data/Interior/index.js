@@ -19,7 +19,7 @@ import { socialGoogleplus } from 'react-icons-kit/ionicons/socialGoogleplus';
 import { socialSkype } from 'react-icons-kit/ionicons/socialSkype';
 import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter';
 
-import member1 from '../../assets/image/interior/team/member1.jpg';
+import member1 from '../../assets/image/interior/team/hilton.png';
 import member2 from '../../assets/image/interior/team/harim.jpg';
 import member3 from '../../assets/image/interior/team/ryan.png';
 import member4 from '../../assets/image/interior/team/daniel.jpg';
@@ -163,14 +163,41 @@ export const aboutData = {
 /* ------------------------------------ */
 
 export const projectData = {
-  title: 'WORK PROCEDURE',
+  title: 'WORK1 PROCEDURE',
   slogan: 'How We Do Our Projects',
   thumb_url: project1,
   projects: [
     {
       id: 1,
+      text: 'Project 1',
+      text2:
+        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    },
+    {
+      id: 2,
       text:
-        'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle. We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
+        'Schedule a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+      text2:
+        'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
+    },
+    // {
+    //   id: 3,
+    //   text:
+    //     'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
+    //   text2:
+    //     'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    // },
+  ],
+};
+
+export const projectData1 = {
+  title: 'WORK2 PROCEDURE',
+  slogan: 'How We Do Our Projects',
+  thumb_url: project1,
+  projects: [
+    {
+      id: 1,
+      text: 'Project 2',
       text2:
         'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
     },
@@ -344,7 +371,7 @@ export const newsData = [
     excerpt:
       'People who come from families where they will be the first person from their family to pursue higher education.',
     link_text: 'Be proud!',
-    link_url: '#feature',
+    link_url: '#first-gen',
   },
   {
     id: 2,
@@ -352,7 +379,7 @@ export const newsData = [
     excerpt:
       'Students who self-identify as non-white, referred to some as ethnic "minority" students. Students of color may be underprivileged, and/or be marginalized by institutions/policies. ',
     link_text: 'We\'re with you',
-    link_url: '#',
+    link_url: '#low-income',
   },
   {
     id: 3,
@@ -360,7 +387,7 @@ export const newsData = [
     excerpt:
       <span>Those who come from a low-income background or family. The guidelines for low-income are defined <a href="https://www2.ed.gov/about/offices/list/ope/trio/incomelevels.html">here</a>.</span>,
     link_text: 'No cost to you',
-    link_url: '#',
+    link_url: '#low-income',
   },
   {
     id: 4,
@@ -368,7 +395,7 @@ export const newsData = [
     excerpt:
       'Those who are not documented as citizens in this country often find themselves scraping for educational resources, some of which require you to be a citizen.',
     link_text: 'We\'ve got your back',
-    link_url: '#',
+    link_url: '#low-income',
   },
 ];
 
