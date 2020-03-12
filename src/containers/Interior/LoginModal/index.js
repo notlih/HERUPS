@@ -314,6 +314,7 @@ const LoginModal = ({
   );
 };
 
+
 // LoginModal style props
 LoginModal.propTypes = {
   row: PropTypes.object,
