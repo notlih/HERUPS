@@ -53,7 +53,10 @@ const LoginModal = ({
   const [passwordR, setPasswordR] = useState('');
 
   const [register, setRegister] = useState(0);
-  const [errorRegistering, setErrorRegistering] = useState(<div></div>);
+  const [errorRegistering, setErrorRegistering] = useState();
+  const [errorStatus, setErrorStatus] = useState();
+  const [errorPronouns, setErrorPronouns] = useState();
+  const [errorStudy, setErrorStudy] = useState();
 
   const [firstGen, setFirstGen] = useState(false);
   const [lowIncome, setLowIncome] = useState(false);
@@ -65,7 +68,7 @@ const LoginModal = ({
 
   const [emailL, setEmailL] = useState('');
   const [passwordL, setPasswordL] = useState('');
-  const [errorLogIn, setErrorLogIn] = useState(<div></div>);
+  const [errorLogIn, setErrorLogIn] = useState();
 
   const [toDash, setToDash] = useState(false);
 
@@ -73,7 +76,6 @@ const LoginModal = ({
     firebase.auth().signInWithEmailAndPassword(emailL, passwordL).
     then(function (userCredentials){
       let user = userCredentials.user;
-      console.log(user);
       setUserP(user);
       setToDash(true)
     })
@@ -93,17 +95,14 @@ const LoginModal = ({
           email: emailR
         }
       } else {
-        console.log("user exists");
         return;
       }
     }, function(error, commited){
         if(error){
           console.log("transaction failed")
         } else if(!commited){
-          console.log("User Already Exists")
           setErrorRegistering(<Heading color="RED" as="h3" content="Display Name already in use, please choose another or LOG IN" />);
         } else{
-          console.log("User created")
           firebase.auth().createUserWithEmailAndPassword(emailR, passwordR)
           .then((userCredentials) => {
             let user = userCredentials.user;
@@ -151,9 +150,21 @@ const LoginModal = ({
       </div>
     </div>);
   
+  function requireStatus() {
+    if(firstGen === false && lowIncome === false && undoc === false && studentOfColor === false && immigrant === false){
+      setErrorStatus(
+        <Heading color="RED" as="h3" content={"Please select one of the following identifiers to provide you your resources"}/>
+      )
+    }
+    else{
+      setRegister(2);
+    }
+  }
+
   const underPrivilegedBackground = (
     <div>
       <Heading content={"Hello " + nameR + ", please fill out further details to tailor this platform to you."} {...titleStyle}/>
+      {errorStatus}
       <form>
         <label>
           First-Generation Student
@@ -205,14 +216,26 @@ const LoginModal = ({
           />
         </label>
         <br/>
-        <Button className="default" title="Continue Registration" onClick={e => setRegister(2)} {...btnStyle}/>
+        <Button className="default" title="Continue Registration" onClick={e => requireStatus()} {...btnStyle}/>
       </form>
     </div>
   )
+  
+  function requirePronoun(){
+    if(pronouns === ""){
+      setErrorPronouns(
+        <Heading color="RED" as="h3" content={"Please set your pronouns"}/>
+      )
+    }
+    else{
+      setRegister(3);
+    }
+  }
 
   const pronounRegistration = (
     <div>
       <Heading content={"What are your prefered pronouns?"} {...titleStyle}/>
+      {errorPronouns}
       <form>
         <input 
           type="radio" 
@@ -242,21 +265,35 @@ const LoginModal = ({
         <br/>
       </form>
       <br/>
-      <Button className="default" title="Continue Registration" onClick={e => setRegister(3)} {...btnStyle}/>
+      <Button className="default" title="Continue Registration" onClick={e => requirePronoun()} {...btnStyle}/>
     </div>
   )
+
+  function requireEducation(){
+    if(education === ""){
+      setErrorStudy(
+        <Heading color="RED" as="h3" content={"Please enter the field of study you are interested in"}/>
+      )
+    }
+    else{
+      submitRegistration();
+    }
+  }
 
   const educationRegistration = (
     <div>
       <Heading content={"What field of study are you interested in?"} {...titleStyle}/>
+      {errorStudy}
       <form  onSubmit={e => submitRegistration()}>
         <input
           type="text"
           id="education"
-          name="education"/>
+          name="education"
+          value={education}
+          onChange={e => setEducation(e.target.value)}/>
       </form>
       <br/>
-      <Button className="default" title="Submit Registration" onClick={e => submitRegistration()} {...btnStyle}/>
+      <Button className="default" title="Submit Registration" onClick={e => requireEducation()} {...btnStyle}/>
     </div>
   )
 
