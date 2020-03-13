@@ -16,7 +16,7 @@ const Copyright = () => {
           </li>
         ))}
       </ul>
-      <Text content="Copyrights 2019 @RedQ Inc" />
+      <Text content="Fresh Avocado 2020" />
     </CopyrightWrapper>
   );
 };
