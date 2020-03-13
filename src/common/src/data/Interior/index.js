@@ -3,20 +3,22 @@ import React from 'react'
 import slide1 from '../../assets/image/interior/slider/pStatements.jpg';
 import slide2 from '../../assets/image/interior/slider/cApplications.jpg';
 import slide3 from '../../assets/image/interior/slider/fAid.jpg';
+import slide4 from '../../assets/image/interior/slider/gBased.jpg';
+import slide5 from '../../assets/image/interior/slider/events.png';
 
 import corporateIcon from '../../assets/image/interior/feature/targeted.svg';
 import landscapeIcon from '../../assets/image/interior/feature/easy.svg';
 import interiorIcon from '../../assets/image/interior/feature/available.svg';
 
 import parentImg from '../../assets/image/interior/student.jpg';
+import resourceImg from '../../assets/image/interior/resourceStudent.jpg';
 
 import project1 from '../../assets/image/interior/projects/1.png';
 
 import { Icon } from 'react-icons-kit';
 import { socialFacebook } from 'react-icons-kit/ionicons/socialFacebook';
 import { socialDribbble } from 'react-icons-kit/ionicons/socialDribbble';
-import { socialGoogleplus } from 'react-icons-kit/ionicons/socialGoogleplus';
-import { socialSkype } from 'react-icons-kit/ionicons/socialSkype';
+import { socialInstagram } from 'react-icons-kit/ionicons/socialInstagram';
 import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter';
 
 import member1 from '../../assets/image/interior/team/hilton.png';
@@ -33,7 +35,6 @@ import galleryImg5 from '../../assets/image/interior/gallery/5.jpg';
 import { facebook } from 'react-icons-kit/fa/facebook';
 import { github } from 'react-icons-kit/fa/github';
 import { googlePlus } from 'react-icons-kit/fa/googlePlus';
-import { skype } from 'react-icons-kit/fa/skype';
 import { twitter } from 'react-icons-kit/fa/twitter';
 import logo from '../../../../common/src/assets/image/interior/avocado.png';
 
@@ -65,13 +66,13 @@ export const menuData = [
     offset: '80',
   },
   {
-    label: 'About',
-    path: '#aboutUs',
+    label: 'Mentors',
+    path: 'mentors',
     offset: '80',
   },
   {
-    label: 'Project',
-    path: '#project',
+    label: 'Contact Us',
+    path: 'yourResources',
     offset: '80',
   },
   {
@@ -88,20 +89,20 @@ export const menuData = [
 export const bannerData = {
   discount: '100%',
   discountLabel: 'COMMITTED TO A BETTER FUTURE',
-  title: 'Higher Education Resources for Underprivileged Students',
+  title: 'Let us stay in touch with you',
   text:
-    'It’s intimidating to confront the process of discovering resources in pursuing higher education. We aim to provide underprivileged students in the South Seattle area with information for them to consider taking action.',
+    'Provide us with you email address to sign up for the latest newsletters that will include resources, events, and deadlines regarding the higher education process. We\'re here to move ahead with you!',
   carousel: [
     {
       id: 1,
       thumb_url: slide1,
-      title: 'Statements',
+      title: 'Personal Statements',
       link: '#1',
     },
     {
       id: 2,
       thumb_url: slide2,
-      title: 'Applications',
+      title: 'Higher Education Applications',
       link: '#1',
     },
     {
@@ -112,8 +113,14 @@ export const bannerData = {
     },
     {
       id: 4,
-      thumb_url: slide1,
-      title: 'Statements',
+      thumb_url: slide4,
+      title: 'Gender-based Resources',
+      link: '#1',
+    }, 
+    {
+      id: 5,
+      thumb_url: slide5,
+      title: 'Events',
       link: '#1',
     },
     
@@ -158,7 +165,7 @@ export const featureData = {
 
 export const userData = {
   title: 'Greetings, harim2000!',
-  slogan: 'you are',
+  slogan: 'You are',
   features: [
     // {
     //   id: 1,
@@ -192,9 +199,18 @@ export const aboutData = {
   thumb_url: parentImg,
   title: 'Why this matters',
   text:
-    'High school students who come from underprivileged backgrounds have difficulty navigating the resources required to pursue higher education. In particular, the focus of our project is in the South Seattle area, where most of us, the site creators, grew up from.',
+    'High school students who come from underprivileged backgrounds have difficulty navigating the resources required to pursue higher education. The focus of our project is in the South Seattle area, where most of us, the ones who made this website, started our journey to higher education. ',
   text2:
     'It is especially difficult for this population of students, as they often lack the information about the higher education process. Specifics of the higher education process, such as cost, accessibility, and benefits are not well detailed towards a person’s background. These students may also not know anyone from their family, or group of friends that has gone to college, so they experience more difficulty in finding resources and information related to the higher education process. It’s difficult feeling like you’re the only person in your situation, we know—we’ve been in your situation before. You’re not alone!',
+};
+
+export const aboutResources = {
+  thumb_url: resourceImg,
+  title: 'Higher Education Resources for Underprivileged Students',
+  text:
+    'It’s intimidating to confront the process of discovering resources in pursuing higher education. We aim to empower underprivileged students in the South Seattle area with information for them to consider taking action.',
+  text2:
+    'We hope to inform people, we can provide them the power to move forward in accomplishing their goals of post-secondary education. This project offers a way for students to get in contact with mentors when they have questions related to life after high school—aiming to inspire students of new pathways that they can pursue and find passion in. This website will also inform its users of contact information for various organizations that can be reached out to for assistance with more information. We intend to develop a better, more intuitive method to organize all of the resources available to support the students like you.',
 };
 
 /* ------------------------------------ */
@@ -202,30 +218,24 @@ export const aboutData = {
 /* ------------------------------------ */
 
 export const projectData0 = {
-  title: 'WORK1 PROCEDURE',
-  slogan: 'How We Do Our Projects',
+  title: 'First-generation',
+  slogan: 'You\'re the first from your family...',
   thumb_url: project1,
   projects: [
     {
       id: 1,
-      text: 'Project 1',
+      text: 
+        'The Husky Promise',
       text2:
-        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+        'The Husky Promise guarantees that the students of Washington state will not let financial trouble get in the way of discovering their potential. The program guarantees full tuition and the standard fees will be covered by grant or scholarship support. The student must be a Washington state resident and meet all eligibility criteria for the Pell Grant program.',
     },
-    {
-      id: 2,
-      text:
-        'Project 1 a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
-      text2:
-        'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
-    },
-    {
-      id: 3,
-      text:
-        'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
-      text2:
-        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
-    },
+    // {
+    //   id: 2,
+    //   text:
+    //     'Project 1 a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    //   text2:
+    //     'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
+    // },
   ],
 };
 
@@ -264,7 +274,8 @@ export const userResources = {
   projects: [
     {
       id: 1,
-      text: 'Husky Promise',
+      text: 
+      'Husky Promise',
       text2:
         'The Husky Promise guarantees that the students of Washington state will not let financial trouble get in the way of discovering their potential. The program guarantees full tuition and the standard fees will be covered by grant or scholarship support. The student must be a Washington state resident and meet all eligibility criteria for the Pell Grant program.',
     },
@@ -367,13 +378,13 @@ export const teamData = {
         },
         {
           id: 3,
-          icon: <Icon icon={socialGoogleplus} />,
-          url: '#1',
+          icon: <Icon icon={socialInstagram} />,
+          url: 'https://www.instagram.com/hilt.on/',
         },
         {
           id: 4,
-          icon: <Icon icon={socialSkype} />,
-          url: '#1',
+          icon: <Icon icon={github} />,
+          url: 'http://github.com/notlih/',
         },
         {
           id: 5,
@@ -400,12 +411,12 @@ export const teamData = {
         },
         {
           id: 3,
-          icon: <Icon icon={socialGoogleplus} />,
+          icon: <Icon icon={socialInstagram} />,
           url: '#1',
         },
         {
           id: 4,
-          icon: <Icon icon={socialSkype} />,
+          icon: <Icon icon={github} />,
           url: '#1',
         },
         {
@@ -433,12 +444,12 @@ export const teamData = {
         },
         {
           id: 3,
-          icon: <Icon icon={socialGoogleplus} />,
+          icon: <Icon icon={socialInstagram} />,
           url: '#1',
         },
         {
           id: 4,
-          icon: <Icon icon={socialSkype} />,
+          icon: <Icon icon={github} />,
           url: '#1',
         },
         {
@@ -466,12 +477,12 @@ export const teamData = {
         },
         {
           id: 3,
-          icon: <Icon icon={socialGoogleplus} />,
+          icon: <Icon icon={socialInstagram} />,
           url: '#1',
         },
         {
           id: 4,
-          icon: <Icon icon={socialSkype} />,
+          icon: <Icon icon={github} />,
           url: '#1',
         },
         {
@@ -553,56 +564,56 @@ export const testimonialData = {
   reviews: [
     {
       id: 0,
-      name: 'Joe S.',
-      designation: 'Co-Founder & CEO',
-      username: '@amader craft',
-      account_url: '#',
+      name: 'Jair S.',
+      designation: 'Student',
+      username: '@UW',
+      account_url: 'http://www.washington.edu/',
       comment:
-        'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
+        'HERUPS provides extremely helpful mentors who are knowledgeable and responsive to questions that I have about higher education. I was struggling with writing my personal statement but after meeting with my mentor and learning about resources, I have regained my confidence. Go Huskies!',
       avatar:
-        'https://tinyfac.es/data/avatars/7D3FA6C0-83C8-4834-B432-6C65ED4FD4C3-500w.jpeg',
+        'https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg',
     },
     {
       id: 1,
       name: 'Jennifer N.',
-      designation: 'Co-Founder & CEO',
-      username: '@Light’s craft',
-      account_url: '#',
+      designation: 'Business Student',
+      username: '@Seattle U',
+      account_url: 'https://www.seattleu.edu/',
       comment:
-        'Impressed with master class support of the team and really look forward for the future.Really, really well made! Love that each component is handmade and customised. Great Work :)',
-      avatar: 'https://randomuser.me/api/portraits/women/63.jpg',
+        'HERUPS has walked me through the FAFSA process as well as providing assistance with my personal statements. They kept me updated through emails and provided me with advice towards my process to higher education.',
+      avatar: 'https://randomuser.me/api/portraits/women/90.jpg',
     },
     {
       id: 2,
       name: 'Anna L.',
-      designation: 'Co-Founder & CEO',
-      username: '@Eagle’s craft',
-      account_url: '#',
+      designation: 'Freshman Student',
+      username: '@UW',
+      account_url: 'http://www.washington.edu/',
       comment:
-        'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
+        'The biggest fear that I had was figuring out how to pay for college. The mentors at HERUPS provided information about colleges and organizations that had scholarships specific to my identity as a low-income, first-generation college student. After applying to multiple scholarships and successfully getting approved, I will be able to attend college without any financial worries.',
       avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
     },
     {
       id: 3,
       name: 'Betsy S.',
-      designation: 'Co-Founder & CEO',
-      username: '@Earth’s craft',
-      account_url: '#',
+      designation: 'Student',
+      username: '@SSC',
+      account_url: 'https://southseattle.edu/',
       comment:
-        'Impressed with master class support of the team and really look forward for the future.Really, really well made! Love that each component is handmade and customised. Great Work !',
+        'Thanks to HERUPS, I was able to learn about events within my neighborhood that were providing information and assistance regarding higher education. I was able to attend these free events and learn about educational programs aligned with my passions.',
       avatar:
-        'https://pbs.twimg.com/profile_images/1049383024306081792/cQkGbpRO.jpg',
+        'https://randomuser.me/api/portraits/women/8.jpg',
     },
     {
       id: 4,
-      name: 'Jair S.',
-      designation: 'Co-Founder & CEO',
-      username: '@Moon’s craft',
-      account_url: '#',
+      name: 'Joe S.',
+      designation: 'Alumni',
+      username: '@Bellevue College',
+      account_url: 'https://www.bellevuecollege.edu/',
       comment:
-        'Impressed with master class support of the team and really look forward for the future.Really, really well made! Love that each component is handmade and customised. Great Work :)',
+        'As high school progressed, I felt left out as my peers were talking about college, something that I hadn’t planned for. My parents had no experience navigating the higher education process and an income that could not support the journey. I wish I had discovered HERUPS, their resources and mentorship would have given me the knowledge and funding that I never received.',
       avatar:
-        'https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg',
+        'https://randomuser.me/api/portraits/men/54.jpg',
     },
   ],
 };

@@ -8,12 +8,12 @@ import Navbar from './containers/Interior/Navbar';
 import Banner from './containers/Interior/Banner';
 import Feature from './containers/Interior/Feature';
 import AboutUs from './containers/Interior/AboutUs';
-import Project from './containers/Interior/Project';
+// import Project from './containers/Interior/Project';
 import Team from './containers/Interior/Team';
-import News from './containers/Interior/News';
+// import News from './containers/Interior/News';
 import Testimonial from './containers/Interior/Testimonial';
-import Gallery from './containers/Interior/Gallery';
-import Newsletter from './containers/Interior/Newsletter';
+// import Gallery from './containers/Interior/Gallery';
+// import Newsletter from './containers/Interior/Newsletter';
 import Footer from './containers/Interior/Footer';
 import { ResetCSS } from './common/src/assets/css/style';
 import {

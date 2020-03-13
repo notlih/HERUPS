@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get'
+// import { themeGet } from '@styled-system/theme-get'
 
 const SectionWrapper = styled.div`
   background-color: #ffc04d;
-  padding-bottom: 20px;
-  padding-top: 10%;
   position: relative;
   @media only screen and (max-width: 1440px) {
     margin-top: -20px;

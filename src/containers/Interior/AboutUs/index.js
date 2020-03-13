@@ -31,6 +31,7 @@ const AboutUs = () => {
             <Heading dangerouslySetInnerHTML={setTitle(title)} />
             <Text content={text} />
             <Text content={text2} />
+            {/* see if resources can link to a specific page section, aka an ID of a container */}
             <Link to="/resources">
               <a className="learn__more-btn">
                 <span className="btn_text">LEARN MORE</span>
