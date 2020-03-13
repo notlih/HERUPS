@@ -42,7 +42,6 @@ export const ContentWrapper = styled.div`
   max-width: 1576px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
   @media only screen and (max-width: 1600px) {
     padding: 0 60px;
   }
@@ -92,7 +91,6 @@ export const NewsWrapper = styled.div`
   margin: 0 -30px;
   position: relative;
   top: -7vw;
-  z-index: 1;
   @media only screen and (max-width: 1440px) {
     top: -8vw;
   }

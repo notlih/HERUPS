@@ -42,7 +42,6 @@ const CloseModalButtonAlt = () => (
 
 const Navbar = ({ navbarStyle, logoStyle }) => {
   const { state, dispatch } = useContext(DrawerContext);
-  const { toHome, setToHome } = useState(false);
   const auth = useAuth();
 
   const handleSearchModal = () => {
@@ -89,12 +88,19 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
     });
   };
 
+  const handleSignOut = () => {
+    auth.signout();
+  }
+
 
   const toggleHandler = () => {
     dispatch({
       type: 'TOGGLE',
     });
   };
+
+
+
 
   return (
     <NavbarWrapper {...navbarStyle}>
@@ -147,15 +153,11 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
           {auth.user ? (
             <Button
               variant="textButton"
-              onClick={() => auth.signout()}
+              onClick={handleSignOut}
               title="Sign Out"
               aria-label="registration button"
             />
-            ):(
-              <Redirect to={{
-                pathname: "/",
-              }}/>
-            )} 
+            ):null} 
           <Drawer
             width="420px"
             placement="right"
