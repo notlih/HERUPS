@@ -110,6 +110,13 @@ export const bannerData = {
       title: 'Financial Aid',
       link: '#1',
     },
+    {
+      id: 4,
+      thumb_url: slide1,
+      title: 'Statements',
+      link: '#1',
+    },
+    
   ],
 };
 
@@ -162,7 +169,7 @@ export const aboutData = {
 // Projects section data
 /* ------------------------------------ */
 
-export const projectData = {
+export const projectData0 = {
   title: 'WORK1 PROCEDURE',
   slogan: 'How We Do Our Projects',
   thumb_url: project1,
@@ -176,7 +183,7 @@ export const projectData = {
     {
       id: 2,
       text:
-        'Schedule a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+        'Project 1 a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
       text2:
         'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
     },
@@ -205,6 +212,62 @@ export const projectData1 = {
       id: 2,
       text:
         'Schedule a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+      text2:
+        'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
+    },
+    // {
+    //   id: 3,
+    //   text:
+    //     'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
+    //   text2:
+    //     'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    // },
+  ],
+};
+
+export const projectData2 = {
+  title: 'WORK1 PROCEDURE',
+  slogan: 'How We Do Our Projects',
+  thumb_url: project1,
+  projects: [
+    {
+      id: 1,
+      text: 'Project 1',
+      text2:
+        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    },
+    {
+      id: 2,
+      text:
+        'Project 1 a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+      text2:
+        'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
+    },
+    // {
+    //   id: 3,
+    //   text:
+    //     'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
+    //   text2:
+    //     'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    // },
+  ],
+};
+
+export const projectData3 = {
+  title: 'WORK1 PROCEDURE',
+  slogan: 'How We Do Our Projects',
+  thumb_url: project1,
+  projects: [
+    {
+      id: 1,
+      text: 'Project 1',
+      text2:
+        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    },
+    {
+      id: 2,
+      text:
+        'Project 1 a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
       text2:
         'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
     },

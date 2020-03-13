@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 import Fade from 'react-reveal/Fade';
 import Image from '../../../common/src/components/Image';
 import Heading from '../../../common/src/components/Heading';
@@ -31,10 +31,12 @@ const AboutUs = () => {
             <Heading dangerouslySetInnerHTML={setTitle(title)} />
             <Text content={text} />
             <Text content={text2} />
-            <a className="learn__more-btn" href="#1">
-              <span className="btn_text">LEARN MORE</span>
-              <span className="next_arrow"></span>
-            </a>
+            <Link to="/resources">
+              <a className="learn__more-btn">
+                <span className="btn_text">LEARN MORE</span>
+                <span className="next_arrow"></span>
+              </a>
+            </Link>
           </Fade>
         </TextWrapper>
       </Container>
