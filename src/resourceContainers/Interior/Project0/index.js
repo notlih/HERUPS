@@ -13,10 +13,10 @@ import SectionWrapper, {
   ImageWrapper,
 } from './project.style';
 
-import { projectData } from '../../../common/src/data/Interior';
+import { projectData0 } from '../../../common/src/data/Interior';
 
 const Project = () => {
-  const { title, slogan, thumb_url, projects } = projectData;
+  const { title, slogan, thumb_url, projects } = projectData0;
   const glideOptions = {
     type: 'carousel',
     perView: 1,

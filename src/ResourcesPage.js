@@ -9,14 +9,15 @@ import Navbar from './resourceContainers/Interior/Navbar';
 // import Banner from './resourceContainers/Interior/Banner';
 import Feature from './resourceContainers/Interior/Feature';
 import AboutUs from './resourceContainers/Interior/AboutUs';
-import Project from './resourceContainers/Interior/Project';
-import Project1 from './resourceContainers/Interior/Project 1';
+import FirstGen from './resourceContainers/Interior/Project0';
+import PersonOfColor from './resourceContainers/Interior/Project1';
+import LowIncome from './resourceContainers/Interior/Project2';
+import Undocumented from './resourceContainers/Interior/Project3';
 
-import Team from './resourceContainers/Interior/Team';
+// import Team from './resourceContainers/Interior/Team';
 import News from './resourceContainers/Interior/News';
-import Testimonial from './resourceContainers/Interior/Testimonial';
-import Gallery from './resourceContainers/Interior/Gallery';
-import Newsletter from './resourceContainers/Interior/Newsletter';
+// import Testimonial from './resourceContainers/Interior/Testimonial';
+// import Newsletter from './resourceContainers/Interior/Newsletter';
 import Footer from './resourceContainers/Interior/Footer';
 import { ResetCSS } from './common/src/assets/css/style';
 import {
@@ -44,14 +45,16 @@ export default class ResourcesPage extends Component{
                 </Sticky>
                 <ContentWrapper>
                   <News />
-                  <Gallery />
+                  {/* <Gallery /> */}
                   <Feature />
                   <AboutUs />
-                  <Project />
-                  <Project1 />
-                  <Team />
-                  <Testimonial />
-                  <Newsletter />
+                  <FirstGen />
+                  <PersonOfColor />
+                  <LowIncome />
+                  <Undocumented />
+                  {/* <Team /> */}
+                  {/* <Testimonial />
+                  <Newsletter /> */}
                   <Modal/>
                 </ContentWrapper>
                 <Footer />

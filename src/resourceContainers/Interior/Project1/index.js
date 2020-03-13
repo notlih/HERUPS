@@ -13,10 +13,10 @@ import SectionWrapper, {
   ImageWrapper,
 } from './project.style';
 
-import { projectData0 } from '../../../common/src/data/Interior';
+import { projectData1 } from '../../../common/src/data/Interior';
 
 const Project = () => {
-  const { title, slogan, thumb_url, projects } = projectData0;
+  const { title, slogan, thumb_url, projects } = projectData1;
   const glideOptions = {
     type: 'carousel',
     perView: 1,
@@ -24,7 +24,7 @@ const Project = () => {
   };
 
   return (
-    <SectionWrapper id="project">
+    <SectionWrapper id="person-of-color">
       <Container width="1360px">
         <Fade bottom>
           <SectionHeader>
