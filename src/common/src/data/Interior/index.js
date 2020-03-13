@@ -12,6 +12,10 @@ import interiorIcon from '../../assets/image/interior/feature/available.svg';
 
 import parentImg from '../../assets/image/interior/student.jpg';
 import resourceImg from '../../assets/image/interior/resourceStudent.jpg';
+import Img1 from '../../assets/image/interior/First Generation.jpg';
+import Img2 from '../../assets/image/interior/Person of Color.jpg';
+import Img3 from '../../assets/image/interior/Low Income.jpg';
+import Img4 from '../../assets/image/interior/Undocumented.jpg';
 
 import project1 from '../../assets/image/interior/projects/1.png';
 
@@ -244,7 +248,7 @@ export const aboutEvents = {
 export const projectData0 = {
   title: 'First-generation',
   slogan: 'You\'re the first from your family...',
-  thumb_url: project1,
+  thumb_url: Img1,
   projects: [
     {
       id: 1,
@@ -266,7 +270,7 @@ export const projectData0 = {
 export const projectData1 = {
   title: 'Person of Color',
   slogan: 'We stand with you.',
-  thumb_url: project1,
+  thumb_url: Img2,
   projects: [
     {
       id: 1,
@@ -316,7 +320,7 @@ export const userResources = {
 export const projectData2 = {
   title: 'Low-income',
   slogan: 'Cost should not be a barrier.',
-  thumb_url: project1,
+  thumb_url: Img3,
   projects: [
   
     {
@@ -338,7 +342,7 @@ export const projectData2 = {
 export const projectData3 = {
   title: 'Undocumented',
   slogan: 'We\'re in this together!',
-  thumb_url: project1,
+  thumb_url: Img4,
   projects: [
     {
       id: 1,
