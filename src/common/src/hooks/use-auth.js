@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
 import * as firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/database"
 
 const firebaseConfig = {
     apiKey: "AIzaSyC6di1ZF_w-2JJLM7i87_yqrecjypoE-3Y",
@@ -27,7 +28,8 @@ export const useAuth = () => {
 };
 
 function useProvideAuth(){
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState();
+    const [userDetails, setUserDetails] = useState(null);
 
     const logIn = (email, password) => {
         return firebase
@@ -86,7 +88,8 @@ function useProvideAuth(){
             setUser(false);
           }
         });
-    
+
+
         // Cleanup subscription on unmount
         return () => unsubscribe();
       }, []);
