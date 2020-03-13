@@ -14,6 +14,9 @@ import LoginModalWrapper from './loginModal.style';
 import 'rc-tabs/assets/index.css';
 import LogoImage from '../../../common/src/assets/image/agency/logo.png';
 import LoginImage from '../../../common/src/assets/image/agency/login-bg.jpg';
+import firebase from "firebase"
+import "firebase/database"
+
 
 import {useAuth} from "../../../common/src/hooks/use-auth.js"
 

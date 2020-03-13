@@ -19,7 +19,7 @@ import {
 } from './pResourceContainers/Interior/interior.style';
 
 const pResourceContainers = () => {
-   
+
   return(
       <ThemeProvider theme={interiorTheme}>
       <Fragment>
@@ -34,7 +34,7 @@ const pResourceContainers = () => {
             </DrawerProvider>
           </Sticky>
           <ContentWrapper>
-            <UserInfo/>
+            <UserInfo />
             <Identify/>
             <UserResources/>
             <Modal/>
