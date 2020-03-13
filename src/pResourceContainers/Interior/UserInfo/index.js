@@ -37,6 +37,8 @@ const Feature = () => {
     )
   }
 
+  console.log(auth.user)
+
   const greeting = "Greetings, " + auth.user.displayName;
 
     firebase.database().ref("/users/" + auth.user.displayName).once('value').then(function(snapshot){
@@ -48,14 +50,6 @@ const Feature = () => {
       setUndoc(snapshot.val().undocStatus);
       setPronouns(snapshot.val().pronoun);
   })
-
-  console.log("firstgen: " + firstGen);
-  console.log("immigrant: " + immigrant);
-  console.log("education: " + education);
-  console.log("low income: " + lowIncome);
-  console.log("student of color: " + studentOfColor);
-  console.log("undocu: " + undoc);
-  console.log("pronouns: " + pronouns)
 
   let firstGenIntro = <div></div>;
   if(firstGen){
@@ -69,7 +63,7 @@ const Feature = () => {
 
   let lowIncomeIntro = <div></div>;
   if(lowIncome){
-    lowIncomeIntro = <Heading as="p" color="BLACK" content="a Student of Low Income"/>
+    lowIncomeIntro = <Heading as="p" color="BLACK" content="A Student of Low Income"/>
   }
 
   let SOCIntro = <div></div>;

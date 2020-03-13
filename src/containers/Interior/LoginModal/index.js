@@ -30,7 +30,6 @@ const LoginModal = ({
   outlineBtnStyle,
   descriptionStyle,
   googleButtonStyle,
-  firebase
 }) => {
 
   const auth = useAuth();
@@ -77,42 +76,13 @@ const LoginModal = ({
 
   const [toDash, setToDash] = useState(false);
 
+
   async function onRegister() {
 
-    let userRef = firebase.database().ref('users/' + nameR);
-    userRef.transaction(function(currentData){
-
-      if (currentData === null){
-        return {
-          username: nameR,
-          email: emailR
-        }
-      } else {
-        return;
-      }
-    }, function(error, commited){
-        if(error){
-          console.log("transaction failed")
-        } else if(!commited){
-          setErrorRegistering(<Heading color="RED" as="h3" content="Display Name already in use, please choose another or LOG IN" />);
-        } else{
+   let resp = auth.signUp(emailR, passwordR, nameR);
+   console.log(resp);
+   setRegister(1);
           
-          let user = auth.signUp(emailR, passwordR)
-          
-          user.updateProfile({
-            displayName:nameR
-          })
-          setRegister(1)
-
-
-          // })
-          // .catch((error) => {
-          //   if(error.message === "The email address is already in use by another account."){
-          //     setErrorRegistering(<Heading color="RED" as="h3" content="Email already in use, please LOG IN" />);
-          //   }
-          // });
-        }
-      });
   }
 
   function submitRegistration(){
@@ -305,7 +275,7 @@ const LoginModal = ({
 
   return (
     <LoginModalWrapper>
-      {auth.user ? (
+      {auth.user &&  toDash ? (
         <Redirect to={{
           pathname: pathnameRedirect,
         }}/>) : null}
