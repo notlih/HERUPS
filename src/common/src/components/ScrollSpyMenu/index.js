@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import PropTypes from 'prop-types';
 import Scrollspy from 'react-scrollspy';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+// import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import { DrawerContext } from '../../contexts/DrawerContext';
 

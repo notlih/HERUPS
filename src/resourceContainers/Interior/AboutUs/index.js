@@ -10,16 +10,16 @@ import SectionWrapper, {
   TextWrapper,
 } from './aboutUs.style';
 
-import { aboutData } from '../../../common/src/data/Interior';
+import { aboutResources } from '../../../common/src/data/Interior';
 
 const AboutUs = () => {
-  const { thumb_url, title, text, text2 } = aboutData;
+  const { thumb_url, title, text, text2 } = aboutResources;
   const setTitle = title => {
     return { __html: title };
   };
 
   return (
-    <SectionWrapper id="aboutUs">
+    <SectionWrapper id="aboutProject">
       <Container>
         <ImageWrapper>
           <Fade left>
@@ -31,8 +31,8 @@ const AboutUs = () => {
             <Heading dangerouslySetInnerHTML={setTitle(title)} />
             <Text content={text} />
             <Text content={text2} />
-            <a className="learn__more-btn" href="#1">
-              <span className="btn_text">LEARN MORE</span>
+            <a className="learn__more-btn" href="https://github.com/notlih/HERUPS#team-fresh-avocado">
+              <span className="btn_text">MORE ABOUT THE PROJECT</span>
               <span className="next_arrow"></span>
             </a>
           </Fade>

@@ -46,7 +46,7 @@ export default class ResourcesPage extends Component{
                 <ContentWrapper>
                   <News />
                   {/* <Gallery /> */}
-                  <Feature />
+                  {/* <Feature /> */}
                   <AboutUs />
                   <FirstGen />
                   <PersonOfColor />
