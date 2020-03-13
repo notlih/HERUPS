@@ -2,49 +2,25 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get'
 
 const SectionWrapper = styled.div`
-  background-color: #ffc04d;
   padding-bottom: 20px;
-  padding-top: 10%;
   position: relative;
   @media only screen and (max-width: 1440px) {
-    margin-top: -20px;
+    margin-top: 20px;
   }
   @media only screen and (max-width: 1360px) {
-    margin-top: -60px;
+    margin-top: 60px;
   }
   @media only screen and (max-width: 767px) {
     margin-top: 22px;
   }
 
-  &::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 10vw;
-    background-color: #ffc04d;
-    position: absolute;
-    top: 0;
-    left: 0;
-    @media only screen and (max-width: 1440px) {
-      height: 14vw;
-    }
-    @media only screen and (max-width: 1360px) {
-      height: 15vw;
-    }
-    @media only screen and (max-width: 1200px) {
-      height: 17vw;
-    }
-    @media only screen and (max-width: 767px) {
-      height: 13vw;
-    }
+  
   }
 `;
 
 export const ContentWrapper = styled.div`
-  max-width: 1576px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
   align-items: center;
   @media only screen and (max-width: 1600px) {
     padding: 0 60px;
@@ -92,30 +68,13 @@ export const ContentWrapper = styled.div`
 export const NewsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -30px;
+  padding: 0 30px;
   position: relative;
-  align-items: center;
+  justify-content: space-around;
   
-  top: -7vw;
-  z-index: 1;
-  @media only screen and (max-width: 1440px) {
-    top: -8vw;
-  }
-  @media only screen and (max-width: 1360px) {
-    top: -12vw;
-  }
-  @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    margin: 0 -15px;
-    top: -14vw;
-  }
-  @media only screen and (max-width: 767px) {
-    top: -15vw;
-    padding-bottom: 50px;
-  }
 `;
 
 export const NewsItem = styled.div`
-  width: calc(100% / 4);
   padding: 0 50px;
   @media only screen and (max-width: 1440px) {
     padding: 0 30px;

@@ -14,9 +14,8 @@ import LoginModalWrapper from './loginModal.style';
 import 'rc-tabs/assets/index.css';
 import LogoImage from '../../../common/src/assets/image/agency/logo.png';
 import LoginImage from '../../../common/src/assets/image/agency/login-bg.jpg';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import "firebase/database"
+
+import {useAuth} from "../../../common/src/hooks/use-auth.js"
 
 const LoginModal = ({
   row,
@@ -28,11 +27,15 @@ const LoginModal = ({
   outlineBtnStyle,
   descriptionStyle,
   googleButtonStyle,
+  firebase
 }) => {
+
+  const auth = useAuth();
+
   const LoginButtonGroup = () => (
     
     <Fragment>
-      <Button className="default" title="LOGIN" onClick={login} {...btnStyle} />
+      <Button className="default" title="LOGIN" onClick={() => auth.logIn(emailL, passwordL)} {...btnStyle} />
       <Button
         title="Forget Password"
         variant="textButton"
@@ -47,7 +50,6 @@ const LoginModal = ({
     </Fragment>
   );
 
-  const [userP, setUserP] = useState();
   const [nameR, setNameR] = useState('');
   const [emailR, setEmailR] = useState('');
   const [passwordR, setPasswordR] = useState('');
@@ -72,18 +74,6 @@ const LoginModal = ({
 
   const [toDash, setToDash] = useState(false);
 
-  async function login() {
-    firebase.auth().signInWithEmailAndPassword(emailL, passwordL).
-    then(function (userCredentials){
-      let user = userCredentials.user;
-      setUserP(user);
-      setToDash(true)
-    })
-    .catch(function(error){
-      setErrorLogIn(<Heading color="RED" as="h3" content={error.message} />);
-    })
-  }
-
   async function onRegister() {
 
     let userRef = firebase.database().ref('users/' + nameR);
@@ -103,20 +93,21 @@ const LoginModal = ({
         } else if(!commited){
           setErrorRegistering(<Heading color="RED" as="h3" content="Display Name already in use, please choose another or LOG IN" />);
         } else{
-          firebase.auth().createUserWithEmailAndPassword(emailR, passwordR)
-          .then((userCredentials) => {
-            let user = userCredentials.user;
-            setUserP(user);
-            user.updateProfile({
-              displayName: nameR,
-            })
-            setRegister(1);
+          
+          let user = auth.signUp(emailR, passwordR)
+          
+          user.updateProfile({
+            displayName:nameR
           })
-          .catch((error) => {
-            if(error.message === "The email address is already in use by another account."){
-              setErrorRegistering(<Heading color="RED" as="h3" content="Email already in use, please LOG IN" />);
-            }
-          });
+          setRegister(1)
+
+
+          // })
+          // .catch((error) => {
+          //   if(error.message === "The email address is already in use by another account."){
+          //     setErrorRegistering(<Heading color="RED" as="h3" content="Email already in use, please LOG IN" />);
+          //   }
+          // });
         }
       });
   }
@@ -307,13 +298,13 @@ const LoginModal = ({
     registrationStage = educationRegistration;
   } 
 
+  let pathnameRedirect = "/dashboard/" + auth.user.displayName
 
   return (
     <LoginModalWrapper>
-      {toDash ? (
+      {auth.user ? (
         <Redirect to={{
-          pathname: "/dashboard",
-          state:{ user : userP}
+          pathname: pathnameRedirect,
         }}/>) : null}
       <Box className="row" {...row}>
         <Box className="col tabCol" {...col}>
