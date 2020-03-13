@@ -37,7 +37,7 @@ const LoginModal = ({
   const LoginButtonGroup = () => (
     
     <Fragment>
-      <Button className="default" title="LOGIN" onClick={() => auth.logIn(emailL, passwordL)} {...btnStyle} />
+      <Button className="default" title="LOGIN" onClick={() => onLogin} {...btnStyle} />
       <Button
         title="Forget Password"
         variant="textButton"
@@ -76,6 +76,13 @@ const LoginModal = ({
 
   const [toDash, setToDash] = useState(false);
 
+
+  async function onLogin(){
+
+    auth.logIn(emailL, passwordL)
+    setToDash(true);
+
+  }
 
   async function onRegister() {
 
