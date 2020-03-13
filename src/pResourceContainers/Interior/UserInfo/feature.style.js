@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 const SectionWrapper = styled.section`
-  padding: 81px 0;
+  background-color: rgb(2, 116, 190);
+  padding: 5% 0;
   overflow: hidden;
   @media only screen and (max-width: 1440px) {
-    padding: 60px 0;
+    padding: 10% 0;
   }
   @media only screen and (max-width: 767px) {
-    padding: 42px 0 12px;
+    padding: 5% 0 12px;
 
     header {
       padding: 0 30px 40px;

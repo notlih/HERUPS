@@ -15,12 +15,6 @@ const News = () => {
   return (
     <SectionWrapper id="news">
       <ContentWrapper>
-        <div className="row">
-          <div className="col">
-          </div>
-          <div className="col">
-          </div>
-        </div>
         <NewsWrapper>
           {identifyData.map(item => (
             <NewsItem key={`news_key${item.id}`}>

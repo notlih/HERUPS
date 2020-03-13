@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from 'react';
+import { Link, Redirect } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { openModal, closeModal } from '@redq/reuse-modal';
 import { Icon } from 'react-icons-kit';
@@ -13,11 +13,13 @@ import ScrollSpyMenu from '../../../common/src/components/ScrollSpyMenu';
 import { DrawerContext } from '../../../common/src/contexts/DrawerContext';
 import { Container } from './navbar.style';
 import SearchPanel from '../SearchPanel';
-import LoginModal from '../LoginModal';
 import Copyright from '../Copyright';
 
 import { menuData } from '../../../common/src/data/Interior';
 import logo from '../../../common/src/assets/image/interior/avocado.png';
+import LoginModal from '../LoginModal';
+
+import {useAuth} from "../../../common/src/hooks/use-auth.js"
 
 const CloseModalButton = () => (
   <Button
@@ -40,6 +42,8 @@ const CloseModalButtonAlt = () => (
 
 const Navbar = ({ navbarStyle, logoStyle }) => {
   const { state, dispatch } = useContext(DrawerContext);
+  const { toHome, setToHome } = useState(false);
+  const auth = useAuth();
 
   const handleSearchModal = () => {
     openModal({
@@ -84,6 +88,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
       closeOnClickOutside: true,
     });
   };
+
 
   const toggleHandler = () => {
     dispatch({
@@ -139,7 +144,18 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
             icon={<i className="flaticon-user" />}
             aria-label="registration button"
           />
-
+          {auth.user ? (
+            <Button
+              variant="textButton"
+              onClick={() => auth.signout()}
+              title="Sign Out"
+              aria-label="registration button"
+            />
+            ):(
+              <Redirect to={{
+                pathname: "/",
+              }}/>
+            )} 
           <Drawer
             width="420px"
             placement="right"
