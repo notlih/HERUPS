@@ -146,6 +146,38 @@ export const featureData = {
 };
 
 /* ------------------------------------ */
+// User section data
+/* ------------------------------------ */
+
+export const userData = {
+  title: 'Greetings, harim2000!',
+  slogan: 'you are',
+  features: [
+    // {
+    //   id: 1,
+    //   icon: corporateIcon,
+    //   title: 'Targeted',
+    //   description:
+    //     'Aimed to support over 2,000 students in South Seattle — with a focus on students who are underprivileged.',
+    // },
+    // {
+    //   id: 2,
+    //   icon: landscapeIcon,
+    //   title: 'Easy to Use',
+    //   description:
+    //     'Designed to be accessible on multiple platforms, updated and maintained to ensure information reliability.',
+    // },
+    // {
+    //   id: 3,
+    //   icon: interiorIcon,
+    //   title: 'Readily Available',
+    //   description:
+    //     '4+ mentors always available to answer your questions and address your concerns.',
+    // },
+  ],
+};
+
+/* ------------------------------------ */
 // About section data
 /* ------------------------------------ */
 
@@ -180,13 +212,13 @@ export const projectData = {
       text2:
         'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
     },
-    // {
-    //   id: 3,
-    //   text:
-    //     'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
-    //   text2:
-    //     'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
-    // },
+    {
+      id: 3,
+      text:
+        'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
+      text2:
+        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    },
   ],
 };
 
@@ -208,13 +240,41 @@ export const projectData1 = {
       text2:
         'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
     },
-    // {
-    //   id: 3,
-    //   text:
-    //     'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
-    //   text2:
-    //     'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
-    // },
+    {
+      id: 3,
+      text:
+        'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
+      text2:
+        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+    },
+  ],
+};
+
+export const userResources = {
+  title: 'Personalized Resources',
+  slogan: 'Here are some resources tailored to your needs',
+  thumb_url: project1,
+  projects: [
+    {
+      id: 1,
+      text: 'Husky Promise',
+      text2:
+        'The Husky Promise guarantees that the students of Washington state will not let financial trouble get in the way of discovering their potential. The program guarantees full tuition and the standard fees will be covered by grant or scholarship support. The student must be a Washington state resident and meet all eligibility criteria for the Pell Grant program.',
+    },
+    {
+      id: 2,
+      text:
+        'Gates Millennium Scholars Program',
+      text2:
+        'The Gates Scholarship is a highly competitive program for exception, Pell-eligable, minority, high school seniors. Scholarships are awarded to 300 students every year. The scholars receive full funding for the cost of attendance, that is already not covered by the other financial aid. An ideal candidate will have outstanding record in high school, leadership ability, and exceptional personal success skills.',
+    },
+    {
+      id: 3,
+      text:
+        'College Success Foundation',
+      text2:
+        'The College Success Foundation provides scholarships and system of supports for low-income familiies, students of color, and first-generation college students. The program supports a wide range of students from middle schoolers all the way to college students.',
+    },
   ],
 };
 
@@ -395,6 +455,28 @@ export const newsData = [
     excerpt:
       'Those who are not documented as citizens in this country often find themselves scraping for educational resources, some of which require you to be a citizen.',
     link_text: 'We\'ve got your back',
+    link_url: '#low-income',
+  },
+];
+
+/* ------------------------------------ */
+// Identify section data
+/* ------------------------------------ */
+export const identifyData = [
+  {
+    id: 1,
+    title: 'First-generation',
+    excerpt:
+      'People who come from families where they will be the first person from their family to pursue higher education.',
+    link_text: 'Be proud!',
+    link_url: '#first-gen',
+  },
+  {
+    id: 2,
+    title: 'Low-income',
+    excerpt:
+      <span>Those who come from a low-income background or family. The guidelines for low-income are defined <a href="https://www2.ed.gov/about/offices/list/ope/trio/incomelevels.html">here</a>.</span>,
+    link_text: 'No cost to you',
     link_url: '#low-income',
   },
 ];

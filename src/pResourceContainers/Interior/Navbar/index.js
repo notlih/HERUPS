@@ -118,15 +118,14 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
             aria-label="Mentor button"
             title="Mentor"
           />
-          <Link to="/yourResources">
-            <Button
-              // as="a"
-              // href="/contact"
-              variant="textButton"
-              aria-label="Contact button"
-              title="Contact us"
-            />
-          </Link>
+          <Button
+            as="a"
+            href="/contact"
+            variant="textButton"
+            aria-label="Contact button"
+            title="Contact us"
+          />
+          
           <Button
             variant="textButton"
             onClick={handleSearchModal}

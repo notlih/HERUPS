@@ -4,6 +4,7 @@ import ResourcesPage from './ResourcesPage'
 import UserDashboard from './UserDashboard'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { HashRouter } from "react-router-dom";
+import pResourcesPage from './pResourcesPage';
 
 export default class App extends Component{
 
@@ -15,6 +16,7 @@ export default class App extends Component{
             <Route path='/' exact component={HomePage}/>
             <Route path='/resources' exact component={ResourcesPage}/>
             <Route path='/dashboard' component={UserDashboard}/>
+            <Route path='/yourResources' component={pResourcesPage}/>
           </Switch>
         </HashRouter>
       </div>
