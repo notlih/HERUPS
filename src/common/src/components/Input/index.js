@@ -50,7 +50,6 @@ const Input = ({
 
   // handle input value
   const handleOnChange = event => {
-    console.log(event.target.value);
     setState({
       ...state,
       value: event.target.value,
@@ -123,7 +122,7 @@ const Input = ({
             {...props}
             id={htmlFor}
             name={htmlFor}
-            type={state.toggle ? 'password' : 'text'}
+            type='password'
             value={state.value}
             onChange={handleOnChange}
             onBlur={handleOnBlur}

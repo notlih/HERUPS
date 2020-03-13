@@ -10,6 +10,8 @@ import Navbar from './resourceContainers/Interior/Navbar';
 import Feature from './resourceContainers/Interior/Feature';
 import AboutUs from './resourceContainers/Interior/AboutUs';
 import Project from './resourceContainers/Interior/Project';
+import Project1 from './resourceContainers/Interior/Project 1';
+
 import Team from './resourceContainers/Interior/Team';
 import News from './resourceContainers/Interior/News';
 import Testimonial from './resourceContainers/Interior/Testimonial';
@@ -46,6 +48,7 @@ export default class ResourcesPage extends Component{
                   <Feature />
                   <AboutUs />
                   <Project />
+                  <Project1 />
                   <Team />
                   <Testimonial />
                   <Newsletter />

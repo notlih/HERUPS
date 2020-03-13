@@ -43,7 +43,7 @@ export default class HomePage extends Component{
                   <Banner />
                   <Feature />
                   <AboutUs />
-                  <Project />
+                  {/* <Project /> */}
                   <Team />
                   {/* <News /> */}
                   <Testimonial />
