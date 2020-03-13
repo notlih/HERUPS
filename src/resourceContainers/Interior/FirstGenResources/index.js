@@ -23,6 +23,7 @@ const Project = () => {
     gap: 0,
   };
 
+  console.log(projects)
   return (
     <SectionWrapper id="first-generation">
       <Container width="1360px">

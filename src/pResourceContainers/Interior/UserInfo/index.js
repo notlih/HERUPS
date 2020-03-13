@@ -1,4 +1,6 @@
 import React from 'react';
+import { Redirect } from "react-router-dom";
+
 import Fade from 'react-reveal/Fade';
 import Heading from '../../../common/src/components/Heading';
 import BlogPost from '../../../common/src/components/BlogPost';
@@ -8,9 +10,20 @@ import SectionWrapper, { FeatureWrapper } from './feature.style';
 
 import { userData } from '../../../common/src/data/Interior';
 
+import {useAuth} from  "../../../common/src/hooks/use-auth.js"
+
+
 const Feature = () => {
   const { title, slogan, features } = userData;
+  const auth = useAuth();
 
+  if(!auth.user){
+    return(
+      <Redirect to={{
+        pathname: "/",
+      }}/>
+    )
+  }
   return (
     <SectionWrapper id="user">
       <Fade bottom>
