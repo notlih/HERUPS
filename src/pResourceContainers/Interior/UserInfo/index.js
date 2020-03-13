@@ -85,7 +85,7 @@ const Feature = () => {
       <Fade bottom>
         <SectionHeader>
           <Heading as="h1" content={greeting} />
-          <Heading content={"Your are "} />
+          <Heading as="h2" content={"You are "} />
             {firstGenIntro}
             {immigrantIntro}
             {lowIncomeIntro}
