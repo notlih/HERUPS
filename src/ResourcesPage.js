@@ -7,9 +7,9 @@ import { interiorTheme } from './common/src/theme/interior';
 import { DrawerProvider } from './common/src/contexts/DrawerContext';
 import Navbar from './resourceContainers/Interior/Navbar';
 // import Banner from './resourceContainers/Interior/Banner';
-import Feature from './resourceContainers/Interior/Feature';
+// import Feature from './resourceContainers/Interior/Feature';
 import AboutUs from './resourceContainers/Interior/AboutUs';
-import FirstGen from './resourceContainers/Interior/Project0';
+import FirstGen from './resourceContainers/Interior/FirstGenResources';
 import PersonOfColor from './resourceContainers/Interior/Project1';
 import LowIncome from './resourceContainers/Interior/Project2';
 import Undocumented from './resourceContainers/Interior/Project3';
@@ -45,16 +45,11 @@ export default class ResourcesPage extends Component{
                 </Sticky>
                 <ContentWrapper>
                   <News />
-                  {/* <Gallery /> */}
-                  {/* <Feature /> */}
                   <AboutUs />
                   <FirstGen />
                   <PersonOfColor />
                   <LowIncome />
                   <Undocumented />
-                  {/* <Team /> */}
-                  {/* <Testimonial />
-                  <Newsletter /> */}
                   <Modal/>
                 </ContentWrapper>
                 <Footer />

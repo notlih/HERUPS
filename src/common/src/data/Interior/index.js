@@ -229,40 +229,33 @@ export const projectData0 = {
       text2:
         'The Husky Promise guarantees that the students of Washington state will not let financial trouble get in the way of discovering their potential. The program guarantees full tuition and the standard fees will be covered by grant or scholarship support. The student must be a Washington state resident and meet all eligibility criteria for the Pell Grant program.',
     },
-    // {
-    //   id: 2,
-    //   text:
-    //     'Project 1 a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
-    //   text2:
-    //     'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
-    // },
+    {
+      id: 2,
+      text:
+        'College Parents of America',
+      text2:
+        'This organization offers many scholarships and grant programs for first-generation college students. Their main goals are to educate the students about the various options for financing college, guiding them through the most critical stage of life.',
+    },
   ],
 };
 
 export const projectData1 = {
-  title: 'WORK2 PROCEDURE',
-  slogan: 'How We Do Our Projects',
+  title: 'Section 2',
+  slogan: 'Section 2',
   thumb_url: project1,
   projects: [
     {
       id: 1,
-      text: 'Project 2',
+      text: 'Test 1',
       text2:
-        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+        'Test 2',
     },
     {
       id: 2,
       text:
-        'Schedule a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+        'Test 3',
       text2:
-        'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
-    },
-    {
-      id: 3,
-      text:
-        'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
-      text2:
-        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+        'Test 4',
     },
   ],
 };
@@ -297,58 +290,44 @@ export const userResources = {
 };
 
 export const projectData2 = {
-  title: 'WORK1 PROCEDURE',
-  slogan: 'How We Do Our Projects',
+  title: 'Section 3',
+  slogan: 'Section 3',
   thumb_url: project1,
   projects: [
     {
       id: 1,
-      text: 'Project 1',
+      text: 'Test 1',
       text2:
-        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+        'Test 2',
     },
     {
       id: 2,
       text:
-        'Project 1 a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+        'Test 3',
       text2:
-        'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
+        'Test 4',
     },
-    // {
-    //   id: 3,
-    //   text:
-    //     'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
-    //   text2:
-    //     'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
-    // },
   ],
 };
 
 export const projectData3 = {
-  title: 'WORK1 PROCEDURE',
-  slogan: 'How We Do Our Projects',
+  title: 'Section 4',
+  slogan: 'Section 4',
   thumb_url: project1,
   projects: [
     {
       id: 1,
-      text: 'Project 1',
+      text: 'Test 1',
       text2:
-        'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+        'Test 2',
     },
     {
       id: 2,
       text:
-        'Project 1 a brainstorming session in a quiet place with few distractions. If you are working on a project alone, you can use group discussions with friends or colleagues to gain a new perspective on the topic. When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
+        'Test 3',
       text2:
-        'Completing a successful project requires a significant amount of time and work, which means evaluating your priorities and planning your course of action.',
+        'Test 4',
     },
-    // {
-    //   id: 3,
-    //   text:
-    //     'Create a mind map to brainstorm your project to inspire new ideas. Use a simple piece of paper, poster, or whiteboard for your mind map and we write the destination of your project in the middle.We  Write down related topics, subtopics, and relevant concepts around the goal and branch from them to create and follow different tangents.',
-    //   text2:
-    //     'When you conduct a group project, each group member can benefit from the ideas of others and gain new insights by brainstorming together.',
-    // },
   ],
 };
 
