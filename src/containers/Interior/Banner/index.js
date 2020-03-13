@@ -1,4 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { Link, Redirect } from "react-router-dom";
+
 import Fade from 'react-reveal/Fade';
 import { Icon } from 'react-icons-kit';
 import { iosEmailOutline } from 'react-icons-kit/ionicons/iosEmailOutline';
@@ -150,9 +152,11 @@ const Banner = () => {
               <Fragment>
                 {carousel.map(item => (
                   <GlideSlide key={`carousel_key${item.id}`}>
-                    <a className="item_wrapper" href={item.link}>
+                    <a className="item_wrapper">
+                      <Link to={item.link}>
                       <Image src={item.thumb_url} alt={item.title} />
                       <Heading as="h4" content={item.title} />
+                      </Link>
                     </a>
                   </GlideSlide>
                 ))}

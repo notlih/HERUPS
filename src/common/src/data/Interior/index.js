@@ -97,31 +97,31 @@ export const bannerData = {
       id: 1,
       thumb_url: slide1,
       title: 'Personal Statements',
-      link: '#1',
+      link: '/PersonalStatements',
     },
     {
       id: 2,
       thumb_url: slide2,
       title: 'Higher Education Applications',
-      link: '#1',
+      link: '/Applications',
     },
     {
       id: 3,
       thumb_url: slide3,
       title: 'Financial Aid',
-      link: '#1',
+      link: '/FinancialAid',
     },
     {
       id: 4,
       thumb_url: slide4,
       title: 'Gender-based Resources',
-      link: '#1',
+      link: '/GenderResources',
     }, 
     {
       id: 5,
       thumb_url: slide5,
       title: 'Events',
-      link: '#1',
+      link: '/Events',
     },
     
   ],
@@ -167,27 +167,6 @@ export const userData = {
   title: 'Greetings, harim2000!',
   slogan: 'You are',
   features: [
-    // {
-    //   id: 1,
-    //   icon: corporateIcon,
-    //   title: 'Targeted',
-    //   description:
-    //     'Aimed to support over 2,000 students in South Seattle — with a focus on students who are underprivileged.',
-    // },
-    // {
-    //   id: 2,
-    //   icon: landscapeIcon,
-    //   title: 'Easy to Use',
-    //   description:
-    //     'Designed to be accessible on multiple platforms, updated and maintained to ensure information reliability.',
-    // },
-    // {
-    //   id: 3,
-    //   icon: interiorIcon,
-    //   title: 'Readily Available',
-    //   description:
-    //     '4+ mentors always available to answer your questions and address your concerns.',
-    // },
   ],
 };
 
@@ -213,6 +192,51 @@ export const aboutResources = {
     'We hope to inform people, we can provide them the power to move forward in accomplishing their goals of post-secondary education. This project offers a way for students to get in contact with mentors when they have questions related to life after high school—aiming to inspire students of new pathways that they can pursue and find passion in. This website will also inform its users of contact information for various organizations that can be reached out to for assistance with more information. We intend to develop a better, more intuitive method to organize all of the resources available to support the students like you.',
 };
 
+export const aboutStatements = {
+  thumb_url: parentImg,
+  title: 'Looking for more information about personal statements?',
+  text:
+    'We have you covered!',
+  text2:
+    'More information and content will be supplied in this section once we gather enough content and data to display helpful resources for you. We will update you once this page is available, please stay tuned. :)',
+};
+
+export const aboutApps = {
+  thumb_url: parentImg,
+  title: 'Looking to apply to college or other higher education institutions?',
+  text:
+    'We have you covered!',
+  text2:
+    'More information and content will be supplied in this section once we gather enough content and data to display helpful resources for you. We will update you once this page is available, please stay tuned. :)',
+};
+
+export const aboutFinAid = {
+  thumb_url: parentImg,
+  title: 'Are you a bit confused on the financial aid process?',
+  text:
+    'We have you covered!',
+  text2:
+    'More information and content will be supplied in this section once we gather enough content and data to display helpful resources for you. We will update you once this page is available, please stay tuned. :)',
+};
+
+export const aboutOther = {
+  thumb_url: parentImg,
+  title: 'Looking for more information regarding gender-based resources?',
+  text:
+    'We have you covered!',
+  text2:
+    'More information and content will be supplied in this section once we gather enough content and data to display helpful resources for you. We will update you once this page is available, please stay tuned. :)',
+};
+
+export const aboutEvents = {
+  thumb_url: parentImg,
+  title: 'Looking for more events near you?',
+  text:
+    'We have you covered!',
+  text2:
+    'More information and content will be supplied in this section once we gather enough content and data to display helpful resources for you. We will update you once this page is available, please stay tuned. :)',
+};
+
 /* ------------------------------------ */
 // Projects section data
 /* ------------------------------------ */
@@ -224,38 +248,38 @@ export const projectData0 = {
   projects: [
     {
       id: 1,
-      text: 
-        'The Husky Promise',
-      text2:
-        'The Husky Promise guarantees that the students of Washington state will not let financial trouble get in the way of discovering their potential. The program guarantees full tuition and the standard fees will be covered by grant or scholarship support. The student must be a Washington state resident and meet all eligibility criteria for the Pell Grant program.',
-    },
-    {
-      id: 2,
       text:
         'College Parents of America',
       text2:
         'This organization offers many scholarships and grant programs for first-generation college students. Their main goals are to educate the students about the various options for financing college, guiding them through the most critical stage of life.',
     },
+    {
+      id: 2,
+      text: 
+        'The Husky Promise',
+      text2:
+        'The Husky Promise guarantees that the students of Washington state will not let financial trouble get in the way of discovering their potential. The program guarantees full tuition and the standard fees will be covered by grant or scholarship support. The student must be a Washington state resident and meet all eligibility criteria for the Pell Grant program.',
+    },
   ],
 };
 
 export const projectData1 = {
-  title: 'Section 2',
-  slogan: 'Section 2',
+  title: 'Person of Color',
+  slogan: 'We stand with you.',
   thumb_url: project1,
   projects: [
     {
       id: 1,
-      text: 'Test 1',
+      text:
+        'Hispanic Scholarship Fund (HSF)',
       text2:
-        'Test 2',
+        'HSF has given over $470 million in scholarships, granting 5,100 awards every year. The application begins on the 1st of January each year and the awards can range from $1,000 to $15,000.',
     },
     {
       id: 2,
-      text:
-        'Test 3',
+      text: 'National Pan-Hellenic Council (NPHC)',
       text2:
-        'Test 4',
+        'NPHC is a social organization composed of nine African American sororities and fraternities. These organizations provide students with the opportunity to volunteer in their communities, access to exclusive career boards, and gain leadership experience.',
     },
   ],
 };
@@ -290,43 +314,44 @@ export const userResources = {
 };
 
 export const projectData2 = {
-  title: 'Section 3',
-  slogan: 'Section 3',
+  title: 'Low-income',
+  slogan: 'Cost should not be a barrier.',
   thumb_url: project1,
   projects: [
+  
     {
       id: 1,
-      text: 'Test 1',
+      text:
+        'Gates Millennium Scholars Program',
       text2:
-        'Test 2',
+        'The Gates Scholarship is a highly competitive program for exception, Pell-eligible, minority, high school seniors. Scholarships are awarded to 300 students every year. The scholars receive full funding for the cost of attendance, that is already not covered by the other financial aid. An ideal candidate will have outstanding record in high school, leadership ability, and exceptional personal success skills.',
     },
     {
       id: 2,
-      text:
-        'Test 3',
+      text: 'College Success Foundation',
       text2:
-        'Test 4',
+        'The College Success Foundation provides scholarships and system of support for low-income families, students of color, and first-generation college students. The program supports a wide range of students from middle schoolers all the way to college students.',
     },
   ],
 };
 
 export const projectData3 = {
-  title: 'Section 4',
-  slogan: 'Section 4',
+  title: 'Undocumented',
+  slogan: 'We\'re in this together!',
   thumb_url: project1,
   projects: [
     {
       id: 1,
-      text: 'Test 1',
+      text:
+        'Golden Door Scholars',
       text2:
-        'Test 2',
+        'Golden Door offers large scholarships to high performing high school students with DACA, TPS, or undocumented. Each student is paired with a mentor, as well as help finding employment after college.',
     },
     {
       id: 2,
-      text:
-        'Test 3',
+      text: 'QuestBridge',
       text2:
-        'Test 4',
+        'QuestBridge partners with 40 prestigious colleges and universities in the US in order to offer National College Match scholarship. The scholarship covers the full cost of attendance. Although not all college partners consider non-US citizens, QuestBridge accepts undocumented studnets as long as they are attending high school in the US.',
     },
   ],
 };
