@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7a7a7ecff80b6f9e47c57c25f639766c",
+    "revision": "7a5db90a2dc78ebab57179fc208a6f05",
     "url": "/HERUPS/index.html"
   },
   {
-    "revision": "dfe02cef830872ea4671",
+    "revision": "850d467bf993a3d09d8b",
     "url": "/HERUPS/static/css/2.d2d351c6.chunk.css"
   },
   {
-    "revision": "ec83c927690674fad4b8",
+    "revision": "b1a4058f80a1dbcc6e02",
     "url": "/HERUPS/static/css/main.64e13da7.chunk.css"
   },
   {
-    "revision": "dfe02cef830872ea4671",
-    "url": "/HERUPS/static/js/2.d1f00d16.chunk.js"
+    "revision": "850d467bf993a3d09d8b",
+    "url": "/HERUPS/static/js/2.afc66e2b.chunk.js"
   },
   {
     "revision": "dea1d4f3ef12b45f2b743e6cca16fb94",
-    "url": "/HERUPS/static/js/2.d1f00d16.chunk.js.LICENSE.txt"
+    "url": "/HERUPS/static/js/2.afc66e2b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ec83c927690674fad4b8",
-    "url": "/HERUPS/static/js/main.38529964.chunk.js"
+    "revision": "b1a4058f80a1dbcc6e02",
+    "url": "/HERUPS/static/js/main.0fa7965d.chunk.js"
   },
   {
     "revision": "c4001a3af4aa9457a209",
@@ -76,8 +76,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/media/error.bc05fb19.svg"
   },
   {
+    "revision": "7303aba4e67f5d3a8d3c6a8abc0805b0",
+    "url": "/HERUPS/static/media/events.7303aba4.png"
+  },
+  {
     "revision": "b9f3dd334156d97eed46480e746f899d",
     "url": "/HERUPS/static/media/fAid.b9f3dd33.jpg"
+  },
+  {
+    "revision": "9d1b84dcf953a9926ffb33c39b19a5ec",
+    "url": "/HERUPS/static/media/gBased.9d1b84dc.jpg"
   },
   {
     "revision": "845a4184adfb27d9625958fe0bbf0c73",
@@ -102,6 +110,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d29e9b2f351d528dba72557b639232aa",
     "url": "/HERUPS/static/media/pStatements.d29e9b2f.jpg"
+  },
+  {
+    "revision": "981d9b68bce2c364adf399bd912d6821",
+    "url": "/HERUPS/static/media/resourceStudent.981d9b68.jpg"
   },
   {
     "revision": "ac846088bc65b6c596760c7bf04822d4",
