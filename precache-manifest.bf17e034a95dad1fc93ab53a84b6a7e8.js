@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8f212915544145fc6f36ca278565e170",
+    "revision": "374f0ba19af41e9b400ae328f2d176ac",
     "url": "/HERUPS/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/css/2.d2d351c6.chunk.css"
   },
   {
-    "revision": "cfe5992efeb86baa84e6",
-    "url": "/HERUPS/static/css/main.66bb4e04.chunk.css"
+    "revision": "ad9816a850b2baf02e2c",
+    "url": "/HERUPS/static/css/main.64e13da7.chunk.css"
   },
   {
     "revision": "8c0af6b9511b3514a53a",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/js/2.c399bdd4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cfe5992efeb86baa84e6",
-    "url": "/HERUPS/static/js/main.910fdf47.chunk.js"
+    "revision": "ad9816a850b2baf02e2c",
+    "url": "/HERUPS/static/js/main.3e157b56.chunk.js"
   },
   {
     "revision": "c4001a3af4aa9457a209",
@@ -40,16 +40,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/media/Flaticon.41b47e36.ttf"
   },
   {
-    "revision": "4e84d4710ba2b48798ab2026e966d828",
-    "url": "/HERUPS/static/media/Flaticon.4e84d471.svg"
+    "revision": "a4d2f67ba16f73c38d548cb47372c194",
+    "url": "/HERUPS/static/media/Flaticon.a4d2f67b.svg"
   },
   {
     "revision": "bd6d1d55050dbd3a98a61eaf6e908559",
     "url": "/HERUPS/static/media/Flaticon.bd6d1d55.woff2"
   },
   {
-    "revision": "934806535a6ad1def4f7eee255d5e24f",
-    "url": "/HERUPS/static/media/available.93480653.svg"
+    "revision": "0fd5d67dc3aa6c791af07b6f5d121a77",
+    "url": "/HERUPS/static/media/available.0fd5d67d.svg"
   },
   {
     "revision": "d262ae041824a5c97e20671f38950aed",
@@ -60,20 +60,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/media/cApplications.7b4e609e.jpg"
   },
   {
-    "revision": "a0283902b01288c7612cf306518d7553",
-    "url": "/HERUPS/static/media/curv-bg.a0283902.svg"
+    "revision": "f458c03ef7bc399e504527243767cfe0",
+    "url": "/HERUPS/static/media/curv-bg.f458c03e.svg"
   },
   {
     "revision": "7b2e77f3b3831497100838ab8e3bc343",
     "url": "/HERUPS/static/media/daniel.7b2e77f3.jpg"
   },
   {
-    "revision": "ce12c1b0e565d0dfa8ffb2c4295af231",
-    "url": "/HERUPS/static/media/easy.ce12c1b0.svg"
+    "revision": "aab10dcda881a44e80000af983aa787a",
+    "url": "/HERUPS/static/media/easy.aab10dcd.svg"
   },
   {
-    "revision": "3992b2cd2f226e8f1d91d9e36cc2de18",
-    "url": "/HERUPS/static/media/error.3992b2cd.svg"
+    "revision": "bc05fb19b84dca436d581e674e0c6333",
+    "url": "/HERUPS/static/media/error.bc05fb19.svg"
   },
   {
     "revision": "b9f3dd334156d97eed46480e746f899d",
@@ -112,15 +112,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HERUPS/static/media/student.18e14e8e.jpg"
   },
   {
-    "revision": "544baea17e0b272155535e64df606012",
-    "url": "/HERUPS/static/media/success.544baea1.svg"
+    "revision": "34b863ea02c320cb3735ef22e8a195bf",
+    "url": "/HERUPS/static/media/success.34b863ea.svg"
   },
   {
-    "revision": "d579b2dfc81d89ddf3ae314bcf22aea2",
-    "url": "/HERUPS/static/media/targeted.d579b2df.svg"
+    "revision": "9b693167b614b1dd627cd1876d5e8edd",
+    "url": "/HERUPS/static/media/targeted.9b693167.svg"
   },
   {
-    "revision": "e108be9164cbad901b229809d42b8812",
-    "url": "/HERUPS/static/media/twitter.e108be91.svg"
+    "revision": "6f64ae8eefc9c9040289302248a367db",
+    "url": "/HERUPS/static/media/twitter.6f64ae8e.svg"
   }
 ]);
