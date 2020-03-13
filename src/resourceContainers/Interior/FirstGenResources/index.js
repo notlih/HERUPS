@@ -25,7 +25,7 @@ const Project = () => {
 
   console.log(projects)
   return (
-    <SectionWrapper id="first-generation">
+    <SectionWrapper id="first-gen">
       <Container width="1360px">
         <Fade bottom>
           <SectionHeader>

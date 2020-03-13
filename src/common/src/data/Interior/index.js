@@ -517,7 +517,7 @@ export const newsData = [
     excerpt:
       'Students who self-identify as non-white, referred to some as ethnic "minority" students. Students of color may be underprivileged, and/or be marginalized by institutions/policies. ',
     link_text: 'We\'re with you',
-    link_url: '#low-income',
+    link_url: '#person-of-color',
   },
   {
     id: 3,
@@ -533,7 +533,7 @@ export const newsData = [
     excerpt:
       'Those who are not documented as citizens in this country often find themselves scraping for educational resources, some of which require you to be a citizen.',
     link_text: 'We\'ve got your back',
-    link_url: '#low-income',
+    link_url: '#undocumented',
   },
 ];
 
