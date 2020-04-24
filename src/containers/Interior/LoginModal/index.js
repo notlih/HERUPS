@@ -79,15 +79,20 @@ const LoginModal = ({
 
   async function onLogin(){
 
-    let resp = auth.logIn(emailL, passwordL)
-    console.log(resp)
-    setToDash(true);
+    let resp = await auth.logIn(emailL, passwordL)
+    if(resp[0] != 0){
+      setToDash(true);
+    }
+    else{
+      if(resp[1] == "auth/user-not-found")
+      setErrorLogIn("User Not Found, Please Try Again.")
+    }
 
   }
 
   async function onRegister() {
 
-   let resp = auth.signUp(emailR, passwordR, nameR);
+   let resp = await auth.signUp(emailR, passwordR, nameR);
    console.log(resp);
    setRegister(1);
           
@@ -299,7 +304,8 @@ const LoginModal = ({
             >
               <TabPane tab="LOGIN" key="loginForm">
               <Heading content="Please login to your account" {...titleStyle} />
-                {errorLogIn}
+                
+                <Heading color="RED" as="h3" content={errorLogIn}/>
                 <Input inputType="email"  label="Email Address" value={emailL} onChange={e => setEmailL(e.target.value)}/>
                 <Input inputType="password"  label="Password" value={passwordL} onChange={e => setPasswordL(e.target.value)}/>
                 <CheckBox

@@ -5,7 +5,7 @@ const SectionWrapper = styled.section`
   padding: 5% 0;
   overflow: hidden;
   @media only screen and (max-width: 1440px) {
-    padding: 10% 0;
+    padding: 10% 0 0 0;
   }
   @media only screen and (max-width: 767px) {
     padding: 5% 0 12px;

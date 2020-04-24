@@ -35,7 +35,9 @@ function useProvideAuth(){
                 .signInWithEmailAndPassword(email, password)
                 .then(response => {
                     setUser(response.user)
-                    return response.user
+                    return [response.user, 0]
+                }).catch(error => {
+                  return [0, error.code]
                 });    
     }
 
@@ -54,7 +56,6 @@ function useProvideAuth(){
             }
         }, function(error, commited){
             if(error){
-                console.log(error)
             }else if(!commited){
                 return "Display Name already in use, please choose another or LOG IN";
             } else{

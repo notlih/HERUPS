@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
-import Text from '../../../common/src/components/Text';
+import Button from '../../../common/src/components/Button';
 import Heading from '../../../common/src/components/Heading';
 import Image from '../../../common/src/components/Image';
 import Container from '../../../common/src/components/UI/Container';
@@ -14,11 +14,14 @@ import SectionWrapper, {
   CarouselWrapper,
 } from './team.style';
 
-import { teamData } from '../../../common/src/data/Interior';
+const Team = (props) => {
 
-const Team = () => {
-  const { title, slogan, members } = teamData;
-  const [loading, setLoading] = useState(false);
+  const [resources, setResources] = useState({})
+
+  useEffect(() => {
+    console.log(props.newResources)
+    setResources(props.newResources)
+  }, [props.newResources])
 
   const glideOptions = {
     type: 'carousel',
@@ -39,62 +42,17 @@ const Team = () => {
     },
   };
 
-  useEffect(() => {
-    setLoading(true);
-  }, []);
-
   return (
     <SectionWrapper id="team">
       <Container width="1360px">
         <Fade bottom>
           <SectionHeader>
-            <Heading as="h5" content={title} />
-            <Heading content={slogan} />
+            <Heading as="h5" content={"category"} />
+            <Heading content={"description"} />
           </SectionHeader>
         </Fade>
         <Fade bottom delay={30}>
-          <CarouselWrapper>
-            {loading ? (
-              <GlideCarousel
-                carouselSelector="team_carousel"
-                options={glideOptions}
-                nextButton={<span className="next_arrow" />}
-                prevButton={<span className="prev_arrow" />}
-              >
-                <Fragment>
-                  {members.map(member => (
-                    <GlideSlide key={`project_key${member.id}`}>
-                      <TeamCard className="team_card">
-                        <ImageWrapper className="image_wrapper">
-                          <Image src={member.avatar} alt={member.name} />
-                        </ImageWrapper>
-                        <TextWrapper className="text_wrapper">
-                          <div className="name_plate">
-                            <Heading as="h3" content={member.name} />
-                            <Text content={member.designation} />
-                          </div>
-                          <ul className="social_links">
-                            {member.social_links.map(item => (
-                              <li key={`social_link__key${item.id}`}>
-                                <a href={item.url} aria-label="Check out our team member profile">
-                                  {item.icon}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </TextWrapper>
-                      </TeamCard>
-                    </GlideSlide>
-                  ))}
-                </Fragment>
-              </GlideCarousel>
-            ) : (
-              <CircleLoader className="alt">
-                <div className="circle"></div>
-                <div className="circle"></div>
-              </CircleLoader>
-            )}
-          </CarouselWrapper>
+          
         </Fade>
       </Container>
     </SectionWrapper>

@@ -11,6 +11,7 @@ import UserInfo from './pResourceContainers/Interior/UserInfo';
 import UserResources from './pResourceContainers/Interior/UserResources';
 import Identify from './pResourceContainers/Interior/Identify';
 import Footer from './pResourceContainers/Interior/Footer';
+
 import { ResetCSS } from './common/src/assets/css/style';
 import {
   GlobalStyle,
@@ -35,9 +36,7 @@ const pResourceContainers = () => {
           </Sticky>
           <ContentWrapper>
             <UserInfo />
-            <Identify/>
             <UserResources/>
-            <Modal/>
           </ContentWrapper>
           <Footer />
         </InteriorWrapper>

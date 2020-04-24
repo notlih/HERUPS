@@ -23,7 +23,6 @@ export default class App extends Component{
               <Route path='/' exact component={HomePage}/>
               <Route path='/resources' exact component={ResourcesPage}/>
               <Route path='/dashboard' component={pResourcesPage}/>
-              <Route path='/yourResources' component={pResourcesPage}/>
               <Route path='/PersonalStatements' component={pStatementsPage}/>
               <Route path='/Events' component={EventsPage}/>
               <Route path='/FinancialAid' component={FinAidPage}/>

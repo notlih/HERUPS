@@ -99,8 +99,10 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
     });
   };
 
-
-
+  let pathnameRedirect = "/dashboard/";
+  if (auth.user){
+    pathnameRedirect = pathnameRedirect + auth.user.displayName
+  }
 
   return (
     <NavbarWrapper {...navbarStyle}>
@@ -127,29 +129,24 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
             href="/mentors"
             variant="textButton"
             aria-label="Mentor button"
-            title="Mentor"
+            title="Mentors"
           />
-          <Link to="/yourResources">
-            <Button
-              // as="a"
-              // href="/contact"
+          {auth.user ? 
+            (<Link to={{
+            pathname: pathnameRedirect,
+            }}>
+              <Button
               variant="textButton"
-              aria-label="Contact button"
-              title="Contact us"
-            />
-          </Link>
-          <Button
-            variant="textButton"
-            onClick={handleSearchModal}
-            icon={<i className="flaticon-magnifying-glass" />}
-            aria-label="search button"
-          />
-          <Button
+              icon={<i className="flaticon-user" />}
+              aria-label="Your Resources button"
+              />
+            </Link>) : 
+            (<Button
             variant="textButton"
             onClick={handleLoginModal}
             icon={<i className="flaticon-user" />}
             aria-label="registration button"
-          />
+            />)}
           {auth.user ? (
             <Button
               variant="textButton"
