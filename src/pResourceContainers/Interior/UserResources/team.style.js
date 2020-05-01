@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get'
 
-export const SectionWrapper = styled.section`
+const SectionWrapper = styled.section`
   padding: 10px 0 81px;
   @media only screen and (max-width: 1440px) {
     padding: 10px 0 60px;
@@ -76,6 +76,11 @@ export const SectionWrapper = styled.section`
 export const TeamCard = styled.div`
   position: relative;
 
+  background-color:rgb(2,116,190);
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+
   &:hover {
     .image_wrapper {
       &::before {
@@ -93,13 +98,14 @@ export const TeamCard = styled.div`
 export const ImageWrapper = styled.div`
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
+
+  padding: 10px;
 
   &::before {
     content: '';
     display: block;
     width: 100%;
-    height: 150px;
     background: linear-gradient(
       rgba(255, 255, 255, 0),
       rgba(0, 0, 0, 0.8) 110%
@@ -116,8 +122,8 @@ export const ImageWrapper = styled.div`
   }
 
   img {
-    width: 100%;
-    height: 100%;
+    border-radius: 10px;
+    width: 190px;
     object-fit: cover;
     transition: all 0.3s ease;
   }
@@ -127,25 +133,15 @@ export const TextWrapper = styled.div`
   text-align: center;
 
   .name_plate {
-    width: calc(100% - 120px);
-    margin: -43px 0 20px 60px;
+    width: 90%;
+    margin: 10px;
     padding: 16px;
     border-radius: 10px;
     background-color: ${themeGet('colors.primary', '#FDEF00')};
-    position: relative;
+    position: absolute;
+    bottom: 0;
     z-index: 1;
-    @media only screen and (max-width: 1200px) {
-      width: calc(100% - 80px);
-      margin-left: 40px;
-    }
-    @media only screen and (max-width: 991px) {
-      width: calc(100% - 30px);
-      margin-left: 15px;
-    }
-    @media only screen and (max-width: 767px) {
-      width: calc(100% - 60px);
-      margin-left: 30px;
-    }
+  
 
     h3 {
       color: ${themeGet('colors.heading', '#191919')};

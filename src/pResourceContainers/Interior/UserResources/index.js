@@ -12,13 +12,13 @@ import Container from '../../../common/src/components/UI/Container';
 import Text from '../../../common/src/components/Text';
 import GlideSlide from '../../../common/src/components/GlideCarousel/glideSlide';
 import GlideCarousel from '../../../common/src/components/GlideCarousel';
-import {
+import SectionWrapper, {
   TeamCard,
-  SectionWrapper,
-  ImageWrapper as TeamImageWrapper,
-  TextWrapper as TeamTextWrapper,
+  ImageWrapper,
+  TextWrapper,
   CarouselWrapper,
 } from './team.style';
+
 
 import {useAuth} from  "../../../common/src/hooks/use-auth.js"
 
@@ -54,17 +54,16 @@ const Project = () => {
   const auth = useAuth();
 
   const [firstGen, setFirstGen] = useState(false);
-  const [FGResourceContainer, setFGResourceContainer] = useState(<div></div>)
+  const [FGResourceContainer, setFGResourceContainer] = useState(<div></div>);
   const [lowIncome, setLowIncome] = useState(false);
-  const [LIResourceContainer, setLIResourceContainer] = useState(<div></div>)
+  const [LIResourceContainer, setLIResourceContainer] = useState(<div></div>);
   const [undoc, setUndoc] = useState(false);
-  const [UResourceContainer, setUResourceContainer] = useState(<div></div>)
+  const [UResourceContainer, setUResourceContainer] = useState(<div></div>);
   const [studentOfColor, setStudentOfColor] = useState(false);
-  const [SOCResourceContainer, setSOCResourceContainer] = useState(<div></div>)
-  const [immigrant, setImmigrant] = useState(false);
-  const [IResourceContainer, setIResourceContainer] = useState(<div></div>)
+  const [SOCResourceContainer, setSOCResourceContainer] = useState(<div></div>);
+
   const [pronouns, setPronouns] = useState("");
-  const [education, setEducation] = useState("")
+  const [education, setEducation] = useState("");
 
   useEffect(() => {
     if(firstGen){
@@ -94,16 +93,10 @@ const Project = () => {
     }
    }, [studentOfColor])
 
-  useEffect(() => {
-    if(immigrant){
-      console.log("immigrant")
-      getIResources();
-    }
-  }, [immigrant])
 
 
   function getFGResources(){
-    fetch("https://fresh-avocado-2020.herokuapp.com/resources?q=First-generation")
+    fetch("https://fresh-avocado-2020.herokuapp.com/resources?q=First%20Generation")
       .then(response => {
         return response.json();
       })
@@ -123,7 +116,7 @@ const Project = () => {
   }
 
   function getLIResources(){
-    fetch("https://fresh-avocado-2020.herokuapp.com/resources?q=Low-income")
+    fetch("https://fresh-avocado-2020.herokuapp.com/resources?q=Low%20Income")
     .then(response => {
       return response.json();
     })
@@ -165,7 +158,7 @@ const Project = () => {
   }
 
   function getSOCResources(){
-    fetch("https://fresh-avocado-2020.herokuapp.com/resources?q=Person%20of%20color")
+    fetch("https://fresh-avocado-2020.herokuapp.com/resources?q=Person%20of%20Color")
       .then(response => {
         return response.json();
       })
@@ -185,26 +178,6 @@ const Project = () => {
       });
   }
 
-  function getIResources(){
-    fetch("https://fresh-avocado-2020.herokuapp.com/resources?q=Immigrant")
-      .then(response => {
-        return response.json();
-      })
-      .then(resources => {
-
-        let newResources = {
-          list: {},
-          category: "Resources for Immigrants"
-        }
-        for (let i = 0; i < resources.length; i++){
-          newResources.list[i] = resources[i] 
-        }
-        console.log(newResources)
-        setIResourceContainer(setCarousel(newResources))
-
-      });
-  }
-
   function setCarousel(resources){
     let resourceList = resources.list;
     let category = resources.category;
@@ -218,30 +191,34 @@ const Project = () => {
       let items = (
         <GlideSlide key={`project_key${resourceList[r].Resource}`}>
           <TeamCard className="team_card">
-            <TeamImageWrapper className="image_wrapper">
-              <Image src={imgSRC} alt={category} />
-            </TeamImageWrapper>
-            <TeamTextWrapper className="text_wrapper">
+            <ImageWrapper className="image_wrapper">
+              <Image src={resourceList[r].ResourceImg} alt={category} />
+            </ImageWrapper>
+            <TextWrapper className="text_wrapper">
               <div className="name_plate">
-                <Heading as="h4" content={resourceList[r].Resource} />
+                <Heading as="h3" content={resourceList[r].Resource} />
                 <div style={{display:"flex", flexDirection:"row", justifyContent:"space-around"}}>
                   <Text content="Learn More"/>
                   <Text content="Favorite"/>
                 </div>
               </div>
-            </TeamTextWrapper>
+            </TextWrapper>
           </TeamCard>
         </GlideSlide>)
+        
         div.push(items)
     })
 
     return(
       <SectionWrapper id="team">
-        <Container width="1360px">
+      <Container width="1360px">
+        <Fade bottom>
           <SectionHeader>
             <Heading as="h2" content={category} />
             <Text content={description} />
           </SectionHeader>
+        </Fade>
+        <Fade bottom delay={30}>
           <CarouselWrapper>
             {
               <GlideCarousel
@@ -255,9 +232,10 @@ const Project = () => {
                 </Fragment>
               </GlideCarousel>
             }
-          </CarouselWrapper>
-        </Container>
-      </SectionWrapper>)
+            </CarouselWrapper>
+            </Fade>
+          </Container>
+        </SectionWrapper>)
   }
 
   if(!auth.user){
@@ -270,7 +248,6 @@ const Project = () => {
 
   firebase.database().ref("/users/" + auth.user.displayName).once('value').then(function(snapshot){
     setFirstGen(snapshot.val().firstGenStatus);
-    setImmigrant(snapshot.val().immigrantStatus);
     setEducation(snapshot.val().education);
     setLowIncome(snapshot.val().lowIncomeStatus);
     setStudentOfColor(snapshot.val().studentOfColorStatus);
@@ -282,13 +259,12 @@ const Project = () => {
 
   return (
     <SectionWrapper>
-      <Container width="1360px">
+      <Container>
         <Container>
           {FGResourceContainer}
           {LIResourceContainer}
           {UResourceContainer}
           {SOCResourceContainer}
-          {IResourceContainer}
         </Container>
       </Container>
     </SectionWrapper>
