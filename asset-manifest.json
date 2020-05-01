@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/HERUPS/static/css/main.66bb4e04.chunk.css",
-    "main.js": "/HERUPS/static/js/main.6f97b35d.chunk.js",
-    "main.js.map": "/HERUPS/static/js/main.6f97b35d.chunk.js.map",
+    "main.js": "/HERUPS/static/js/main.b29323b5.chunk.js",
+    "main.js.map": "/HERUPS/static/js/main.b29323b5.chunk.js.map",
     "runtime-main.js": "/HERUPS/static/js/runtime-main.c30626b8.js",
     "runtime-main.js.map": "/HERUPS/static/js/runtime-main.c30626b8.js.map",
     "static/css/2.d2d351c6.chunk.css": "/HERUPS/static/css/2.d2d351c6.chunk.css",
     "static/js/2.b0ab9558.chunk.js": "/HERUPS/static/js/2.b0ab9558.chunk.js",
     "static/js/2.b0ab9558.chunk.js.map": "/HERUPS/static/js/2.b0ab9558.chunk.js.map",
     "index.html": "/HERUPS/index.html",
-    "precache-manifest.d8fa565b80f49ecc480a8c8dc6c45adf.js": "/HERUPS/precache-manifest.d8fa565b80f49ecc480a8c8dc6c45adf.js",
+    "precache-manifest.20e3ad2ffc4ff695c756aab7417c5fa3.js": "/HERUPS/precache-manifest.20e3ad2ffc4ff695c756aab7417c5fa3.js",
     "service-worker.js": "/HERUPS/service-worker.js",
     "static/css/2.d2d351c6.chunk.css.map": "/HERUPS/static/css/2.d2d351c6.chunk.css.map",
     "static/css/main.66bb4e04.chunk.css.map": "/HERUPS/static/css/main.66bb4e04.chunk.css.map",
@@ -47,6 +47,6 @@
     "static/css/2.d2d351c6.chunk.css",
     "static/js/2.b0ab9558.chunk.js",
     "static/css/main.66bb4e04.chunk.css",
-    "static/js/main.6f97b35d.chunk.js"
+    "static/js/main.b29323b5.chunk.js"
   ]
 }
