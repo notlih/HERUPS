@@ -66,7 +66,6 @@ const LoginModal = ({
   const [lowIncome, setLowIncome] = useState(false);
   const [undoc, setUndoc] = useState(false);
   const [studentOfColor, setStudentOfColor] = useState(false);
-  const [immigrant, setImmigrant] = useState(false);
   const [pronouns, setPronouns] = useState("");
   const [education, setEducation] = useState("")
 
@@ -92,9 +91,24 @@ const LoginModal = ({
 
   async function onRegister() {
 
-   let resp = await auth.signUp(emailR, passwordR, nameR);
-   console.log(resp);
-   setRegister(1);
+    let resp = await auth.signUp(emailR, passwordR, nameR);
+
+    console.log(resp);
+
+    if(resp[0] != 0) {
+      setRegister(1);
+    } else {
+      if(resp[1] == "auth/invalid-email"){
+        setErrorRegistering("The email you entered is invalid.");
+      } else if(resp[1] == "auth/email-already-in-use"){
+        setErrorRegistering("The email you entered is already in use, please log in.");
+      } else if(resp[1] == "auth/weak-password"){
+        setErrorRegistering("The password you entered is too weak, please enter another password (Longer than 6 characters)");
+      }
+
+      
+    }
+
           
   }
 
@@ -108,7 +122,6 @@ const LoginModal = ({
       lowIncomeStatus: lowIncome,
       undocStatus: undoc,
       studentOfColorStatus: studentOfColor,
-      immigrantStatus: immigrant,
     });
     setToDash(true);
   }
@@ -118,7 +131,7 @@ const LoginModal = ({
   const registration = (
     <div>
       <Heading content="Please create an account" {...titleStyle} />
-      {errorRegistering}
+      <Heading color="RED" as="h3" content={errorRegistering}/>
       <Input label="Display Name" value={nameR} onChange={e => setNameR(e.target.value)}/>
       <Input inputType="email"  label="Email Address" value={emailR} onChange={e => setEmailR(e.target.value)}/>
       <Input inputType="password"  label="Password" value={passwordR} onChange={e => setPasswordR(e.target.value)}/>
@@ -128,7 +141,7 @@ const LoginModal = ({
     </div>);
   
   function requireStatus() {
-    if(firstGen === false && lowIncome === false && undoc === false && studentOfColor === false && immigrant === false){
+    if(firstGen === false && lowIncome === false && undoc === false && studentOfColor === false){
       setErrorStatus(
         <Heading color="RED" as="h3" content={"Please select one of the following identifiers to provide you your resources"}/>
       )
@@ -180,16 +193,6 @@ const LoginModal = ({
             type="checkbox" 
             checked={studentOfColor} 
             onChange={e => setStudentOfColor(!studentOfColor)}          
-          />
-        </label>
-        <br/>
-        <label>
-          Immigrant
-          <input 
-            name="isImmigrant" 
-            type="checkbox" 
-            checked={immigrant} 
-            onChange={e => setImmigrant(!immigrant)}
           />
         </label>
         <br/>

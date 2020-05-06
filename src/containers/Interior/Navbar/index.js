@@ -67,6 +67,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
   };
 
   const handleLoginModal = () => {
+    console.log("LOGIN MODAL OPEN")
     openModal({
       config: {
         className: 'login-modal',

@@ -22,6 +22,10 @@ export default class App extends Component{
             <Switch>
               <Route path='/' exact component={HomePage}/>
               <Route path='/resources' exact component={ResourcesPage}/>
+              <Route path='/dashboard/:id/resources/Low-Income' exact component={ResourcesPage}/>
+              <Route path='/dashboard/:id/resources/First-Gen' exact component={ResourcesPage}/>
+              <Route path='/dashboard/:id/resources/Undocumented' exact component={ResourcesPage}/>
+              <Route path='/dashboard/:id/resources/Student-of-Color/' exact component={ResourcesPage}/>
               <Route path='/dashboard' component={pResourcesPage}/>
               <Route path='/PersonalStatements' component={pStatementsPage}/>
               <Route path='/Events' component={EventsPage}/>

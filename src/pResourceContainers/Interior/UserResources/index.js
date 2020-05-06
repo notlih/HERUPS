@@ -1,5 +1,5 @@
 import React, { Fragment, useState , useEffect } from 'react';
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import firebase from "firebase"
 import "firebase/database"
@@ -19,9 +19,10 @@ import SectionWrapper, {
   CarouselWrapper,
 } from './team.style';
 
+import { openModal, closeModal } from '@redq/reuse-modal';
+import DescriptionModal from'../DescriptionModal'
 
 import {useAuth} from  "../../../common/src/hooks/use-auth.js"
-
 
 import { SectionHeader } from '../interior.style';
 
@@ -103,7 +104,7 @@ const Project = () => {
       .then(resources => {
 
         let newResources = {
-          list: {},
+          list: [],
           category: "First Generation Resources",
           description: "People who come from families where they will be the first person from their family to pursue higher education. BE PROUD!",
         }
@@ -123,7 +124,7 @@ const Project = () => {
     .then(resources => {
 
       let newResources = {
-        list: {},
+        list: [],
         category: "Low Income Resources",
         description: "Those who come from a low-income background or family. NO COST TO YOU"
       }
@@ -144,7 +145,7 @@ const Project = () => {
     .then(resources => {
 
       let newResources = {
-        list: {},
+        list: [],
         category: "Resources for Undocumented Immigrants",
         description: "Those who are not documented as citizens in this country often find themselves scraping for educational resources, some of which require you to be a citizen. WE'VE GOT YOUR BACK"
       }
@@ -165,7 +166,7 @@ const Project = () => {
       .then(resources => {
 
         let newResources = {
-          list: {},
+          list: [],
           category: "Resources for Students of Color",
           description: "Students who self-identify as non-white, referred to some as ethnic \"minority\" students. Students of color may be underprivileged, and/or be marginalized by institutions/policies. WE'RE WITH YOU"
         }
@@ -185,29 +186,25 @@ const Project = () => {
 
     let div = [];
 
-    console.log(category)
-    Object.keys(resourceList).forEach(r => {
-      console.log(resourceList[r])
+    console.log(resourceList)
+
+    resourceList.map((item, i) => {
       let items = (
-        <GlideSlide key={`project_key${resourceList[r].Resource}`}>
+        <GlideSlide key={`project_key${item.Resource}`}>
           <TeamCard className="team_card">
             <ImageWrapper className="image_wrapper">
-              <Image src={resourceList[r].ResourceImg} alt={category} />
+              <Image src={item.ResourceImg} alt={category} />
             </ImageWrapper>
             <TextWrapper className="text_wrapper">
               <div className="name_plate">
-                <Heading as="h3" content={resourceList[r].Resource} />
-                <div style={{display:"flex", flexDirection:"row", justifyContent:"space-around"}}>
-                  <Text content="Learn More"/>
-                  <Text content="Favorite"/>
-                </div>
+                <Heading as="h3" content={item.Resource}/>
               </div>
             </TextWrapper>
           </TeamCard>
-        </GlideSlide>)
-        
-        div.push(items)
-    })
+        </GlideSlide>
+      )       
+      div.push(items)
+    }) 
 
     return(
       <SectionWrapper id="team">
@@ -262,9 +259,33 @@ const Project = () => {
       <Container>
         <Container>
           {FGResourceContainer}
+          <Link to={"/dashboard/" + auth.user.displayName + "/resources/First-Gen/"}>
+            <Button 
+              color="secondary"               
+              title="All First Gen. Resources"/>
+          </Link>
+
           {LIResourceContainer}
+          <Link to={"/dashboard/" + auth.user.displayName + "/resources/Low-Income/"}>
+            <Button 
+              color="secondary"               
+              title="All Low Income Resources"/>
+          </Link>
+
           {UResourceContainer}
+          <Link to={"/dashboard/" + auth.user.displayName + "/resources/Undocumented/"}>
+            <Button 
+              color="secondary"               
+              title="All Undocumented Student Resources"/>
+          </Link>
+
           {SOCResourceContainer}
+          <Link to={"/dashboard/" + auth.user.displayName + "/resources/Student-of-Color/"}>
+            <Button 
+              color="secondary"               
+              title="All Student of Color Resources"/>
+          </Link>
+
         </Container>
       </Container>
     </SectionWrapper>

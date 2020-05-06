@@ -34,50 +34,32 @@ function useProvideAuth(){
                 .auth()
                 .signInWithEmailAndPassword(email, password)
                 .then(response => {
-                    setUser(response.user)
-                    return [response.user, 0]
+                    setUser(response.user);
+                    return [response.user, 0];
                 }).catch(error => {
-                  return [0, error.code]
+                  return [0, error.code];
                 });    
     }
 
     const signUp = (email, password, nameR) => {
 
-        let userRef = firebase.database().ref('users/' + nameR);
-        userRef.transaction(function(currentData){
 
-            if(currentData === null){
-                return {
-                    username: nameR,
-                    email: email,
-                } 
-            } else {
-                return;
-            }
-        }, function(error, commited){
-            if(error){
-            }else if(!commited){
-                return "Display Name already in use, please choose another or LOG IN";
-            } else{
+      return firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(response => {
 
-
-                return firebase
-                .auth()
-                .createUserWithEmailAndPassword(email, password)
-                .then(response => {
-
-                    response.user.updateProfile({
-                        displayName: nameR,
-                    })
-
-                    setUser(response.user);
-                    return(response.user);
-                });
-            }
-
+        response.user.updateProfile({
+          displayName: nameR
         })
-
-        
+        console.log(response.user)
+        setUser(response.user);
+        return [response.user, 0];
+      })
+      .catch(error => {
+        return[0, error.code];
+      });
+    
     }
 
     const signout = () => {

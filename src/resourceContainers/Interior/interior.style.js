@@ -151,6 +151,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .reuseModalHolder.login-modal{
+    position: fixed!important;
     .reusecore__button {
       color: ${themeGet('colors.link', '#352FD9')};
       &.default {

@@ -1,16 +1,11 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get'
 
-const LoginModalWrapper = styled.div`
+const DescriptionModalWrapper = styled.div`
   width: 80%;
   margin: 71px auto;
   border-radius: 5px;
   overflow: hidden;
-      
-  -webkit-box-shadow: 0px 0px 35px 14px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 35px 14px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 35px 14px rgba(0,0,0,0.75);
-
   background-color: ${themeGet('colors.white', '#ffffff')};
   @media only screen and (min-width: 1201px) {
     max-width: 1170px;
@@ -47,8 +42,8 @@ const LoginModalWrapper = styled.div`
 
   .rc-tabs {
     border: 0;
+    max-width: 360px;
     margin: 30px 0 0;
-    
     @media only screen and (max-width: 991px) {
       max-width: 100%;
     }
@@ -128,4 +123,4 @@ const LoginModalWrapper = styled.div`
   }
 `;
 
-export default LoginModalWrapper;
+export default DescriptionModalWrapper;
