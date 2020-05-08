@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/HERUPS/static/css/main.66bb4e04.chunk.css",
-    "main.js": "/HERUPS/static/js/main.74c963dc.chunk.js",
-    "main.js.map": "/HERUPS/static/js/main.74c963dc.chunk.js.map",
+    "main.js": "/HERUPS/static/js/main.9b42839f.chunk.js",
+    "main.js.map": "/HERUPS/static/js/main.9b42839f.chunk.js.map",
     "runtime-main.js": "/HERUPS/static/js/runtime-main.c30626b8.js",
     "runtime-main.js.map": "/HERUPS/static/js/runtime-main.c30626b8.js.map",
     "static/css/2.d2d351c6.chunk.css": "/HERUPS/static/css/2.d2d351c6.chunk.css",
-    "static/js/2.0e45454b.chunk.js": "/HERUPS/static/js/2.0e45454b.chunk.js",
-    "static/js/2.0e45454b.chunk.js.map": "/HERUPS/static/js/2.0e45454b.chunk.js.map",
+    "static/js/2.be1a8e94.chunk.js": "/HERUPS/static/js/2.be1a8e94.chunk.js",
+    "static/js/2.be1a8e94.chunk.js.map": "/HERUPS/static/js/2.be1a8e94.chunk.js.map",
     "index.html": "/HERUPS/index.html",
-    "precache-manifest.d65772daa134beb4df09a6e16f17a7a2.js": "/HERUPS/precache-manifest.d65772daa134beb4df09a6e16f17a7a2.js",
+    "precache-manifest.4b9e5e6ecaaa4f4aec0fa6ca923f7500.js": "/HERUPS/precache-manifest.4b9e5e6ecaaa4f4aec0fa6ca923f7500.js",
     "service-worker.js": "/HERUPS/service-worker.js",
     "static/css/2.d2d351c6.chunk.css.map": "/HERUPS/static/css/2.d2d351c6.chunk.css.map",
     "static/css/main.66bb4e04.chunk.css.map": "/HERUPS/static/css/main.66bb4e04.chunk.css.map",
-    "static/js/2.0e45454b.chunk.js.LICENSE.txt": "/HERUPS/static/js/2.0e45454b.chunk.js.LICENSE.txt",
+    "static/js/2.be1a8e94.chunk.js.LICENSE.txt": "/HERUPS/static/js/2.be1a8e94.chunk.js.LICENSE.txt",
     "static/media/First Generation.jpg": "/HERUPS/static/media/First Generation.c373d27d.jpg",
     "static/media/flaticon.css": "/HERUPS/static/media/Flaticon.bd6d1d55.woff2",
     "static/media/Low Income.jpg": "/HERUPS/static/media/Low Income.29062772.jpg",
@@ -31,6 +31,7 @@
     "static/media/gBased.jpg": "/HERUPS/static/media/gBased.9d1b84dc.jpg",
     "static/media/harim.jpg": "/HERUPS/static/media/harim.845a4184.jpg",
     "static/media/hilton.png": "/HERUPS/static/media/hilton.0c8f1056.png",
+    "static/media/loadingGIF.gif": "/HERUPS/static/media/loadingGIF.5f9c78f7.gif",
     "static/media/login-bg.jpg": "/HERUPS/static/media/login-bg.be2e9a02.jpg",
     "static/media/logo.png": "/HERUPS/static/media/logo.b7304821.png",
     "static/media/map.png": "/HERUPS/static/media/map.25359dc5.png",
@@ -45,8 +46,8 @@
   "entrypoints": [
     "static/js/runtime-main.c30626b8.js",
     "static/css/2.d2d351c6.chunk.css",
-    "static/js/2.0e45454b.chunk.js",
+    "static/js/2.be1a8e94.chunk.js",
     "static/css/main.66bb4e04.chunk.css",
-    "static/js/main.74c963dc.chunk.js"
+    "static/js/main.9b42839f.chunk.js"
   ]
 }
