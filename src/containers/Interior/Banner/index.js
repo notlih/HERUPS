@@ -132,7 +132,7 @@ const Banner = () => {
         <ContentArea>
           <Fade bottom delay={30}>
             <HighlightedText>
-              <strong>{discount}</strong> {discountLabel}
+              <strong>{discount}</strong>
             </HighlightedText>
             <Heading as="h1" content={title} />
             <Text content={text} />

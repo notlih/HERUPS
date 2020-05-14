@@ -7,8 +7,8 @@ import { DrawerProvider } from './common/src/contexts/DrawerContext';
 import Navbar from './containers/Interior/Navbar';
 import Banner from './containers/Interior/Banner';
 import Feature from './containers/Interior/Feature';
-import AboutUs from './containers/Interior/AboutUs';
-// import Project from './containers/Interior/Project';
+import AboutUs from './resourceContainers/Interior/AboutUs';
+import Login from './resourceContainers/Interior/Login';
 import Team from './containers/Interior/Team';
 // import News from './containers/Interior/News';
 import Testimonial from './containers/Interior/Testimonial';
@@ -42,6 +42,7 @@ export default class HomePage extends Component{
                 <ContentWrapper>
                   <Banner />
                   <Feature />
+                  <Login/>
                   <AboutUs />
                   {/* <Project /> */}
                   <Team />

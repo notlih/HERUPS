@@ -1,6 +1,11 @@
 import React, {Component, useState, useEffect} from 'react';
 import HomePage from './HomePage';
 import ResourcesPage from './ResourcesPage'
+import LIResourcesPage from './LIResourcesPage'
+import FGResourcesPage from './FGResourcesPage'
+import UResourcesPage from './UResourcesPage'
+import SOCResourcesPage from './SOCResourcesPage'
+
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { HashRouter } from "react-router-dom";
 import pResourcesPage from './pResourcesPage';
@@ -22,10 +27,10 @@ export default class App extends Component{
             <Switch>
               <Route path='/' exact component={HomePage}/>
               <Route path='/resources' exact component={ResourcesPage}/>
-              <Route path='/dashboard/:id/resources/Low-Income' exact component={ResourcesPage}/>
-              <Route path='/dashboard/:id/resources/First-Gen' exact component={ResourcesPage}/>
-              <Route path='/dashboard/:id/resources/Undocumented' exact component={ResourcesPage}/>
-              <Route path='/dashboard/:id/resources/Student-of-Color/' exact component={ResourcesPage}/>
+              <Route path='/resources/Low-Income' exact component={LIResourcesPage}/>
+              <Route path='/resources/First-Gen' exact component={FGResourcesPage}/>
+              <Route path='/resources/Undocumented' exact component={UResourcesPage}/>
+              <Route path='/resources/Student-of-Color/' exact component={SOCResourcesPage}/>
               <Route path='/dashboard' component={pResourcesPage}/>
               <Route path='/PersonalStatements' component={pStatementsPage}/>
               <Route path='/Events' component={EventsPage}/>

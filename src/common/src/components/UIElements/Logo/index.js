@@ -18,7 +18,7 @@ const Logo = ({
     {withAchor ? (
       <a {...anchorProps}>
         {logoSrc ? (
-          <Image src={logoSrc} alt={title} {...logoStyle} />
+          <Image style={{width:"180px"}} src={logoSrc} alt={title} {...logoStyle} />
         ) : (
           <Text content={title} {...titleStyle} />
         )}
@@ -26,7 +26,7 @@ const Logo = ({
     ) : (
       <>
         {logoSrc ? (
-          <Image src={logoSrc} alt={title} {...logoStyle} />
+          <Image style={{width:"180px"}} src={logoSrc} alt={title} {...logoStyle} />
         ) : (
           <Text content={title} {...titleStyle} />
         )}

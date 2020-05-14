@@ -93,7 +93,7 @@ export const HighlightedText = styled.p`
   width: 100%;
   min-height: 28px;
   border-radius: 80px;
-  padding: 3px 28px 3px 4px;
+  padding: 5px;
   font-size: 12px;
   line-height: 18px;
   font-weight: 500;
@@ -119,7 +119,7 @@ export const HighlightedText = styled.p`
     letter-spacing: 0;
     color: ${themeGet('colors.heading', '#191919')};
     background-color: ${themeGet('colors.primary', '#FDEF00')};
-    margin-right: 10px;
+
   }
 `;
 

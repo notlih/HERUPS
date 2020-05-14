@@ -8,44 +8,23 @@ import SectionWrapper, {
   NewsWrapper,
   NewsItem,
 } from './news.style';
+import Img1 from '../../../common/src/assets/image/interior/First Generation.jpg';
 
 import { Container } from '../Banner/banner.style';
 
-import { newsData } from '../../../common/src/data/Interior';
 
 const News = () => {
   return (
     <SectionWrapper id="help">
       <Container>
         <ContentWrapper>
-          <div className="row">
-            <div className="col">
-              <Fade delay={30}>H</Fade>
+          <div style={{display:"flex", flexDirection:"row", flexWrap: "wrap"}}>
+            <div style={{maxWidth:"800px", padding:"30px"}}>
+              <Heading as="H1" content="All Available Resources"/>
+              <Text content="Here you will find all of the resources that we have available for students like you. The resources are all split into different identifiers for your assistance. These identifiers include First Generation Students, Low Income Students, Undocumented Students, and Students of Color."/>
             </div>
-            <div className="col">
-              <Fade delay={60}>E</Fade>
-            </div>
-            <div className="col">
-              <Fade delay={90}>L</Fade>
-            </div>
-            <div className="col">
-              <Fade delay={90}>P</Fade>
-            </div>
+            <img src={Img1} style={{height:"500px", display: "block", marginLeft: "auto", marginRight: "auto"}}/>
           </div>
-          <NewsWrapper>
-            {newsData.map(item => (
-              <NewsItem key={`news_key${item.id}`}>
-                <Fade bottom delay={60 * item.id}>
-                  <Heading as="h2" content={item.title} />
-                  <Text content={item.excerpt} />
-                  <Link smooth to={item.link_url} className="read_more__btn">
-                    <span className="arrow"></span>
-                    <span className="text">{item.link_text}</span>
-                  </Link>
-                </Fade>
-              </NewsItem>
-            ))}
-          </NewsWrapper>
         </ContentWrapper>
       </Container>
     </SectionWrapper>

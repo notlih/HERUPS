@@ -18,23 +18,10 @@ const SectionWrapper = styled.div`
     content: '';
     display: block;
     width: 100%;
-    height: 10vw;
     background-color: #ffc04d;
     position: absolute;
     top: 0;
     left: 0;
-    @media only screen and (max-width: 1440px) {
-      height: 14vw;
-    }
-    @media only screen and (max-width: 1360px) {
-      height: 15vw;
-    }
-    @media only screen and (max-width: 1200px) {
-      height: 17vw;
-    }
-    @media only screen and (max-width: 767px) {
-      height: 13vw;
-    }
   }
 `;
 

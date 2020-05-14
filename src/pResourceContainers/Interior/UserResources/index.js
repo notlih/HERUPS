@@ -19,52 +19,28 @@ import SectionWrapper, {
   CarouselWrapper,
 } from './team.style';
 
-import { openModal, closeModal } from '@redq/reuse-modal';
-import DescriptionModal from'../DescriptionModal'
+import loadingIMG from "../../../common/loadingGIF.gif"
 
 import {useAuth} from  "../../../common/src/hooks/use-auth.js"
 
 import { SectionHeader } from '../interior.style';
 
-
-
 const Project = () => {
-
-  const glideOptions = {
-    type: 'carousel',
-    perView: 4,
-    gap: 50,
-    breakpoints: {
-      1200: {
-        perView: 3,
-        gap: 30,
-      },
-      767: {
-        perView: 2,
-        gap: 30,
-      },
-      480: {
-        perView: 1,
-      },
-    },
-  };
-
-  const imgSRC = "https://pbs.twimg.com/profile_images/1115302853273313280/hWZpEBHB_400x400.png"
-
 
   const auth = useAuth();
 
   const [firstGen, setFirstGen] = useState(false);
-  const [FGResourceContainer, setFGResourceContainer] = useState(<div></div>);
+  const [FGResourceContainer, setFGResourceContainer] = useState(<div><img src={loadingIMG}/><br/></div>);
   const [lowIncome, setLowIncome] = useState(false);
-  const [LIResourceContainer, setLIResourceContainer] = useState(<div></div>);
+  const [LIResourceContainer, setLIResourceContainer] = useState(<div><img src={loadingIMG}/><br/></div>);
   const [undoc, setUndoc] = useState(false);
-  const [UResourceContainer, setUResourceContainer] = useState(<div></div>);
+  const [UResourceContainer, setUResourceContainer] = useState(<div><img src={loadingIMG}/><br/></div>);
   const [studentOfColor, setStudentOfColor] = useState(false);
-  const [SOCResourceContainer, setSOCResourceContainer] = useState(<div></div>);
+  const [SOCResourceContainer, setSOCResourceContainer] = useState(<div><img src={loadingIMG}/><br/></div>);
 
   const [pronouns, setPronouns] = useState("");
   const [education, setEducation] = useState("");
+
 
   useEffect(() => {
     if(firstGen){
@@ -218,16 +194,10 @@ const Project = () => {
         <Fade bottom delay={30}>
           <CarouselWrapper>
             {
-              <GlideCarousel
-                carouselSelector="team_carousel"
-                options={glideOptions}
-                nextButton={<span className="next_arrow" />}
-                prevButton={<span className="prev_arrow" />}
-              >
+              
                 <Fragment>
-                  {div.map(item => <Container>{item}</Container>)}              
+                  {div.slice(0, 3).map(item => <Container>{item}</Container>)}              
                 </Fragment>
-              </GlideCarousel>
             }
             </CarouselWrapper>
             </Fade>
@@ -259,30 +229,26 @@ const Project = () => {
       <Container>
         <Container>
           {FGResourceContainer}
-          <Link to={"/dashboard/" + auth.user.displayName + "/resources/First-Gen/"}>
-            <Button 
-              color="secondary"               
+          <Link to={"/resources/First-Gen/"}>
+            <Button className="allButton"            
               title="All First Gen. Resources"/>
           </Link>
 
           {LIResourceContainer}
-          <Link to={"/dashboard/" + auth.user.displayName + "/resources/Low-Income/"}>
-            <Button 
-              color="secondary"               
+          <Link to={"/resources/Low-Income/"}>
+            <Button className="allButton"
               title="All Low Income Resources"/>
           </Link>
 
           {UResourceContainer}
-          <Link to={"/dashboard/" + auth.user.displayName + "/resources/Undocumented/"}>
-            <Button 
-              color="secondary"               
+          <Link to={"/resources/Undocumented/"}>
+            <Button className="allButton"
               title="All Undocumented Student Resources"/>
           </Link>
 
           {SOCResourceContainer}
-          <Link to={"/dashboard/" + auth.user.displayName + "/resources/Student-of-Color/"}>
-            <Button 
-              color="secondary"               
+          <Link to={"/resources/Student-of-Color/"}>
+            <Button  className="allButton"            
               title="All Student of Color Resources"/>
           </Link>
 

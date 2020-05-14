@@ -29,7 +29,7 @@ const Feature = () => {
       <Fade bottom>
         <SectionHeader>
           <Heading as="h1" style={{textDecoration: "underline", textAlign: "start", paddingLeft: "50px"}} content={greeting} />
-          <Heading as="h2" style={{textAlign: "start", paddingLeft: "50px"}} content={"Here are some resources tailored to your needs!"} />
+          <Heading as="h2" style={{textAlign: "start", paddingLeft: "50px", color:"black"}} content={"Here are some resources tailored to your needs!"} />
         </SectionHeader>
         <Container>
 

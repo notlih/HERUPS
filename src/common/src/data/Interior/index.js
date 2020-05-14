@@ -91,8 +91,8 @@ export const menuData = [
 /* ------------------------------------ */
 
 export const bannerData = {
-  discount: '100%',
-  discountLabel: 'COMMITTED TO A BETTER FUTURE',
+  discount: '100% COMMITTED TO A BETTER FUTURE',
+  discountLabel: '100% COMMITTED TO A BETTER FUTURE',
   title: 'Let us stay in touch with you',
   text:
     'Provide us with you email address to sign up for the latest newsletters that will include resources, events, and deadlines regarding the higher education process. We\'re here to move ahead with you!',
