@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/HERUPS/static/css/main.66bb4e04.chunk.css",
-    "main.js": "/HERUPS/static/js/main.b02c78d8.chunk.js",
-    "main.js.map": "/HERUPS/static/js/main.b02c78d8.chunk.js.map",
+    "main.js": "/HERUPS/static/js/main.7569abeb.chunk.js",
+    "main.js.map": "/HERUPS/static/js/main.7569abeb.chunk.js.map",
     "runtime-main.js": "/HERUPS/static/js/runtime-main.c30626b8.js",
     "runtime-main.js.map": "/HERUPS/static/js/runtime-main.c30626b8.js.map",
     "static/css/2.d2d351c6.chunk.css": "/HERUPS/static/css/2.d2d351c6.chunk.css",
-    "static/js/2.6a93ac40.chunk.js": "/HERUPS/static/js/2.6a93ac40.chunk.js",
-    "static/js/2.6a93ac40.chunk.js.map": "/HERUPS/static/js/2.6a93ac40.chunk.js.map",
+    "static/js/2.d88c8f51.chunk.js": "/HERUPS/static/js/2.d88c8f51.chunk.js",
+    "static/js/2.d88c8f51.chunk.js.map": "/HERUPS/static/js/2.d88c8f51.chunk.js.map",
     "index.html": "/HERUPS/index.html",
-    "precache-manifest.3da59d6aa9b68a87a0d23f6908bc90fe.js": "/HERUPS/precache-manifest.3da59d6aa9b68a87a0d23f6908bc90fe.js",
+    "precache-manifest.22ccf77c93b93c5c14b147dc29f40179.js": "/HERUPS/precache-manifest.22ccf77c93b93c5c14b147dc29f40179.js",
     "service-worker.js": "/HERUPS/service-worker.js",
     "static/css/2.d2d351c6.chunk.css.map": "/HERUPS/static/css/2.d2d351c6.chunk.css.map",
     "static/css/main.66bb4e04.chunk.css.map": "/HERUPS/static/css/main.66bb4e04.chunk.css.map",
-    "static/js/2.6a93ac40.chunk.js.LICENSE.txt": "/HERUPS/static/js/2.6a93ac40.chunk.js.LICENSE.txt",
+    "static/js/2.d88c8f51.chunk.js.LICENSE.txt": "/HERUPS/static/js/2.d88c8f51.chunk.js.LICENSE.txt",
     "static/media/First Generation.jpg": "/HERUPS/static/media/First Generation.c373d27d.jpg",
     "static/media/flaticon.css": "/HERUPS/static/media/Flaticon.bd6d1d55.woff2",
     "static/media/Low Income.jpg": "/HERUPS/static/media/Low Income.29062772.jpg",
@@ -21,6 +21,7 @@
     "static/media/Undocumented.jpg": "/HERUPS/static/media/Undocumented.2280d920.jpg",
     "static/media/available.svg": "/HERUPS/static/media/available.93480653.svg",
     "static/media/avocado.png": "/HERUPS/static/media/avocado.d262ae04.png",
+    "static/media/background.png": "/HERUPS/static/media/background.e4e2ee69.png",
     "static/media/cApplications.jpg": "/HERUPS/static/media/cApplications.7b4e609e.jpg",
     "static/media/curv-bg.svg": "/HERUPS/static/media/curv-bg.a0283902.svg",
     "static/media/daniel.jpg": "/HERUPS/static/media/daniel.7b2e77f3.jpg",
@@ -37,6 +38,8 @@
     "static/media/map.png": "/HERUPS/static/media/map.25359dc5.png",
     "static/media/pStatements.jpg": "/HERUPS/static/media/pStatements.d29e9b2f.jpg",
     "static/media/resourceStudent.jpg": "/HERUPS/static/media/resourceStudent.981d9b68.jpg",
+    "static/media/resources.jpg": "/HERUPS/static/media/resources.cbe436d2.jpg",
+    "static/media/resources2.png": "/HERUPS/static/media/resources2.fe364a82.png",
     "static/media/ryan.png": "/HERUPS/static/media/ryan.ac846088.png",
     "static/media/student.jpg": "/HERUPS/static/media/student.18e14e8e.jpg",
     "static/media/success.svg": "/HERUPS/static/media/success.544baea1.svg",
@@ -46,8 +49,8 @@
   "entrypoints": [
     "static/js/runtime-main.c30626b8.js",
     "static/css/2.d2d351c6.chunk.css",
-    "static/js/2.6a93ac40.chunk.js",
+    "static/js/2.d88c8f51.chunk.js",
     "static/css/main.66bb4e04.chunk.css",
-    "static/js/main.b02c78d8.chunk.js"
+    "static/js/main.7569abeb.chunk.js"
   ]
 }
