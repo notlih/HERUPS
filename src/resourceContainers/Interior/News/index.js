@@ -20,8 +20,8 @@ const News = () => {
         <ContentWrapper>
           <div style={{display:"flex", flexDirection:"row", flexWrap: "wrap"}}>
             <div style={{maxWidth:"800px", padding:"30px"}}>
-              <Heading as="H1" content="All Available Resources"/>
-              <Text content="Here you will find all of the resources that we have available for students like you. The resources are all split into different identifiers for your assistance. These identifiers include First Generation Students, Low Income Students, Undocumented Students, and Students of Color."/>
+              <Heading style={{color:"#333333"}} as="H1" content="All Available Resources"/>
+              <Text style={{color:"#333333"}} content="Here you will find all of the resources that we have available for students like you. The resources are all split into different identifiers for your assistance. These identifiers include First Generation Students, Low Income Students, Undocumented Students, and Students of Color."/>
             </div>
             <img src={Img1} style={{height:"500px", display: "block", marginLeft: "auto", marginRight: "auto"}}/>
           </div>
