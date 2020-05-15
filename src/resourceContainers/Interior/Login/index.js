@@ -51,24 +51,33 @@ const Login = () => {
 
     return (
         <Container style={{height:"200px", backgroundColor:"#F2E93D"}}>
-            <Heading as="H1" style={{padding:"10px"}} content="Log In or Create an account to get access to personalized resources and ability to add them to your favorites!"/>
             {auth.user ? 
-            (<Link to={{
-            pathname: pathnameRedirect,
-            }}>
-                <Button style={{backgroundColor:"#0274be", borderRadius: "5px"}}
-                variant="secondary"
-                title="Your Resources"
-                aria-label="Your Resources button"
+            (
+            <div style={{width:"100%", display:"flex", flexDirection:"row", justifyContent:"space-around"}}>
+              <Heading as="H1" content="Access your personalized resources page"/>
+              <div>
+                <Link to={{
+                  pathname: pathnameRedirect,
+                  }}>
+                    <Button style={{backgroundColor:"#0274be", borderRadius: "5px"}}
+                    variant="secondary"
+                    title="Your Resources"
+                    aria-label="Your Resources button"
+                    />
+                </Link>
+              </div>
+            </div>
+            ):(
+              <div style={{width:"100%", display:"flex", flexDirection:"row", justifyContent:"space-around"}}>
+                <Heading as="H1" content="Log in or create an account to get access to personalized resources and ability to add them to your favorites!"/>
+                <Button
+                    style={{backgroundColor:"#0274be", borderRadius: "5px"}}
+                    variant="secondary"
+                    title="Login / Register"
+                    onClick={handleLoginModal}
+                    aria-label="registration button"
                 />
-            </Link>) : 
-            (<Button
-                style={{backgroundColor:"#0274be", borderRadius: "5px"}}
-                variant="secondary"
-                title="Login / Register"
-                onClick={handleLoginModal}
-                aria-label="registration button"
-            />)}
+              </div>)}
         </Container>
     )
 

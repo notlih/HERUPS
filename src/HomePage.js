@@ -10,10 +10,7 @@ import Feature from './containers/Interior/Feature';
 import AboutUs from './resourceContainers/Interior/AboutUs';
 import Login from './resourceContainers/Interior/Login';
 import Team from './containers/Interior/Team';
-// import News from './containers/Interior/News';
 import Testimonial from './containers/Interior/Testimonial';
-// import Gallery from './containers/Interior/Gallery';
-// import Newsletter from './containers/Interior/Newsletter';
 import Footer from './containers/Interior/Footer';
 import { ResetCSS } from './common/src/assets/css/style';
 import {
@@ -44,12 +41,8 @@ export default class HomePage extends Component{
                   <Feature />
                   <Login/>
                   <AboutUs />
-                  {/* <Project /> */}
                   <Team />
-                  {/* <News /> */}
                   <Testimonial />
-                  {/* <Gallery /> */}
-                  {/* <Newsletter /> */}
                   <Modal/>
                 </ContentWrapper>
                 <Footer />

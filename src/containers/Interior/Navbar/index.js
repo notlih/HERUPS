@@ -12,7 +12,6 @@ import HamburgMenu from '../../../common/src/components/HamburgMenu';
 import ScrollSpyMenu from '../../../common/src/components/ScrollSpyMenu';
 import { DrawerContext } from '../../../common/src/contexts/DrawerContext';
 import { Container } from './navbar.style';
-import SearchPanel from '../SearchPanel';
 import Copyright from '../Copyright';
 
 import { menuData } from '../../../common/src/data/Interior';
@@ -44,27 +43,6 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
   const { state, dispatch } = useContext(DrawerContext);
   const auth = useAuth();
 
-  const handleSearchModal = () => {
-    openModal({
-      config: {
-        className: 'search-modal',
-        disableDragging: true,
-        width: '100%',
-        height: '100%',
-        animationFrom: { transform: 'translateY(100px)' },
-        animationTo: { transform: 'translateY(0)' }, //
-        transition: {
-          mass: 1,
-          tension: 180,
-          friction: 26,
-        },
-      },
-      component: SearchPanel,
-      componentProps: {},
-      closeComponent: CloseModalButtonAlt,
-      closeOnClickOutside: false,
-    });
-  };
 
   const handleLoginModal = () => {
     console.log("LOGIN MODAL OPEN")

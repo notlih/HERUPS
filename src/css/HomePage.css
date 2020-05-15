@@ -2,6 +2,8 @@ html{scroll-behavior:smooth}
 
 body{
     background-color: #4BC6B9;
+    font-family: Lato;
+    font-style: normal;
 }
 
 .mainContainer{

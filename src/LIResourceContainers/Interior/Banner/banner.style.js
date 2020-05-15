@@ -31,10 +31,62 @@ const BannerWrapper = styled.div`
   }
 `;
 
+export const SectionHeader = styled.header`
+  text-align: center;
+  padding-bottom: 70px;
+  @media only screen and (max-width: 1440px) {
+    padding-bottom: 56px;
+  }
+  @media only screen and (max-width: 1200px) {
+    padding-bottom: 50px;
+  }
+  @media only screen and (max-width: 991px) {
+    padding-bottom: 40px;
+  }
+  @media only screen and (max-width: 480px) {
+    text-align: left;
+  }
+
+  h5 {
+    color: ${themeGet('colors.link', '#352FD9')};
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+    @media only screen and (max-width: 1200px) {
+      font-size: 14px;
+    }
+    @media only screen and (max-width: 480px) {
+      font-size: 13px;
+    }
+  }
+
+  h2 {
+    color: ${themeGet('colors.heading', '#191919')};
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: 600;
+    margin: 0;
+    @media only screen and (max-width: 1440px) {
+      font-size: 30px;
+      line-height: 46px;
+    }
+    @media only screen and (max-width: 1200px) {
+      font-size: 28px;
+      line-height: 42px;
+    }
+    @media only screen and (max-width: 767px) {
+      font-size: 24px;
+      line-height: 35px;
+    }
+  }
+`;
+
 export const Container = styled.div`
   width: 100%;
   max-width: 1580px;
-  min-height: 100vh;
+  min-height: 50vh;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;

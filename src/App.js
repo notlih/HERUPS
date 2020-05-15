@@ -5,6 +5,8 @@ import LIResourcesPage from './LIResourcesPage'
 import FGResourcesPage from './FGResourcesPage'
 import UResourcesPage from './UResourcesPage'
 import SOCResourcesPage from './SOCResourcesPage'
+import FavoriteResources from './FavoriteResources'
+
 
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { HashRouter } from "react-router-dom";
@@ -31,7 +33,8 @@ export default class App extends Component{
               <Route path='/resources/First-Gen' exact component={FGResourcesPage}/>
               <Route path='/resources/Undocumented' exact component={UResourcesPage}/>
               <Route path='/resources/Student-of-Color/' exact component={SOCResourcesPage}/>
-              <Route path='/dashboard' component={pResourcesPage}/>
+              <Route path='/dashboard/:id' exact component={pResourcesPage}/>
+              <Route path='/dashboard/:id/favorites' exact component={FavoriteResources}/>
               <Route path='/PersonalStatements' component={pStatementsPage}/>
               <Route path='/Events' component={EventsPage}/>
               <Route path='/FinancialAid' component={FinAidPage}/>

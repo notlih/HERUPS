@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
+import Background from './background.png';
+
 const SectionWrapper = styled.section`
-  background-color: rgb(2, 116, 190);
   padding: 5% 0;
   overflow: hidden;
   @media only screen and (max-width: 1440px) {

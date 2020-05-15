@@ -231,25 +231,35 @@ const Project = () => {
           {FGResourceContainer}
           <Link to={"/resources/First-Gen/"}>
             <Button className="allButton"            
-              title="All First Gen. Resources"/>
+              title="All First Gen. Resources"
+              style={{marginBottom:"40px"}}/>
           </Link>
+
+          <hr/>
 
           {LIResourceContainer}
           <Link to={"/resources/Low-Income/"}>
             <Button className="allButton"
-              title="All Low Income Resources"/>
+              title="All Low Income Resources"
+              style={{marginBottom:"40px"}}/>
           </Link>
+
+          <hr/>
 
           {UResourceContainer}
           <Link to={"/resources/Undocumented/"}>
             <Button className="allButton"
-              title="All Undocumented Student Resources"/>
+              title="All Undocumented Student Resources"
+              style={{marginBottom:"40px"}}/>
           </Link>
+
+          <hr/>
 
           {SOCResourceContainer}
           <Link to={"/resources/Student-of-Color/"}>
             <Button  className="allButton"            
-              title="All Student of Color Resources"/>
+              title="All Student of Color Resources"
+              style={{marginBottom:"40px"}}/>
           </Link>
 
         </Container>

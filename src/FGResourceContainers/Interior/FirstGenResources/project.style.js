@@ -4,20 +4,20 @@ import { themeGet } from '@styled-system/theme-get'
 import curvBg from '../../../common/src/assets/image/interior/curv-bg.svg';
 
 const SectionWrapper = styled.section`
-  padding: 130px 0 260px;
-  margin-top: 140px;
+  padding: 20px 0 260px;
+  margin-top: 20px;
   background-image: url(${curvBg});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top left;
   position: relative;
   @media only screen and (max-width: 1440px) {
-    padding: 120px 0 190px;
-    margin-top: 81px;
+    padding: 20px 0 190px;
+    margin-top: 20px;
   }
   @media only screen and (max-width: 767px) {
-    margin-top: 42px;
-    padding: 82px 0;
+    margin-top: 20px;
+    padding: 20px 0;
   }
 
   header {

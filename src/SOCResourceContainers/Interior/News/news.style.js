@@ -2,39 +2,20 @@ import styled from 'styled-components';
 // import { themeGet } from '@styled-system/theme-get'
 
 const SectionWrapper = styled.div`
-  background-color: #ffc04d;
-  position: relative;
+  padding: 5% 0;
+  overflow: hidden;
   @media only screen and (max-width: 1440px) {
-    margin-top: -20px;
-  }
-  @media only screen and (max-width: 1360px) {
-    margin-top: -60px;
+    padding: 10% 0 0 0;
   }
   @media only screen and (max-width: 767px) {
-    margin-top: 22px;
-  }
+    padding: 5% 0 12px;
 
-  &::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 10vw;
-    background-color: #ffc04d;
-    position: absolute;
-    top: 0;
-    left: 0;
-    @media only screen and (max-width: 1440px) {
-      height: 14vw;
+    header {
+      padding: 0 30px 40px;
     }
-    @media only screen and (max-width: 1360px) {
-      height: 15vw;
-    }
-    @media only screen and (max-width: 1200px) {
-      height: 17vw;
-    }
-    @media only screen and (max-width: 767px) {
-      height: 13vw;
-    }
+  }
+  @media only screen and (max-width: 480px) {
+    padding-bottom: 30px;
   }
 `;
 
@@ -84,6 +65,7 @@ export const ContentWrapper = styled.div`
     }
   }
 `;
+
 
 export const NewsWrapper = styled.div`
   display: flex;

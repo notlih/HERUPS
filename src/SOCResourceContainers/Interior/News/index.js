@@ -9,45 +9,22 @@ import SectionWrapper, {
   NewsItem,
 } from './news.style';
 
-import { Container } from '../Banner/banner.style';
+import { SectionHeader, Container } from '../Banner/banner.style';
 
-import { newsData } from '../../../common/src/data/Interior';
+import Background from '../../../common/resources.jpg';
 
 const News = () => {
   return (
-    <SectionWrapper id="help">
-      <Container>
-        <ContentWrapper>
-          <div className="row">
-            <div className="col">
-              <Fade delay={30}>H</Fade>
-            </div>
-            <div className="col">
-              <Fade delay={60}>E</Fade>
-            </div>
-            <div className="col">
-              <Fade delay={90}>L</Fade>
-            </div>
-            <div className="col">
-              <Fade delay={90}>P</Fade>
-            </div>
-          </div>
-          <NewsWrapper>
-            {newsData.map(item => (
-              <NewsItem key={`news_key${item.id}`}>
-                <Fade bottom delay={60 * item.id}>
-                  <Heading as="h2" content={item.title} />
-                  <Text content={item.excerpt} />
-                  <Link smooth to={item.link_url} className="read_more__btn">
-                    <span className="arrow"></span>
-                    <span className="text">{item.link_text}</span>
-                  </Link>
-                </Fade>
-              </NewsItem>
-            ))}
-          </NewsWrapper>
+    <SectionWrapper id="help" style={{padding:"100px 0", backgroundImage: "url(" + Background + ")", backgroundPosition:"center", backgroundSize: "cover", boxShadow: "inset 0 0 0 2000px rgba(255, 192, 77, 0.7)"}}>
+      <SectionHeader >
+        <ContentWrapper >
+            
+          <Heading as="h1" style={{color:"white"}} className="title" content="Resources for Students of Color"/>
+          <hr style={{width:"200px"}}></hr>
+          <Heading as="h3" style={{color:"white"}} content={"Students who self-identify as non-white, referred to some as ethnic 'minority' students. Students of color may be underprivileged, and/or be marginalized by institutions/policies. WE'RE WITH YOU"} />   
+         
         </ContentWrapper>
-      </Container>
+      </SectionHeader>
     </SectionWrapper>
   );
 };

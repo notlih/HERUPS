@@ -8,6 +8,7 @@ import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons'
 import styled from 'styled-components'
 
 import Button from '../../../common/src/components/Button';
+import Text from '../../../common/src/components/Text';
 import Container from '../../../common/src/components/UI/Container';
 
 import SectionWrapper, {
@@ -24,8 +25,8 @@ import "firebase/database"
 const Styles = styled.div `
   table {
     width: 100%;
-    border-spacing: 0;
-    border: 1px solid black;
+    border-collapse:collapse
+    
     tr {
       :last-child {
         td {
@@ -43,6 +44,9 @@ const Styles = styled.div `
         border-right: 0;
       }
     }
+    tr:nth-child(even) {
+      background-color: rgba(186, 186, 186, 0.5)
+    }
   }
 `
 
@@ -54,44 +58,36 @@ const Project = () => {
 
   let columns = [{
     Header: "Resources",
-    columns: [
-      {
-        Header: "Logo",
-        Cell: (row) => {
-          return <img height={50} src={row.row.original.ResourceImg}/>
-        }
-      },
-      {
-        Header: "Name",
-        accessor: "Resource"
-      },
-      {
-        Header: "Description",
-        accessor: "ResourceDescription"
-      },
-      {
-        Header: "Link",
-        Cell: (row) => {
-          return <a href={row.row.original.ResourceLink}><Button color={"black"} title={"GO"}/></a>
-        }
-      }
-    ]
+    Cell: (row) => {
+      return(
+        <div style={{display:"flex", justifyContent: "space-between", alignItems:"center"}}>
+          <div style={{display:"flex", flexDirection:"column", justifyContent: "space-between", alignItems:"center", textAlign:"center"}}>
+            <img style={{width:"auto", height:"auto", maxWidth:"200px", padding:"10px"}} src={row.row.original.ResourceImg}/>
+            <Text style={{padding:"10px", }} content={row.row.original.Resource}/>
+          </div>
+          <Text style={{padding:"10px"}} content={row.row.original.ResourceDescription}/>
+          <div style={{display:"flex", flexDirection:"column", justifyContent: "space-between", alignItems:"center", textAlign:"center"}}>
+            <a style={{padding:"10px"}} href={row.row.original.ResourceLink}><Button color={"black"} title={"GO"}/></a>
+          </div>
+        </div>
+      )
+    }
   }];
 
 
-  function addFavoriteDB(resource){
+  function addFavoriteDB(r){
 
     let updates = {};
-    updates["/users/" + auth.user.displayName + "/favorites/FirstGen/" + resource] = true
+    updates["/users/" + auth.user.displayName + "/favorites/FirstGen/" + r.Resource] = r
 
     firebase.database().ref().update(updates)
    
   } 
   
-  function removeFavoriteDB(resource){
+  function removeFavoriteDB(r){
 
     let updates = {};
-    updates["/users/" + auth.user.displayName + "/favorites/FirstGen/" + resource] = null
+    updates["/users/" + auth.user.displayName + "/favorites/FirstGen/" + r.Resource] = null
 
     firebase.database().ref().update(updates)
    
@@ -108,9 +104,9 @@ const Project = () => {
       if(f.resource == r.Resource){
         f.favorited = !f.favorited
         if(f.favorited == true){
-          addFavoriteDB(f.resource);
+          addFavoriteDB(r);
         }else{
-          removeFavoriteDB(f.resource);
+          removeFavoriteDB(r);
         }
       }
 
@@ -155,7 +151,6 @@ const Project = () => {
             resourcesF.forEach(r => {
           
               if(userFavorites.includes(r.Resource)){
-                console.log("had it")
                 temp.push({
                   resource: r.Resource,
                   favorited: true
@@ -197,45 +192,36 @@ const Project = () => {
   useMemo(() => {
     
     if(auth.user && favorited){
-      
+    
       columns = [{
         Header: "Resources",
-        columns: [
-          {
-            Header: "Logo",
-            Cell: (row) => {
-              return <img height={50} src={row.row.original.ResourceImg}/>
-            }
-          },
-          {
-            Header: "Name",
-            accessor: "Resource"
-          },
-          {
-            Header: "Description",
-            accessor: "ResourceDescription"
-          },
-          {
-            Header: "Link",
-            Cell: (row) => {
-              return <a href={row.row.original.ResourceLink}><Button color={"black"} title={"GO"}/></a>
-            }
-          },
-          {
-            Header: 'Favorite',
-            Cell: (row) => {
-              let show = false;
-              for(let i = 0; i < favorited.length; i++){
-                if(favorited[i].resource == row.row.original.Resource && favorited[i].favorited == true){
-                  show = true;
-                }
-              }
+        Cell: (row) => {
 
-            return <div style={{display:"flex", justifyContent:"center"}}>{show ? <FontAwesomeIcon icon={faHeart} size="2x" color={"blue"} onClick={() => changeFavorited(row.row.original)}/> : <FontAwesomeIcon icon={farHeart} size="2x" color={"blue"} onClick={() => changeFavorited(row.row.original)}/> }</div>
+          let show = false;
+          for(let i = 0; i < favorited.length; i++){
+            if(favorited[i].resource == row.row.original.Resource && favorited[i].favorited == true){
+              show = true;
             }
           }
-        ]
+
+          console.log(row.row.original)
+
+          return(
+            <div style={{display:"flex", justifyContent: "space-between", alignItems:"center"}}>
+              <div style={{display:"flex", flexDirection:"column", justifyContent: "space-between", alignItems:"center", textAlign:"center"}}>
+                <img style={{width:"auto", height:"auto", maxWidth:"200px", padding:"10px"}} src={row.row.original.ResourceImg}/>
+                <Text style={{padding:"10px", }} content={row.row.original.Resource}/>
+              </div>
+              <Text style={{padding:"10px"}} content={row.row.original.ResourceDescription}/>
+              <div style={{display:"flex", flexDirection:"column", justifyContent: "space-between", alignItems:"center", textAlign:"center"}}>
+                <a style={{padding:"10px"}} href={row.row.original.ResourceLink}><Button color={"black"} title={"GO"}/></a>
+                <div style={{display:"flex", justifyContent:"center", padding:"10px"}}>{show ? <FontAwesomeIcon icon={faHeart} size="2x" color={"blue"} onClick={() => changeFavorited(row.row.original)}/> : <FontAwesomeIcon icon={farHeart} size="2x" color={"blue"} onClick={() => changeFavorited(row.row.original)}/> }</div>
+              </div>
+            </div>
+          )
+        }
       }];
+      
     }
       
     setResourceTable(
