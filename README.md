@@ -1,6 +1,6 @@
 # Team Fresh Avocado
 
-## Landing Page (WIP)
+## Landing Page
 https://notlih.github.io/HERUPS/#/
 
 ## Background
